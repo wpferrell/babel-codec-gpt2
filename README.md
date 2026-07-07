@@ -131,6 +131,29 @@ on one 20 GB workstation GPU — there is no scale barrier between you and any n
 (11.2 → 3.1 unexplained nats), gap tables published each time, nothing relaxed — before the band
 was finally met at 0.000.*
 
+## Read a mind in five minutes
+
+The frozen decoder doubles as a live mind-reader: `demo/read_a_mind.py` runs one CPU forward
+pass of GPT-2 on a sentence (default: "The old captain stared at the horizon, knowing the storm
+would sink his") and prints, at three depths, the top-8 certified reads of the internal state in
+the model's own vocabulary — honest labels included (NAMED / NAMED-CONDITIONED / STILL-DARK /
+CERTIFIED-NO-GLOSS). It is read-only and gate-checked: the frozen artifact hashes are verified
+before anything runs, nothing is steered, and nothing is claimed beyond the certified record.
+The full narrated transcript is `demo/EXAMPLES.md`.
+
+```bash
+pip install torch transformers
+python demo/read_a_mind.py    # CPU, ~1 min; self-checks against the frozen reference readout, exit 0 = reproduced
+```
+
+**The single best read:** mid-sentence at ` storm`, the comma-boundary/dramatic-event field is
+the loudest certified entry (z +3.0) and a folded-read word whose certified causal write-image
+is "+push raises [SHIP, ...]" is elevated at +2.6 — four tokens before the model actually emits
+" ship" at 63%. (A readout association, not a causal claim about this sentence.)
+
+And honestly: at the late-stack probe most of what is loud is CERTIFIED-NO-GLOSS — the certified
+5.3% dark remainder is not an abstraction; the demo shows it live, on your own CPU.
+
 ## Related work (credited, not competed with)
 
 Anthropic's **Natural Language Autoencoders** (Transformer Circuits, May 2026) and **Cycle-
