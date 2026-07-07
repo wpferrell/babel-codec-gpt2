@@ -1,0 +1,4500 @@
+{
+ "experiment": "L6 hunt the 5.3% + explain the last miss: Arm A dark-mass localize (SVD rank-ladder + greedy) / adjudicate (L1 battery) / re-transplant gate (BABEL-OQ-3); Arm B rung causal story: listeners fan-out, writer-vs-reader incl. BABEL-OQ-4 honest-N dose null, corr_j17 leakage-vs-genuine echo decomposition. Consumes FROZEN ENCODER_V1; machinery byte-verbatim L5/L4/L1/L3. GPT-2 124M.",
+ "date": "2026-07-06",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'L6 -- HUNT THE 5.3% + EXPLAIN THE LAST MISS: ARM A DARK-MASS LOCALIZE/ADJUDICATE/RE-TRANSPLANT (BABEL-OQ-3) + ARM B RUNG CAUSAL STORY (LISTENERS / WRITER-VS-READER incl. BABEL-OQ-4 / corr_j17 LEAKAGE-vs-GENUINE) -- GAP-SCAN + PRE-REGISTRATION (2026-07-06 ~13:4x)'",
+ "locked": {
+  "tol_replay": 0.002,
+  "n_nulldir_A": 3,
+  "n_null_B": 12,
+  "n_null_OQ4": 20,
+  "k_ladder": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32,
+   64,
+   128,
+   256
+  ],
+  "closure_T": 0.8,
+  "battery_cap": 8,
+  "b_null_battery": 12,
+  "A1_bands": "LOCALIZED-LOW-RANK k_loc<=8 / LOCALIZED-MID 8<k_loc<=32 / DIFFUSE k_loc>32 ; bet DIFFUSE40/MID35/LOWRANK25",
+  "A2_bands": "f=(NAMED+NAMED-REGIME-SPECIFIC)/n_adjudicated: ALL-DARK f=0 / NAMED-SOME 0<f<0.5 / NAMED-MAJORITY f>=0.5 ; bet ALLDARK45/SOME35/MAJORITY20",
+  "A3_gate": "residKL(p_sel)<=0.1871 else LOCALIZATION-INCOMPLETE",
+  "B1_bands": "SILENT 0 / CONCENTRATED 1-3 / BROADCAST >=4 ; bet CONCENTRATED40/SILENT35/BROADCAST25",
+  "B2_bands": "COWRITER if |A_on6|>null95_20 & sign==A_on / READER if reader_valid & control_writes / else INDEPENDENT ; bet READER45/INDEPENDENT30/COWRITER25",
+  "B3_bands": "LEAKAGE |Mcomp|<=null95c / MIXED >null95c & <|Mdirect| / GENUINE >null95c & >=|Mdirect| & signs ; bet MIXED40/LEAKAGE35/GENUINE25"
+ },
+ "config": {
+  "n_hold": 16,
+  "mb": 4,
+  "cap_chunk": 16,
+  "cert_block": 512,
+  "ind_seg": 64,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager",
+  "seed": 1234,
+  "smoke": false
+ },
+ "gpu_free_checks": [
+  {
+   "tag": "armA-A1",
+   "t": 62.3,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armB",
+   "t": 156.6,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armB-B1",
+   "t": 157.5,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armB-B2",
+   "t": 175.1,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armB-B3",
+   "t": 216.6,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armA-A2",
+   "t": 256.8,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  }
+ ],
+ "instrument_discrepancy": [],
+ "gates": {
+  "hashes": {
+   "detail": {
+    "encoder_v1": {
+     "sha": "6be189567c41e91d",
+     "locked": "6be189567c41e91d",
+     "ok": true
+    },
+    "encoder_json": {
+     "sha": "365dc3ff592fc6bd",
+     "locked": "365dc3ff592fc6bd",
+     "ok": true
+    },
+    "decoder_v7": {
+     "sha": "b1d2f464c00c3ef6",
+     "locked": "b1d2f464c00c3ef6",
+     "ok": true
+    },
+    "floors_recal": {
+     "sha": "71549ae3afcc8d07",
+     "locked": "71549ae3afcc8d07",
+     "ok": true
+    },
+    "lexicon_v3": {
+     "sha": "71a51619a9bb25c3",
+     "locked": "71a51619a9bb25c3",
+     "ok": true
+    },
+    "grammar": {
+     "sha": "da6f8a63a061782b",
+     "locked": "da6f8a63a061782b",
+     "ok": true
+    },
+    "l2babel_maps": {
+     "sha": "b43f877af68728df",
+     "locked": "b43f877af68728df",
+     "ok": true
+    },
+    "wellposedness": {
+     "sha": "ea5236cbd608a385",
+     "locked": "ea5236cbd608a385",
+     "ok": true
+    },
+    "offspan": {
+     "sha": "77dd0948a63bb24f",
+     "locked": "77dd0948a63bb24f",
+     "ok": true
+    }
+   },
+   "pass": true
+  },
+  "encoder_is_decoder_inverse": {
+   "max_abs_diff": {
+    "C": 0.0,
+    "B2": 0.0,
+    "Q35": 0.0,
+    "Q_union": 0.0,
+    "mu": 0.0,
+    "read_W": 0.0
+   },
+   "pass": true
+  },
+  "recal_ok": true,
+  "identity_inject": {
+   "detail": {
+    "prose": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "code": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "repetition": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    }
+   },
+   "pass": true
+  },
+  "G1_M0a_subset": {
+   "content_match": {
+    "B2_vs_v1": 0.0,
+    "mu_vs_v1": 0.0
+   },
+   "corridor_recompute_match": true,
+   "n_corridor": 35,
+   "pass": true
+  },
+  "G3_snap_identity": {
+   "max_dlogit": {
+    "prose": 0.0,
+    "code": 0.0,
+    "repetition": 0.0
+   },
+   "pass": true
+  },
+  "G4_anchor_replay": {
+   "anchors": {
+    "j0": {
+     "C": -0.62806,
+     "banked": -0.6281,
+     "dev": 4e-05,
+     "pass": true
+    },
+    "j16": {
+     "C": -1.5931,
+     "banked": -1.5931,
+     "dev": 0.0,
+     "pass": true
+    }
+   },
+   "pass": true
+  },
+  "G2_G5_omitted": "fold-provenance gates NOT carried (L6 consumes no fold bases) -- FLAGGED per pre-reg"
+ },
+ "armA": {
+  "ga1": {
+   "sbar1": 0.9467,
+   "residKL1": 0.3004,
+   "se": 0.001,
+   "banked": 0.9467,
+   "dev": 4e-05,
+   "pass": true,
+   "per_pair": [
+    {
+     "A": 0,
+     "B": 1,
+     "s": 0.9483,
+     "residKL": 0.29421
+    },
+    {
+     "A": 1,
+     "B": 2,
+     "s": 0.9465,
+     "residKL": 0.26497
+    },
+    {
+     "A": 2,
+     "B": 3,
+     "s": 0.9428,
+     "residKL": 0.30614
+    },
+    {
+     "A": 3,
+     "B": 4,
+     "s": 0.9479,
+     "residKL": 0.313
+    },
+    {
+     "A": 4,
+     "B": 5,
+     "s": 0.9492,
+     "residKL": 0.32041
+    },
+    {
+     "A": 5,
+     "B": 6,
+     "s": 0.9424,
+     "residKL": 0.36664
+    },
+    {
+     "A": 6,
+     "B": 7,
+     "s": 0.9491,
+     "residKL": 0.28394
+    },
+    {
+     "A": 7,
+     "B": 8,
+     "s": 0.9441,
+     "residKL": 0.31126
+    },
+    {
+     "A": 8,
+     "B": 9,
+     "s": 0.9397,
+     "residKL": 0.34032
+    },
+    {
+     "A": 9,
+     "B": 10,
+     "s": 0.9527,
+     "residKL": 0.26756
+    },
+    {
+     "A": 10,
+     "B": 11,
+     "s": 0.9527,
+     "residKL": 0.29532
+    },
+    {
+     "A": 11,
+     "B": 12,
+     "s": 0.9503,
+     "residKL": 0.27516
+    },
+    {
+     "A": 12,
+     "B": 13,
+     "s": 0.9414,
+     "residKL": 0.3222
+    },
+    {
+     "A": 13,
+     "B": 14,
+     "s": 0.946,
+     "residKL": 0.28187
+    },
+    {
+     "A": 14,
+     "B": 15,
+     "s": 0.9505,
+     "residKL": 0.2624
+    },
+    {
+     "A": 15,
+     "B": 0,
+     "s": 0.9443,
+     "residKL": 0.30096
+    }
+   ]
+  },
+  "p3": {
+   "sbar3": 1.0,
+   "residKL3": 0.0,
+   "per_pair": [
+    {
+     "A": 0,
+     "B": 1,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 1,
+     "B": 2,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 2,
+     "B": 3,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 3,
+     "B": 4,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 4,
+     "B": 5,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 5,
+     "B": 6,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 6,
+     "B": 7,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 7,
+     "B": 8,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 8,
+     "B": 9,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 9,
+     "B": 10,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 10,
+     "B": 11,
+     "s": 1.0,
+     "residKL": -0.0
+    },
+    {
+     "A": 11,
+     "B": 12,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 12,
+     "B": 13,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 13,
+     "B": 14,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 14,
+     "B": 15,
+     "s": 1.0,
+     "residKL": 0.0
+    },
+    {
+     "A": 15,
+     "B": 0,
+     "s": 1.0,
+     "residKL": 0.0
+    }
+   ]
+  },
+  "svd": {
+   "n_rows": 8192,
+   "svals_top16": [
+    718.86,
+    644.55,
+    611.48,
+    576.67,
+    550.22,
+    504.86,
+    494.98,
+    467.36,
+    450.98,
+    441.22,
+    427.69,
+    425.64,
+    411.03,
+    407.15,
+    403.47,
+    397.93
+   ],
+   "sval_1": 718.86,
+   "sval_8": 467.36,
+   "sval_32": 329.51,
+   "sval_256": 119.2,
+   "dark_span5_leak_max": 0.002990545704960823
+  },
+  "ladder": {
+   "1": {
+    "sbar": 0.9473,
+    "residKL": 0.29719,
+    "closure": 0.0111
+   },
+   "2": {
+    "sbar": 0.9464,
+    "residKL": 0.30201,
+    "closure": -0.0052
+   },
+   "4": {
+    "sbar": 0.9456,
+    "residKL": 0.30724,
+    "closure": -0.0211
+   },
+   "8": {
+    "sbar": 0.9459,
+    "residKL": 0.30568,
+    "closure": -0.0152
+   },
+   "16": {
+    "sbar": 0.9467,
+    "residKL": 0.29916,
+    "closure": -0.0006
+   },
+   "32": {
+    "sbar": 0.9499,
+    "residKL": 0.27527,
+    "closure": 0.0606
+   },
+   "64": {
+    "sbar": 0.9568,
+    "residKL": 0.23048,
+    "closure": 0.1895
+   },
+   "128": {
+    "sbar": 0.9645,
+    "residKL": 0.18405,
+    "closure": 0.3331
+   },
+   "256": {
+    "sbar": 0.9723,
+    "residKL": 0.14078,
+    "closure": 0.4795
+   }
+  },
+  "greedy": {
+   "steps": [
+    {
+     "j": 1,
+     "dir": 7,
+     "closure": 0.0121,
+     "sbar": 0.9473,
+     "residKL": 0.29631
+    },
+    {
+     "j": 2,
+     "dir": 0,
+     "closure": 0.0204,
+     "sbar": 0.9478,
+     "residKL": 0.29366
+    },
+    {
+     "j": 3,
+     "dir": 8,
+     "closure": 0.0284,
+     "sbar": 0.9482,
+     "residKL": 0.29114
+    },
+    {
+     "j": 4,
+     "dir": 5,
+     "closure": 0.0327,
+     "sbar": 0.9484,
+     "residKL": 0.2898
+    },
+    {
+     "j": 5,
+     "dir": 10,
+     "closure": 0.0353,
+     "sbar": 0.9486,
+     "residKL": 0.28926
+    },
+    {
+     "j": 6,
+     "dir": 12,
+     "closure": 0.0379,
+     "sbar": 0.9487,
+     "residKL": 0.28802
+    },
+    {
+     "j": 7,
+     "dir": 4,
+     "closure": 0.0392,
+     "sbar": 0.9488,
+     "residKL": 0.2879
+    },
+    {
+     "j": 8,
+     "dir": 15,
+     "closure": 0.0399,
+     "sbar": 0.9488,
+     "residKL": 0.2877
+    }
+   ],
+   "selected_order": [
+    7,
+    0,
+    8,
+    5,
+    10,
+    12,
+    4,
+    15
+   ]
+  },
+  "a1_verdict": {
+   "ladder_k": null,
+   "greedy_j": null,
+   "k_loc": null,
+   "H_L6_A1": "DIFFUSE",
+   "selected_source": "diffuse-top8-svd (A3 payload=ladder k=256)",
+   "selected_idx": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "bet": "DIFFUSE40/MID35/LOWRANK25",
+   "bet_favorite_hit": true
+  },
+  "specificity": {
+   "rank": 256,
+   "n_draws": 3,
+   "closure_null_draws": [
+    0.3617,
+    0.3857,
+    0.3814
+   ],
+   "closure_null_mean": 0.3763,
+   "residKL_null_mean": 0.17184,
+   "seed": 20260710
+  },
+  "a3": {
+   "payload": "best-ladder-k256",
+   "rank": 256,
+   "sbar_sel": 0.9723,
+   "closure_sel": 0.4795,
+   "residKL_sel": 0.14078,
+   "recal_floor": 0.1871,
+   "GATE_PASS": true,
+   "verdict_text": "RE-TRANSPLANT GATE PASS: certified+recovered payload within recal floor of raw",
+   "closure_null_mean": 0.3763,
+   "residKL_null_mean": 0.17184,
+   "per_pair": [
+    {
+     "A": 0,
+     "B": 1,
+     "s": 0.9725,
+     "residKL": 0.13979
+    },
+    {
+     "A": 1,
+     "B": 2,
+     "s": 0.9747,
+     "residKL": 0.1212
+    },
+    {
+     "A": 2,
+     "B": 3,
+     "s": 0.9701,
+     "residKL": 0.15037
+    },
+    {
+     "A": 3,
+     "B": 4,
+     "s": 0.9713,
+     "residKL": 0.14514
+    },
+    {
+     "A": 4,
+     "B": 5,
+     "s": 0.9734,
+     "residKL": 0.14069
+    },
+    {
+     "A": 5,
+     "B": 6,
+     "s": 0.9746,
+     "residKL": 0.14152
+    },
+    {
+     "A": 6,
+     "B": 7,
+     "s": 0.9731,
+     "residKL": 0.13658
+    },
+    {
+     "A": 7,
+     "B": 8,
+     "s": 0.9694,
+     "residKL": 0.15381
+    },
+    {
+     "A": 8,
+     "B": 9,
+     "s": 0.9672,
+     "residKL": 0.16339
+    },
+    {
+     "A": 9,
+     "B": 10,
+     "s": 0.9744,
+     "residKL": 0.14219
+    },
+    {
+     "A": 10,
+     "B": 11,
+     "s": 0.9746,
+     "residKL": 0.13952
+    },
+    {
+     "A": 11,
+     "B": 12,
+     "s": 0.9726,
+     "residKL": 0.13403
+    },
+    {
+     "A": 12,
+     "B": 13,
+     "s": 0.969,
+     "residKL": 0.15813
+    },
+    {
+     "A": 13,
+     "B": 14,
+     "s": 0.9734,
+     "residKL": 0.12707
+    },
+    {
+     "A": 14,
+     "B": 15,
+     "s": 0.9714,
+     "residKL": 0.13525
+    },
+    {
+     "A": 15,
+     "B": 0,
+     "s": 0.9744,
+     "residKL": 0.12385
+    }
+   ]
+  },
+  "attribution": {
+   "b2": {
+    "sbar1": 0.9839,
+    "sbar3": 1.0,
+    "dark_gap": 0.0161,
+    "dark_mass_frac": 0.1439
+   },
+   "b4": {
+    "sbar1": 0.964,
+    "sbar3": 1.0,
+    "dark_gap": 0.036,
+    "dark_mass_frac": 0.037
+   },
+   "b8": {
+    "sbar1": 0.9456,
+    "sbar3": 1.0,
+    "dark_gap": 0.0544,
+    "dark_mass_frac": 0.0719
+   },
+   "b10": {
+    "sbar1": 0.94,
+    "sbar3": 1.0,
+    "dark_gap": 0.06,
+    "dark_mass_frac": 0.1149
+   },
+   "b6_banked": {
+    "sbar1": 0.9467,
+    "sbar3": 1.0,
+    "dark_gap": 0.0533,
+    "dark_mass_frac": 0.0483
+   }
+  },
+  "a1_done": true,
+  "a2_words": {
+   "dark_b6_svd0": {
+    "done": true,
+    "dir_index": 0,
+    "regimes": {
+     "prose": {
+      "sigma": 2.3784,
+      "n_null": 12,
+      "C1": 0.0415,
+      "SE1": 0.0051,
+      "C2": 0.083,
+      "SE2": 0.0101,
+      "null95_C": 0.0823,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.3443,
+        "SE": 0.0563
+       },
+       "8": {
+        "C": 0.4215,
+        "SE": 0.0579
+       },
+       "9": {
+        "C": 0.4529,
+        "SE": 0.0556
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.6892,
+        "SE": 0.1124
+       },
+       "8": {
+        "C": 0.8434,
+        "SE": 0.1158
+       },
+       "9": {
+        "C": 0.9062,
+        "SE": 0.1111
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.4529,
+      "null95_INT": 1.2583,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.996,
+       "cos2": -0.9841,
+       "Dmag1": 0.1394,
+       "Dmag2": 0.2789,
+       "null95_D": 0.2463
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        374,
+        70,
+        124,
+        313,
+        454,
+        420,
+        331,
+        475,
+        301,
+        188,
+        505,
+        426,
+        321,
+        73,
+        28,
+        323
+       ],
+       "wte_top": [
+        "iencies",
+        "inion",
+        "brance",
+        "eds",
+        " Corps",
+        " Commando",
+        "agh",
+        "-+-+-+-+",
+        "agy",
+        " Outbreak"
+       ],
+       "wte_bot": [
+        " Warning",
+        "scripts",
+        "oj",
+        "ifice",
+        "rection",
+        "uten",
+        "lash",
+        "pez",
+        " Kem",
+        " Pav"
+       ],
+       "cur_tokens": [
+        " north",
+        " north",
+        " northeast",
+        " south",
+        " North",
+        " northeast",
+        " north",
+        " south"
+       ],
+       "wu_top": [
+        "iencies",
+        "brance",
+        "agh",
+        "ortium",
+        "eds",
+        "arnaev",
+        "inion",
+        "ulhu",
+        "agy",
+        "pora"
+       ],
+       "wu_bot": [
+        " Warning",
+        "scripts",
+        "ifice",
+        " Kem",
+        "lash",
+        "oj",
+        "mberg",
+        "itability",
+        " Pav",
+        "ward"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 1.9061,
+      "n_null": 12,
+      "C1": 0.0093,
+      "SE1": 0.0115,
+      "C2": 0.0186,
+      "SE2": 0.023,
+      "null95_C": 0.1079,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.6071,
+        "SE": 0.0498
+       },
+       "8": {
+        "C": 0.6437,
+        "SE": 0.1003
+       },
+       "9": {
+        "C": 0.6638,
+        "SE": 0.1372
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.215,
+        "SE": 0.0995
+       },
+       "8": {
+        "C": 1.2875,
+        "SE": 0.2003
+       },
+       "9": {
+        "C": 1.328,
+        "SE": 0.2741
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.6638,
+      "null95_INT": 0.8925,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9887,
+       "cos2": -0.9558,
+       "Dmag1": 0.158,
+       "Dmag2": 0.3157,
+       "null95_D": 0.1755
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        344,
+        325,
+        74,
+        2,
+        497,
+        261,
+        396,
+        356,
+        201,
+        178,
+        107,
+        192,
+        373,
+        270,
+        178,
+        438
+       ],
+       "wte_top": [
+        "iencies",
+        "inion",
+        "brance",
+        "eds",
+        " Corps",
+        " Commando",
+        "agh",
+        "-+-+-+-+",
+        "agy",
+        " Outbreak"
+       ],
+       "wte_bot": [
+        " Warning",
+        "scripts",
+        "oj",
+        "ifice",
+        "rection",
+        "uten",
+        "lash",
+        "pez",
+        " Kem",
+        " Pav"
+       ],
+       "cur_tokens": [
+        " c",
+        " num",
+        " arr",
+        "ow",
+        " of",
+        " num",
+        " c",
+        " num"
+       ],
+       "wu_top": [
+        "iencies",
+        "brance",
+        "agh",
+        "ortium",
+        "eds",
+        "arnaev",
+        "inion",
+        "ulhu",
+        "agy",
+        "pora"
+       ],
+       "wu_bot": [
+        " Warning",
+        "scripts",
+        "ifice",
+        " Kem",
+        "lash",
+        "oj",
+        "mberg",
+        "itability",
+        " Pav",
+        "ward"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.6435,
+      "n_null": 12,
+      "C1": 0.2189,
+      "SE1": 0.0124,
+      "C2": 0.4379,
+      "SE2": 0.0248,
+      "null95_C": 0.2181,
+      "wu_clear": true,
+      "wu_stable": true,
+      "int1": {
+       "7": {
+        "C": 1.4705,
+        "SE": 0.099
+       },
+       "8": {
+        "C": 1.4003,
+        "SE": 0.1477
+       },
+       "9": {
+        "C": 1.4446,
+        "SE": 0.1602
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 2.9398,
+        "SE": 0.1982
+       },
+       "8": {
+        "C": 2.8,
+        "SE": 0.2953
+       },
+       "9": {
+        "C": 2.8882,
+        "SE": 0.3204
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 1.4705,
+      "null95_INT": 3.5607,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9961,
+       "cos2": -0.9846,
+       "Dmag1": 0.3023,
+       "Dmag2": 0.6046,
+       "null95_D": 0.4264
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        143,
+        207,
+        205,
+        463,
+        141,
+        144,
+        208,
+        508,
+        271,
+        335,
+        269,
+        272,
+        399,
+        461,
+        333,
+        49
+       ],
+       "wte_top": [
+        "iencies",
+        "inion",
+        "brance",
+        "eds",
+        " Corps",
+        " Commando",
+        "agh",
+        "-+-+-+-+",
+        "agy",
+        " Outbreak"
+       ],
+       "wte_bot": [
+        " Warning",
+        "scripts",
+        "oj",
+        "ifice",
+        "rection",
+        "uten",
+        "lash",
+        "pez",
+        " Kem",
+        " Pav"
+       ],
+       "cur_tokens": [
+        "plin",
+        "plin",
+        " Depths",
+        "plin",
+        " Depths",
+        "division",
+        "division",
+        "Extra"
+       ],
+       "wu_top": [
+        "iencies",
+        "brance",
+        "agh",
+        "ortium",
+        "eds",
+        "arnaev",
+        "inion",
+        "ulhu",
+        "agy",
+        "pora"
+       ],
+       "wu_bot": [
+        " Warning",
+        "scripts",
+        "ifice",
+        " Kem",
+        "lash",
+        "oj",
+        "mberg",
+        "itability",
+        " Pav",
+        "ward"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 1,
+    "stable_regimes": [
+     "repetition"
+    ],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 56.3
+   },
+   "dark_b6_svd1": {
+    "done": true,
+    "dir_index": 1,
+    "regimes": {
+     "prose": {
+      "sigma": 2.1901,
+      "n_null": 12,
+      "C1": 0.0262,
+      "SE1": 0.0062,
+      "C2": 0.0523,
+      "SE2": 0.0125,
+      "null95_C": 0.0745,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.1976,
+        "SE": 0.0402
+       },
+       "8": {
+        "C": 0.2563,
+        "SE": 0.0499
+       },
+       "9": {
+        "C": 0.2862,
+        "SE": 0.0633
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.3956,
+        "SE": 0.0803
+       },
+       "8": {
+        "C": 0.5128,
+        "SE": 0.0999
+       },
+       "9": {
+        "C": 0.5726,
+        "SE": 0.1267
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.2862,
+      "null95_INT": 0.9248,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9987,
+       "cos2": -0.9947,
+       "Dmag1": 0.0562,
+       "Dmag2": 0.1125,
+       "null95_D": 0.265
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        35,
+        454,
+        266,
+        331,
+        85,
+        70,
+        504,
+        231,
+        69,
+        420,
+        374,
+        124,
+        401,
+        475,
+        384,
+        263
+       ],
+       "wte_top": [
+        "ensor",
+        "ensibly",
+        "oppers",
+        "heastern",
+        " Amendment",
+        " derivative",
+        "quad",
+        "readable",
+        "ammers",
+        "RP"
+       ],
+       "wte_bot": [
+        "ijn",
+        "toe",
+        "boys",
+        "abase",
+        "essen",
+        "akura",
+        "osaurs",
+        " dressing",
+        " Wellington",
+        " encour"
+       ],
+       "cur_tokens": [
+        "th",
+        " North",
+        "teenth",
+        " north",
+        " fifth",
+        " north",
+        " Second",
+        "elfth"
+       ],
+       "wu_top": [
+        "\ufffd\ufffd",
+        "ensibly",
+        "heastern",
+        "oppers",
+        "ensor",
+        "umbing",
+        "ividual",
+        "umbnail",
+        "ulhu",
+        "umer"
+       ],
+       "wu_bot": [
+        "ijn",
+        "boys",
+        "toe",
+        " Eden",
+        "boarding",
+        " Wellington",
+        " Freder",
+        " encour",
+        " cheese",
+        "abase"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 2.0395,
+      "n_null": 12,
+      "C1": 0.0355,
+      "SE1": 0.0055,
+      "C2": 0.0709,
+      "SE2": 0.0111,
+      "null95_C": 0.1051,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.4266,
+        "SE": 0.0655
+       },
+       "8": {
+        "C": 0.4566,
+        "SE": 0.0785
+       },
+       "9": {
+        "C": 0.4436,
+        "SE": 0.0882
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.8529,
+        "SE": 0.1309
+       },
+       "8": {
+        "C": 0.913,
+        "SE": 0.157
+       },
+       "9": {
+        "C": 0.887,
+        "SE": 0.1764
+       }
+      },
+      "int_kstar": 8,
+      "maxint1": 0.4566,
+      "null95_INT": 1.1873,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9991,
+       "cos2": -0.9962,
+       "Dmag1": 0.1168,
+       "Dmag2": 0.2334,
+       "null95_D": 0.2615
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        25,
+        9,
+        5,
+        154,
+        49,
+        422,
+        77,
+        355,
+        358,
+        236,
+        426,
+        171,
+        418,
+        22,
+        37,
+        147
+       ],
+       "wte_top": [
+        "ensor",
+        "ensibly",
+        "oppers",
+        "heastern",
+        " Amendment",
+        " derivative",
+        "quad",
+        "readable",
+        "ammers",
+        "RP"
+       ],
+       "wte_bot": [
+        "ijn",
+        "toe",
+        "boys",
+        "abase",
+        "essen",
+        "akura",
+        "osaurs",
+        " dressing",
+        " Wellington",
+        " encour"
+       ],
+       "cur_tokens": [
+        "th",
+        "st",
+        "st",
+        "st",
+        "st",
+        "st",
+        "st",
+        "st"
+       ],
+       "wu_top": [
+        "\ufffd\ufffd",
+        "ensibly",
+        "heastern",
+        "oppers",
+        "ensor",
+        "umbing",
+        "ividual",
+        "umbnail",
+        "ulhu",
+        "umer"
+       ],
+       "wu_bot": [
+        "ijn",
+        "boys",
+        "toe",
+        " Eden",
+        "boarding",
+        " Wellington",
+        " Freder",
+        " encour",
+        " cheese",
+        "abase"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.5636,
+      "n_null": 12,
+      "C1": 0.1786,
+      "SE1": 0.0192,
+      "C2": 0.3571,
+      "SE2": 0.0383,
+      "null95_C": 0.2112,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 1.2491,
+        "SE": 0.1079
+       },
+       "8": {
+        "C": 1.3804,
+        "SE": 0.1302
+       },
+       "9": {
+        "C": 1.5169,
+        "SE": 0.1557
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 2.4983,
+        "SE": 0.2159
+       },
+       "8": {
+        "C": 2.7611,
+        "SE": 0.2606
+       },
+       "9": {
+        "C": 3.0338,
+        "SE": 0.3114
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 1.5169,
+      "null95_INT": 2.2815,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.999,
+       "cos2": -0.9962,
+       "Dmag1": 0.1937,
+       "Dmag2": 0.3872,
+       "null95_D": 0.3833
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        483,
+        419,
+        163,
+        227,
+        355,
+        291,
+        35,
+        99,
+        500,
+        436,
+        372,
+        180,
+        244,
+        308,
+        421,
+        485
+       ],
+       "wte_top": [
+        "ensor",
+        "ensibly",
+        "oppers",
+        "heastern",
+        " Amendment",
+        " derivative",
+        "quad",
+        "readable",
+        "ammers",
+        "RP"
+       ],
+       "wte_bot": [
+        "ijn",
+        "toe",
+        "boys",
+        "abase",
+        "essen",
+        "akura",
+        "osaurs",
+        " dressing",
+        " Wellington",
+        " encour"
+       ],
+       "cur_tokens": [
+        " Tenth",
+        " Tenth",
+        " Tenth",
+        " Tenth",
+        " Tenth",
+        " Tenth",
+        " Tenth",
+        " Tenth"
+       ],
+       "wu_top": [
+        "\ufffd\ufffd",
+        "ensibly",
+        "heastern",
+        "oppers",
+        "ensor",
+        "umbing",
+        "ividual",
+        "umbnail",
+        "ulhu",
+        "umer"
+       ],
+       "wu_bot": [
+        "ijn",
+        "boys",
+        "toe",
+        " Eden",
+        "boarding",
+        " Wellington",
+        " Freder",
+        " encour",
+        " cheese",
+        "abase"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 0,
+    "stable_regimes": [],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 56.9
+   },
+   "dark_b6_svd2": {
+    "done": true,
+    "dir_index": 2,
+    "regimes": {
+     "prose": {
+      "sigma": 2.5948,
+      "n_null": 12,
+      "C1": 0.0736,
+      "SE1": 0.0057,
+      "C2": 0.147,
+      "SE2": 0.0114,
+      "null95_C": 0.0959,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.5702,
+        "SE": 0.0509
+       },
+       "8": {
+        "C": 0.6461,
+        "SE": 0.0648
+       },
+       "9": {
+        "C": 0.6296,
+        "SE": 0.0707
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.1405,
+        "SE": 0.1016
+       },
+       "8": {
+        "C": 1.292,
+        "SE": 0.1294
+       },
+       "9": {
+        "C": 1.2592,
+        "SE": 0.1412
+       }
+      },
+      "int_kstar": 8,
+      "maxint1": 0.6461,
+      "null95_INT": 1.1696,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9949,
+       "cos2": -0.9799,
+       "Dmag1": 0.2286,
+       "Dmag2": 0.4575,
+       "null95_D": 0.1803
+      },
+      "field_clear": true,
+      "field_stable": true,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        374,
+        70,
+        124,
+        420,
+        331,
+        301,
+        188,
+        313,
+        475,
+        505,
+        426,
+        321,
+        454,
+        323,
+        271,
+        13
+       ],
+       "wte_top": [
+        " rehe",
+        " tong",
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        "eer",
+        "Boo",
+        "\ufffd\ufffd",
+        "glers",
+        " manslaughter"
+       ],
+       "wte_bot": [
+        "heading",
+        "bound",
+        "acement",
+        "urat",
+        "orsi",
+        "ward",
+        "arity",
+        "mits",
+        " neighbor",
+        "iers"
+       ],
+       "cur_tokens": [
+        " north",
+        " north",
+        " northeast",
+        " northeast",
+        " north",
+        " east",
+        " east",
+        " south"
+       ],
+       "wu_top": [
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        " rehe",
+        "eer",
+        "BuyableInstoreAndOnline",
+        " tong",
+        "wcsstore",
+        " Isle",
+        "glers"
+       ],
+       "wu_bot": [
+        "heading",
+        "acement",
+        "bound",
+        "ward",
+        "iers",
+        "orsi",
+        "hent",
+        "urat",
+        "anted",
+        "arity"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 1.8101,
+      "n_null": 12,
+      "C1": 0.0583,
+      "SE1": 0.0098,
+      "C2": 0.1165,
+      "SE2": 0.0196,
+      "null95_C": 0.091,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.4739,
+        "SE": 0.0433
+       },
+       "8": {
+        "C": 0.5425,
+        "SE": 0.0455
+       },
+       "9": {
+        "C": 0.6235,
+        "SE": 0.0591
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.9482,
+        "SE": 0.0868
+       },
+       "8": {
+        "C": 1.085,
+        "SE": 0.0913
+       },
+       "9": {
+        "C": 1.2471,
+        "SE": 0.1183
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.6235,
+      "null95_INT": 0.7024,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9957,
+       "cos2": -0.9834,
+       "Dmag1": 0.1147,
+       "Dmag2": 0.2294,
+       "null95_D": 0.1796
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        496,
+        495,
+        107,
+        424,
+        194,
+        510,
+        391,
+        496,
+        27,
+        295,
+        134,
+        509,
+        361,
+        315,
+        415,
+        223
+       ],
+       "wte_top": [
+        " rehe",
+        " tong",
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        "eer",
+        "Boo",
+        "\ufffd\ufffd",
+        "glers",
+        " manslaughter"
+       ],
+       "wte_bot": [
+        "heading",
+        "bound",
+        "acement",
+        "urat",
+        "orsi",
+        "ward",
+        "arity",
+        "mits",
+        " neighbor",
+        "iers"
+       ],
+       "cur_tokens": [
+        " side",
+        " right",
+        " ascending",
+        " ascending",
+        " forward",
+        " direction",
+        " alphabet",
+        " plus"
+       ],
+       "wu_top": [
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        " rehe",
+        "eer",
+        "BuyableInstoreAndOnline",
+        " tong",
+        "wcsstore",
+        " Isle",
+        "glers"
+       ],
+       "wu_bot": [
+        "heading",
+        "acement",
+        "bound",
+        "ward",
+        "iers",
+        "orsi",
+        "hent",
+        "urat",
+        "anted",
+        "arity"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.4918,
+      "n_null": 12,
+      "C1": 0.0663,
+      "SE1": 0.0163,
+      "C2": 0.1325,
+      "SE2": 0.0327,
+      "null95_C": 0.373,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.5495,
+        "SE": 0.0592
+       },
+       "8": {
+        "C": 0.5727,
+        "SE": 0.0785
+       },
+       "9": {
+        "C": 0.6138,
+        "SE": 0.0946
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.0992,
+        "SE": 0.1183
+       },
+       "8": {
+        "C": 1.1448,
+        "SE": 0.1566
+       },
+       "9": {
+        "C": 1.2267,
+        "SE": 0.1887
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.6138,
+      "null95_INT": 2.6942,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9903,
+       "cos2": -0.9597,
+       "Dmag1": 0.138,
+       "Dmag2": 0.2755,
+       "null95_D": 0.4267
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        8,
+        28,
+        16,
+        37,
+        52,
+        156,
+        29,
+        38,
+        220,
+        31,
+        91,
+        284,
+        92,
+        348,
+        412,
+        16
+       ],
+       "wte_top": [
+        " rehe",
+        " tong",
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        "eer",
+        "Boo",
+        "\ufffd\ufffd",
+        "glers",
+        " manslaughter"
+       ],
+       "wte_bot": [
+        "heading",
+        "bound",
+        "acement",
+        "urat",
+        "orsi",
+        "ward",
+        "arity",
+        "mits",
+        " neighbor",
+        "iers"
+       ],
+       "cur_tokens": [
+        " rails",
+        " Tr",
+        "division",
+        " Branch",
+        " line",
+        " Tr",
+        "shr",
+        " railway"
+       ],
+       "wu_top": [
+        ">>>>",
+        "\ufffd\ufffd",
+        ">>>>>>>>",
+        " rehe",
+        "eer",
+        "BuyableInstoreAndOnline",
+        " tong",
+        "wcsstore",
+        " Isle",
+        "glers"
+       ],
+       "wu_bot": [
+        "heading",
+        "acement",
+        "bound",
+        "ward",
+        "iers",
+        "orsi",
+        "hent",
+        "urat",
+        "anted",
+        "arity"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 1,
+    "stable_regimes": [
+     "prose"
+    ],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 58.4
+   },
+   "dark_b6_svd3": {
+    "done": true,
+    "dir_index": 3,
+    "regimes": {
+     "prose": {
+      "sigma": 2.2299,
+      "n_null": 12,
+      "C1": 0.0482,
+      "SE1": 0.0122,
+      "C2": 0.0964,
+      "SE2": 0.0243,
+      "null95_C": 0.0761,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.4127,
+        "SE": 0.0845
+       },
+       "8": {
+        "C": 0.3954,
+        "SE": 0.1354
+       },
+       "9": {
+        "C": 0.3873,
+        "SE": 0.1365
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.8249,
+        "SE": 0.1687
+       },
+       "8": {
+        "C": 0.7907,
+        "SE": 0.2706
+       },
+       "9": {
+        "C": 0.7747,
+        "SE": 0.273
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 0.4127,
+      "null95_INT": 0.7304,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9961,
+       "cos2": -0.9845,
+       "Dmag1": 0.1143,
+       "Dmag2": 0.2285,
+       "null95_D": 0.227
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        35,
+        231,
+        85,
+        266,
+        510,
+        309,
+        401,
+        380,
+        193,
+        29,
+        502,
+        179,
+        236,
+        427,
+        404,
+        261
+       ],
+       "wte_top": [
+        "cens",
+        " unprotected",
+        "oral",
+        "wing",
+        "ipel",
+        "odic",
+        "CHAT",
+        "tered",
+        " uncons",
+        "letico"
+       ],
+       "wte_bot": [
+        "atto",
+        "oola",
+        "ulum",
+        "esses",
+        "gettable",
+        "IO",
+        " Genocide",
+        " Heights",
+        "hammer",
+        "ocus"
+       ],
+       "cur_tokens": [
+        "th",
+        "elfth",
+        " fifth",
+        "teenth",
+        " Confederate",
+        " second",
+        " fourth",
+        " shell"
+       ],
+       "wu_top": [
+        " unprotected",
+        " Creed",
+        "20439",
+        "ndra",
+        " Alic",
+        " ILCS",
+        " Outs",
+        " Madagascar",
+        "cens",
+        " Fey"
+       ],
+       "wu_bot": [
+        "atto",
+        "gettable",
+        "oola",
+        "esses",
+        "ulum",
+        "ombo",
+        "nance",
+        "hammer",
+        "ommod",
+        "emale"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 1.9738,
+      "n_null": 12,
+      "C1": 0.0153,
+      "SE1": 0.0193,
+      "C2": 0.0306,
+      "SE2": 0.0384,
+      "null95_C": 0.0895,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.6231,
+        "SE": 0.0802
+       },
+       "8": {
+        "C": 0.6497,
+        "SE": 0.0965
+       },
+       "9": {
+        "C": 0.6794,
+        "SE": 0.1249
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.2452,
+        "SE": 0.1601
+       },
+       "8": {
+        "C": 1.2992,
+        "SE": 0.1932
+       },
+       "9": {
+        "C": 1.3584,
+        "SE": 0.2499
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.6794,
+      "null95_INT": 0.8544,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9931,
+       "cos2": -0.9726,
+       "Dmag1": 0.1464,
+       "Dmag2": 0.2916,
+       "null95_D": 0.1665
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        25,
+        5,
+        171,
+        49,
+        269,
+        319,
+        344,
+        109,
+        183,
+        355,
+        9,
+        389,
+        363,
+        112,
+        77,
+        251
+       ],
+       "wte_top": [
+        "cens",
+        " unprotected",
+        "oral",
+        "wing",
+        "ipel",
+        "odic",
+        "CHAT",
+        "tered",
+        " uncons",
+        "letico"
+       ],
+       "wte_bot": [
+        "atto",
+        "oola",
+        "ulum",
+        "esses",
+        "gettable",
+        "IO",
+        " Genocide",
+        " Heights",
+        "hammer",
+        "ocus"
+       ],
+       "cur_tokens": [
+        "th",
+        "st",
+        "st",
+        "st",
+        " neg",
+        " neg",
+        " ele",
+        "n"
+       ],
+       "wu_top": [
+        " unprotected",
+        " Creed",
+        "20439",
+        "ndra",
+        " Alic",
+        " ILCS",
+        " Outs",
+        " Madagascar",
+        "cens",
+        " Fey"
+       ],
+       "wu_bot": [
+        "atto",
+        "gettable",
+        "oola",
+        "esses",
+        "ulum",
+        "ombo",
+        "nance",
+        "hammer",
+        "ommod",
+        "emale"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.1907,
+      "n_null": 12,
+      "C1": -0.037,
+      "SE1": 0.0166,
+      "C2": -0.074,
+      "SE2": 0.0332,
+      "null95_C": 0.2338,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 1.368,
+        "SE": 0.1626
+       },
+       "8": {
+        "C": 1.1467,
+        "SE": 0.1689
+       },
+       "9": {
+        "C": 1.1342,
+        "SE": 0.1875
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 2.7342,
+        "SE": 0.325
+       },
+       "8": {
+        "C": 2.2921,
+        "SE": 0.3378
+       },
+       "9": {
+        "C": 2.2669,
+        "SE": 0.3749
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 1.368,
+      "null95_INT": 2.4046,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9981,
+       "cos2": -0.9924,
+       "Dmag1": 0.2339,
+       "Dmag2": 0.4669,
+       "null95_D": 0.3087
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        35,
+        151,
+        471,
+        407,
+        215,
+        343,
+        279,
+        87,
+        134,
+        198,
+        454,
+        390,
+        262,
+        326,
+        99,
+        497
+       ],
+       "wte_top": [
+        "cens",
+        " unprotected",
+        "oral",
+        "wing",
+        "ipel",
+        "odic",
+        "CHAT",
+        "tered",
+        " uncons",
+        "letico"
+       ],
+       "wte_bot": [
+        "atto",
+        "oola",
+        "ulum",
+        "esses",
+        "gettable",
+        "IO",
+        " Genocide",
+        " Heights",
+        "hammer",
+        "ocus"
+       ],
+       "cur_tokens": [
+        " Tenth",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga"
+       ],
+       "wu_top": [
+        " unprotected",
+        " Creed",
+        "20439",
+        "ndra",
+        " Alic",
+        " ILCS",
+        " Outs",
+        " Madagascar",
+        "cens",
+        " Fey"
+       ],
+       "wu_bot": [
+        "atto",
+        "gettable",
+        "oola",
+        "esses",
+        "ulum",
+        "ombo",
+        "nance",
+        "hammer",
+        "ommod",
+        "emale"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 0,
+    "stable_regimes": [],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 56.7
+   },
+   "dark_b6_svd4": {
+    "done": true,
+    "dir_index": 4,
+    "regimes": {
+     "prose": {
+      "sigma": 2.5993,
+      "n_null": 12,
+      "C1": 0.0371,
+      "SE1": 0.0075,
+      "C2": 0.0743,
+      "SE2": 0.0149,
+      "null95_C": 0.0634,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.7979,
+        "SE": 0.1015
+       },
+       "8": {
+        "C": 0.8797,
+        "SE": 0.1052
+       },
+       "9": {
+        "C": 1.0426,
+        "SE": 0.122
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.5966,
+        "SE": 0.2029
+       },
+       "8": {
+        "C": 1.7605,
+        "SE": 0.2103
+       },
+       "9": {
+        "C": 2.0864,
+        "SE": 0.244
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 1.0426,
+      "null95_INT": 0.972,
+      "int_clear": true,
+      "int_stable": true,
+      "field": {
+       "cos1": -0.9973,
+       "cos2": -0.9893,
+       "Dmag1": 0.1921,
+       "Dmag2": 0.384,
+       "null95_D": 0.2834
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        57,
+        319,
+        132,
+        77,
+        469,
+        33,
+        491,
+        82,
+        7,
+        262,
+        299,
+        466,
+        282,
+        329,
+        62,
+        116
+       ],
+       "wte_top": [
+        "lad",
+        "oil",
+        "olved",
+        "senal",
+        "=-=-=-=-",
+        "alos",
+        "zona",
+        "ITH",
+        "itiveness",
+        " -------"
+       ],
+       "wte_bot": [
+        " Meadows",
+        "\u30ce",
+        " Ripple",
+        "tc",
+        " Roose",
+        " CPC",
+        " Ct",
+        " Obst",
+        " pseudonym",
+        "soDeliveryDate"
+       ],
+       "cur_tokens": [
+        " River",
+        " River",
+        " River",
+        " River",
+        " River",
+        " Creek",
+        " River",
+        " Creek"
+       ],
+       "wu_top": [
+        "aturdays",
+        "=-=-=-=-",
+        "EMBER",
+        "ITH",
+        "senal",
+        "OSH",
+        "zona",
+        "=-=-=-=-=-=-=-=-",
+        "ayson",
+        " goof"
+       ],
+       "wu_bot": [
+        "kefeller",
+        " Meadows",
+        " Roose",
+        " Ripple",
+        "fters",
+        "agall",
+        "tc",
+        " Obst",
+        " Ct",
+        "acca"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 2.0374,
+      "n_null": 12,
+      "C1": 0.0259,
+      "SE1": 0.0101,
+      "C2": 0.0519,
+      "SE2": 0.0202,
+      "null95_C": 0.0902,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.7323,
+        "SE": 0.1066
+       },
+       "8": {
+        "C": 0.8602,
+        "SE": 0.0958
+       },
+       "9": {
+        "C": 1.0372,
+        "SE": 0.1284
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.4686,
+        "SE": 0.2134
+       },
+       "8": {
+        "C": 1.7244,
+        "SE": 0.1919
+       },
+       "9": {
+        "C": 2.0788,
+        "SE": 0.257
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 1.0372,
+      "null95_INT": 1.1577,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9904,
+       "cos2": -0.9625,
+       "Dmag1": 0.1984,
+       "Dmag2": 0.3964,
+       "null95_D": 0.1921
+      },
+      "field_clear": true,
+      "field_stable": true,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        344,
+        233,
+        160,
+        351,
+        409,
+        142,
+        20,
+        412,
+        288,
+        508,
+        259,
+        328,
+        468,
+        396,
+        494,
+        158
+       ],
+       "wte_top": [
+        "lad",
+        "oil",
+        "olved",
+        "senal",
+        "=-=-=-=-",
+        "alos",
+        "zona",
+        "ITH",
+        "itiveness",
+        " -------"
+       ],
+       "wte_bot": [
+        " Meadows",
+        "\u30ce",
+        " Ripple",
+        "tc",
+        " Roose",
+        " CPC",
+        " Ct",
+        " Obst",
+        " pseudonym",
+        "soDeliveryDate"
+       ],
+       "cur_tokens": [
+        " c",
+        " c",
+        " c",
+        "+",
+        " rectangular",
+        " c",
+        "ng",
+        " wells"
+       ],
+       "wu_top": [
+        "aturdays",
+        "=-=-=-=-",
+        "EMBER",
+        "ITH",
+        "senal",
+        "OSH",
+        "zona",
+        "=-=-=-=-=-=-=-=-",
+        "ayson",
+        " goof"
+       ],
+       "wu_bot": [
+        "kefeller",
+        " Meadows",
+        " Roose",
+        " Ripple",
+        "fters",
+        "agall",
+        "tc",
+        " Obst",
+        " Ct",
+        "acca"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.667,
+      "n_null": 12,
+      "C1": 0.133,
+      "SE1": 0.0121,
+      "C2": 0.2655,
+      "SE2": 0.0241,
+      "null95_C": 0.3007,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 1.6966,
+        "SE": 0.1091
+       },
+       "8": {
+        "C": 1.8295,
+        "SE": 0.1092
+       },
+       "9": {
+        "C": 1.9623,
+        "SE": 0.1415
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 3.3883,
+        "SE": 0.2171
+       },
+       "8": {
+        "C": 3.6555,
+        "SE": 0.2179
+       },
+       "9": {
+        "C": 3.9211,
+        "SE": 0.2824
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 1.9623,
+      "null95_INT": 2.9617,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9908,
+       "cos2": -0.9633,
+       "Dmag1": 0.4014,
+       "Dmag2": 0.7936,
+       "null95_D": 0.545
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        237,
+        173,
+        301,
+        365,
+        109,
+        219,
+        429,
+        283,
+        155,
+        249,
+        313,
+        185,
+        249,
+        493,
+        248,
+        185
+       ],
+       "wte_top": [
+        "lad",
+        "oil",
+        "olved",
+        "senal",
+        "=-=-=-=-",
+        "alos",
+        "zona",
+        "ITH",
+        "itiveness",
+        " -------"
+       ],
+       "wte_bot": [
+        " Meadows",
+        "\u30ce",
+        " Ripple",
+        "tc",
+        " Roose",
+        " CPC",
+        " Ct",
+        " Obst",
+        " pseudonym",
+        "soDeliveryDate"
+       ],
+       "cur_tokens": [
+        " cavern",
+        " cavern",
+        " cavern",
+        " cavern",
+        " cavern",
+        " pil",
+        " cavern",
+        " pil"
+       ],
+       "wu_top": [
+        "aturdays",
+        "=-=-=-=-",
+        "EMBER",
+        "ITH",
+        "senal",
+        "OSH",
+        "zona",
+        "=-=-=-=-=-=-=-=-",
+        "ayson",
+        " goof"
+       ],
+       "wu_bot": [
+        "kefeller",
+        " Meadows",
+        " Roose",
+        " Ripple",
+        "fters",
+        "agall",
+        "tc",
+        " Obst",
+        " Ct",
+        "acca"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 2,
+    "stable_regimes": [
+     "prose",
+     "code"
+    ],
+    "verdict": "NAMED",
+    "t_s": 57.5
+   },
+   "dark_b6_svd5": {
+    "done": true,
+    "dir_index": 5,
+    "regimes": {
+     "prose": {
+      "sigma": 2.6825,
+      "n_null": 12,
+      "C1": 0.0121,
+      "SE1": 0.0088,
+      "C2": 0.0243,
+      "SE2": 0.0177,
+      "null95_C": 0.1127,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.3146,
+        "SE": 0.0649
+       },
+       "8": {
+        "C": 0.3052,
+        "SE": 0.0725
+       },
+       "9": {
+        "C": 0.3897,
+        "SE": 0.0977
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.6293,
+        "SE": 0.1297
+       },
+       "8": {
+        "C": 0.6105,
+        "SE": 0.1448
+       },
+       "9": {
+        "C": 0.7794,
+        "SE": 0.1953
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.3897,
+      "null95_INT": 0.85,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.993,
+       "cos2": -0.972,
+       "Dmag1": 0.0702,
+       "Dmag2": 0.1407,
+       "null95_D": 0.1745
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        272,
+        315,
+        255,
+        79,
+        111,
+        100,
+        424,
+        239,
+        255,
+        371,
+        363,
+        385,
+        100,
+        357,
+        37,
+        422
+       ],
+       "wte_top": [
+        "ians",
+        " [*",
+        "akov",
+        "kef",
+        "fights",
+        "ry",
+        "lers",
+        "atti",
+        " Boyd",
+        "=["
+       ],
+       "wte_bot": [
+        "rd",
+        "uador",
+        "xit",
+        "xia",
+        "\u2022\u2022\u2022\u2022",
+        " restroom",
+        "TPP",
+        "++",
+        "isco",
+        "thereum"
+       ],
+       "cur_tokens": [
+        " 2",
+        " 3",
+        " 3",
+        " 2",
+        " 3",
+        " 2",
+        " 3",
+        " 7"
+       ],
+       "wu_top": [
+        " [*",
+        "ians",
+        "kef",
+        "fights",
+        "bite",
+        "angers",
+        "=[",
+        "akov",
+        "actionDate",
+        "atti"
+       ],
+       "wu_bot": [
+        "uador",
+        "\u2022\u2022\u2022\u2022",
+        "rd",
+        "ADRA",
+        "WER",
+        " restroom",
+        "xia",
+        "thereum",
+        " skelet",
+        "IME"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 2.7275,
+      "n_null": 12,
+      "C1": -0.0023,
+      "SE1": 0.0199,
+      "C2": -0.0047,
+      "SE2": 0.0399,
+      "null95_C": 0.1365,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.3166,
+        "SE": 0.0419
+       },
+       "8": {
+        "C": 0.2985,
+        "SE": 0.062
+       },
+       "9": {
+        "C": 0.3045,
+        "SE": 0.0751
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.6338,
+        "SE": 0.0837
+       },
+       "8": {
+        "C": 0.5973,
+        "SE": 0.1241
+       },
+       "9": {
+        "C": 0.6094,
+        "SE": 0.1502
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 0.3166,
+      "null95_INT": 1.8654,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9941,
+       "cos2": -0.9766,
+       "Dmag1": 0.0971,
+       "Dmag2": 0.1941,
+       "null95_D": 0.2635
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        487,
+        184,
+        179,
+        59,
+        39,
+        101,
+        110,
+        28,
+        120,
+        142,
+        484,
+        226,
+        386,
+        449,
+        443,
+        202
+       ],
+       "wte_top": [
+        "ians",
+        " [*",
+        "akov",
+        "kef",
+        "fights",
+        "ry",
+        "lers",
+        "atti",
+        " Boyd",
+        "=["
+       ],
+       "wte_bot": [
+        "rd",
+        "uador",
+        "xit",
+        "xia",
+        "\u2022\u2022\u2022\u2022",
+        " restroom",
+        "TPP",
+        "++",
+        "isco",
+        "thereum"
+       ],
+       "cur_tokens": [
+        " 3",
+        " 3",
+        "3",
+        " 3",
+        " 2",
+        "3",
+        "3",
+        " 3"
+       ],
+       "wu_top": [
+        " [*",
+        "ians",
+        "kef",
+        "fights",
+        "bite",
+        "angers",
+        "=[",
+        "akov",
+        "actionDate",
+        "atti"
+       ],
+       "wu_bot": [
+        "uador",
+        "\u2022\u2022\u2022\u2022",
+        "rd",
+        "ADRA",
+        "WER",
+        " restroom",
+        "xia",
+        "thereum",
+        " skelet",
+        "IME"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.5251,
+      "n_null": 12,
+      "C1": -0.0463,
+      "SE1": 0.0137,
+      "C2": -0.0927,
+      "SE2": 0.0273,
+      "null95_C": 0.3234,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.8484,
+        "SE": 0.0927
+       },
+       "8": {
+        "C": 0.6975,
+        "SE": 0.097
+       },
+       "9": {
+        "C": 0.6148,
+        "SE": 0.0997
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.6963,
+        "SE": 0.1852
+       },
+       "8": {
+        "C": 1.3942,
+        "SE": 0.194
+       },
+       "9": {
+        "C": 1.2282,
+        "SE": 0.1994
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 0.8484,
+      "null95_INT": 2.9978,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9976,
+       "cos2": -0.9903,
+       "Dmag1": 0.1653,
+       "Dmag2": 0.3303,
+       "null95_D": 0.4687
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        60,
+        471,
+        87,
+        151,
+        407,
+        343,
+        215,
+        279,
+        2,
+        488,
+        73,
+        424,
+        360,
+        498,
+        42,
+        29
+       ],
+       "wte_top": [
+        "ians",
+        " [*",
+        "akov",
+        "kef",
+        "fights",
+        "ry",
+        "lers",
+        "atti",
+        " Boyd",
+        "=["
+       ],
+       "wte_bot": [
+        "rd",
+        "uador",
+        "xit",
+        "xia",
+        "\u2022\u2022\u2022\u2022",
+        " restroom",
+        "TPP",
+        "++",
+        "isco",
+        "thereum"
+       ],
+       "cur_tokens": [
+        " GN",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga",
+        "merga"
+       ],
+       "wu_top": [
+        " [*",
+        "ians",
+        "kef",
+        "fights",
+        "bite",
+        "angers",
+        "=[",
+        "akov",
+        "actionDate",
+        "atti"
+       ],
+       "wu_bot": [
+        "uador",
+        "\u2022\u2022\u2022\u2022",
+        "rd",
+        "ADRA",
+        "WER",
+        " restroom",
+        "xia",
+        "thereum",
+        " skelet",
+        "IME"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 0,
+    "stable_regimes": [],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 58.0
+   },
+   "dark_b6_svd6": {
+    "done": true,
+    "dir_index": 6,
+    "regimes": {
+     "prose": {
+      "sigma": 2.7464,
+      "n_null": 12,
+      "C1": 0.0531,
+      "SE1": 0.0072,
+      "C2": 0.1062,
+      "SE2": 0.0143,
+      "null95_C": 0.0729,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.3427,
+        "SE": 0.0785
+       },
+       "8": {
+        "C": 0.4595,
+        "SE": 0.0823
+       },
+       "9": {
+        "C": 0.4539,
+        "SE": 0.1031
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 0.6861,
+        "SE": 0.157
+       },
+       "8": {
+        "C": 0.9189,
+        "SE": 0.1648
+       },
+       "9": {
+        "C": 0.9076,
+        "SE": 0.2066
+       }
+      },
+      "int_kstar": 8,
+      "maxint1": 0.4595,
+      "null95_INT": 1.0414,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9876,
+       "cos2": -0.9519,
+       "Dmag1": 0.2532,
+       "Dmag2": 0.506,
+       "null95_D": 0.3438
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        503,
+        260,
+        249,
+        341,
+        229,
+        33,
+        275,
+        81,
+        188,
+        18,
+        191,
+        101,
+        107,
+        438,
+        151,
+        368
+       ],
+       "wte_top": [
+        "lot",
+        "gren",
+        "banks",
+        "castle",
+        "wic",
+        "dro",
+        " Able",
+        "bach",
+        "umerable",
+        "ace"
+       ],
+       "wte_bot": [
+        "entric",
+        "ials",
+        "rees",
+        "ographies",
+        "uthor",
+        "redit",
+        "Leaks",
+        "oice",
+        "oths",
+        "opy"
+       ],
+       "cur_tokens": [
+        " gun",
+        " km",
+        " gun",
+        " km",
+        " gun",
+        " km",
+        " gun",
+        " guns"
+       ],
+       "wu_top": [
+        "lot",
+        "banks",
+        "gren",
+        "bats",
+        "dro",
+        "castle",
+        "wic",
+        "bour",
+        "bach",
+        "pak"
+       ],
+       "wu_bot": [
+        "entric",
+        "uthor",
+        "Leaks",
+        "rees",
+        "ials",
+        "ographies",
+        "yssey",
+        "oice",
+        "opy",
+        "omal"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 2.0794,
+      "n_null": 12,
+      "C1": -0.0121,
+      "SE1": 0.0168,
+      "C2": -0.0244,
+      "SE2": 0.0337,
+      "null95_C": 0.1144,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.5444,
+        "SE": 0.0785
+       },
+       "8": {
+        "C": 0.6961,
+        "SE": 0.0894
+       },
+       "9": {
+        "C": 0.7275,
+        "SE": 0.1072
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.0876,
+        "SE": 0.1563
+       },
+       "8": {
+        "C": 1.3905,
+        "SE": 0.1782
+       },
+       "9": {
+        "C": 1.4534,
+        "SE": 0.2142
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.7275,
+      "null95_INT": 1.1992,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9946,
+       "cos2": -0.9785,
+       "Dmag1": 0.1097,
+       "Dmag2": 0.2192,
+       "null95_D": 0.2562
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        436,
+        113,
+        335,
+        241,
+        347,
+        279,
+        220,
+        478,
+        454,
+        374,
+        453,
+        308,
+        86,
+        202,
+        15,
+        439
+       ],
+       "wte_top": [
+        "lot",
+        "gren",
+        "banks",
+        "castle",
+        "wic",
+        "dro",
+        " Able",
+        "bach",
+        "umerable",
+        "ace"
+       ],
+       "wte_bot": [
+        "entric",
+        "ials",
+        "rees",
+        "ographies",
+        "uthor",
+        "redit",
+        "Leaks",
+        "oice",
+        "oths",
+        "opy"
+       ],
+       "cur_tokens": [
+        " water",
+        " 9",
+        " 9",
+        " 5",
+        " 10",
+        " 12",
+        " 9",
+        " match"
+       ],
+       "wu_top": [
+        "lot",
+        "banks",
+        "gren",
+        "bats",
+        "dro",
+        "castle",
+        "wic",
+        "bour",
+        "bach",
+        "pak"
+       ],
+       "wu_bot": [
+        "entric",
+        "uthor",
+        "Leaks",
+        "rees",
+        "ials",
+        "ographies",
+        "yssey",
+        "oice",
+        "opy",
+        "omal"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.6702,
+      "n_null": 12,
+      "C1": 0.0111,
+      "SE1": 0.0153,
+      "C2": 0.0222,
+      "SE2": 0.0304,
+      "null95_C": 0.211,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.6759,
+        "SE": 0.1248
+       },
+       "8": {
+        "C": 1.0335,
+        "SE": 0.1785
+       },
+       "9": {
+        "C": 0.9996,
+        "SE": 0.1506
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.3475,
+        "SE": 0.2474
+       },
+       "8": {
+        "C": 2.0639,
+        "SE": 0.3545
+       },
+       "9": {
+        "C": 1.9959,
+        "SE": 0.2989
+       }
+      },
+      "int_kstar": 8,
+      "maxint1": 1.0335,
+      "null95_INT": 2.5194,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.992,
+       "cos2": -0.9686,
+       "Dmag1": 0.3897,
+       "Dmag2": 0.7748,
+       "null95_D": 0.5642
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        121,
+        185,
+        57,
+        249,
+        313,
+        112,
+        441,
+        505,
+        176,
+        377,
+        240,
+        304,
+        432,
+        368,
+        496,
+        399
+       ],
+       "wte_top": [
+        "lot",
+        "gren",
+        "banks",
+        "castle",
+        "wic",
+        "dro",
+        " Able",
+        "bach",
+        "umerable",
+        "ace"
+       ],
+       "wte_bot": [
+        "entric",
+        "ials",
+        "rees",
+        "ographies",
+        "uthor",
+        "redit",
+        "Leaks",
+        "oice",
+        "oths",
+        "opy"
+       ],
+       "cur_tokens": [
+        " deg",
+        " deg",
+        " deg",
+        " deg",
+        " deg",
+        "Compan",
+        " deg",
+        " deg"
+       ],
+       "wu_top": [
+        "lot",
+        "banks",
+        "gren",
+        "bats",
+        "dro",
+        "castle",
+        "wic",
+        "bour",
+        "bach",
+        "pak"
+       ],
+       "wu_bot": [
+        "entric",
+        "uthor",
+        "Leaks",
+        "rees",
+        "ials",
+        "ographies",
+        "yssey",
+        "oice",
+        "opy",
+        "omal"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 0,
+    "stable_regimes": [],
+    "verdict": "CERTIFIED-NO-GLOSS",
+    "t_s": 59.0
+   },
+   "dark_b6_svd7": {
+    "done": true,
+    "dir_index": 7,
+    "regimes": {
+     "prose": {
+      "sigma": 2.4766,
+      "n_null": 12,
+      "C1": 0.0472,
+      "SE1": 0.0113,
+      "C2": 0.0945,
+      "SE2": 0.0226,
+      "null95_C": 0.0836,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.8451,
+        "SE": 0.071
+       },
+       "8": {
+        "C": 0.8564,
+        "SE": 0.09
+       },
+       "9": {
+        "C": 0.9425,
+        "SE": 0.1286
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.6911,
+        "SE": 0.1422
+       },
+       "8": {
+        "C": 1.7137,
+        "SE": 0.1801
+       },
+       "9": {
+        "C": 1.886,
+        "SE": 0.2572
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.9425,
+      "null95_INT": 0.9206,
+      "int_clear": true,
+      "int_stable": true,
+      "field": {
+       "cos1": -0.9975,
+       "cos2": -0.99,
+       "Dmag1": 0.1682,
+       "Dmag2": 0.3363,
+       "null95_D": 0.2844
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        236,
+        484,
+        96,
+        248,
+        490,
+        75,
+        224,
+        192,
+        252,
+        381,
+        235,
+        189,
+        181,
+        454,
+        429,
+        155
+       ],
+       "wte_top": [
+        "ioned",
+        "naire",
+        "stadt",
+        "CHAT",
+        " lashes",
+        "arity",
+        " aster",
+        "undo",
+        " swollen",
+        "ebin"
+       ],
+       "wte_bot": [
+        "croft",
+        "well",
+        "cause",
+        "sam",
+        "orie",
+        "grain",
+        " Nero",
+        "elsen",
+        "otech",
+        "igham"
+       ],
+       "cur_tokens": [
+        " of",
+        " 5",
+        " 8",
+        " 5",
+        " 6",
+        " Bang",
+        " 57",
+        " 2"
+       ],
+       "wu_top": [
+        "CHAT",
+        "naire",
+        " Rangers",
+        " Mehran",
+        " IMAGES",
+        " Famous",
+        "geist",
+        " ja",
+        "stadt",
+        " lashes"
+       ],
+       "wu_bot": [
+        "croft",
+        "igham",
+        "iasco",
+        "elsen",
+        "orie",
+        "osponsors",
+        "otech",
+        "ither",
+        "ilib",
+        "ivable"
+       ]
+      }
+     },
+     "code": {
+      "sigma": 2.1319,
+      "n_null": 12,
+      "C1": 0.0459,
+      "SE1": 0.0102,
+      "C2": 0.092,
+      "SE2": 0.0204,
+      "null95_C": 0.1211,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 0.6905,
+        "SE": 0.0601
+       },
+       "8": {
+        "C": 0.6809,
+        "SE": 0.087
+       },
+       "9": {
+        "C": 0.696,
+        "SE": 0.0834
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 1.3838,
+        "SE": 0.1196
+       },
+       "8": {
+        "C": 1.3638,
+        "SE": 0.1734
+       },
+       "9": {
+        "C": 1.3937,
+        "SE": 0.1666
+       }
+      },
+      "int_kstar": 9,
+      "maxint1": 0.696,
+      "null95_INT": 1.2649,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9947,
+       "cos2": -0.9791,
+       "Dmag1": 0.1697,
+       "Dmag2": 0.3394,
+       "null95_D": 0.2245
+      },
+      "field_clear": false,
+      "field_stable": false,
+      "stable": false,
+      "n_channels_clear": 0,
+      "pos": {
+       "pos16": [
+        497,
+        498,
+        156,
+        258,
+        204,
+        496,
+        452,
+        481,
+        448,
+        83,
+        130,
+        212,
+        290,
+        344,
+        489,
+        372
+       ],
+       "wte_top": [
+        "ioned",
+        "naire",
+        "stadt",
+        "CHAT",
+        " lashes",
+        "arity",
+        " aster",
+        "undo",
+        " swollen",
+        "ebin"
+       ],
+       "wte_bot": [
+        "croft",
+        "well",
+        "cause",
+        "sam",
+        "orie",
+        "grain",
+        " Nero",
+        "elsen",
+        "otech",
+        "igham"
+       ],
+       "cur_tokens": [
+        " of",
+        " the",
+        " tuple",
+        "str",
+        " tuple",
+        " side",
+        " dict",
+        " >>>"
+       ],
+       "wu_top": [
+        "CHAT",
+        "naire",
+        " Rangers",
+        " Mehran",
+        " IMAGES",
+        " Famous",
+        "geist",
+        " ja",
+        "stadt",
+        " lashes"
+       ],
+       "wu_bot": [
+        "croft",
+        "igham",
+        "iasco",
+        "elsen",
+        "orie",
+        "osponsors",
+        "otech",
+        "ither",
+        "ilib",
+        "ivable"
+       ]
+      }
+     },
+     "repetition": {
+      "sigma": 2.4394,
+      "n_null": 12,
+      "C1": -0.0328,
+      "SE1": 0.0159,
+      "C2": -0.0659,
+      "SE2": 0.0317,
+      "null95_C": 0.2296,
+      "wu_clear": false,
+      "wu_stable": false,
+      "int1": {
+       "7": {
+        "C": 1.277,
+        "SE": 0.0958
+       },
+       "8": {
+        "C": 1.2312,
+        "SE": 0.0964
+       },
+       "9": {
+        "C": 1.0123,
+        "SE": 0.1303
+       }
+      },
+      "int2": {
+       "7": {
+        "C": 2.5476,
+        "SE": 0.1908
+       },
+       "8": {
+        "C": 2.454,
+        "SE": 0.1911
+       },
+       "9": {
+        "C": 2.0174,
+        "SE": 0.2596
+       }
+      },
+      "int_kstar": 7,
+      "maxint1": 1.277,
+      "null95_INT": 2.7608,
+      "int_clear": false,
+      "int_stable": false,
+      "field": {
+       "cos1": -0.9965,
+       "cos2": -0.986,
+       "Dmag1": 0.3881,
+       "Dmag2": 0.7717,
+       "null95_D": 0.3466
+      },
+      "field_clear": true,
+      "field_stable": true,
+      "stable": true,
+      "n_channels_clear": 1,
+      "pos": {
+       "pos16": [
+        70,
+        6,
+        454,
+        134,
+        390,
+        326,
+        121,
+        198,
+        111,
+        262,
+        77,
+        185,
+        95,
+        175,
+        431,
+        441
+       ],
+       "wte_top": [
+        "ioned",
+        "naire",
+        "stadt",
+        "CHAT",
+        " lashes",
+        "arity",
+        " aster",
+        "undo",
+        " swollen",
+        "ebin"
+       ],
+       "wte_bot": [
+        "croft",
+        "well",
+        "cause",
+        "sam",
+        "orie",
+        "grain",
+        " Nero",
+        "elsen",
+        "otech",
+        "igham"
+       ],
+       "cur_tokens": [
+        " bapt",
+        " bapt",
+        " bapt",
+        " bapt",
+        " bapt",
+        " bapt",
+        " deg",
+        " bapt"
+       ],
+       "wu_top": [
+        "CHAT",
+        "naire",
+        " Rangers",
+        " Mehran",
+        " IMAGES",
+        " Famous",
+        "geist",
+        " ja",
+        "stadt",
+        " lashes"
+       ],
+       "wu_bot": [
+        "croft",
+        "igham",
+        "iasco",
+        "elsen",
+        "orie",
+        "osponsors",
+        "otech",
+        "ither",
+        "ilib",
+        "ivable"
+       ]
+      }
+     }
+    },
+    "n_regimes_stable": 2,
+    "stable_regimes": [
+     "prose",
+     "repetition"
+    ],
+    "verdict": "NAMED",
+    "t_s": 57.1
+   }
+  },
+  "a2_verdict": {
+   "n_selected_total": 8,
+   "n_adjudicated": 8,
+   "n_unadjudicated": 0,
+   "n_named": 2,
+   "f_named": 0.25,
+   "H_L6_A2": "NAMED-SOME",
+   "battery_gates_pass": true,
+   "bet": "ALLDARK45/SOME35/MAJORITY20",
+   "bet_favorite_hit": false,
+   "lexicon_v4_trigger": true
+  },
+  "a2_done": true
+ },
+ "armB": {
+  "gb1": {
+   "A_on": -0.00387,
+   "banked_A": -0.00388,
+   "dev_A": 5e-06,
+   "mag3": 7.8544,
+   "banked_mag3": 7.8544,
+   "dev_mag": 2e-05,
+   "M_plus3": 0.94944,
+   "M_minus3": 0.95719,
+   "pass": true
+  },
+  "b1": {
+   "bounds": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "n_null": 12,
+   "null95_max": 0.3067,
+   "null_max_draws": [
+    0.2491,
+    0.2277,
+    0.2522,
+    0.2504,
+    0.2096,
+    0.3067,
+    0.2661,
+    0.2739,
+    0.3058,
+    0.2436,
+    0.2508,
+    0.2663
+   ],
+   "antisym_dev": 3.0040740966796875e-05,
+   "const_dev": 1.4007091522216797e-05,
+   "listeners": [
+    {
+     "read": "core",
+     "field": 0,
+     "name": "naval/warship",
+     "best": {
+      "b": 7,
+      "z": -0.3153,
+      "se": 0.00371
+     },
+     "n_bounds_clear": 1
+    }
+   ],
+   "N_listen": 1,
+   "top8_cells_z": [
+    {
+     "read": "core",
+     "field": 0,
+     "b": 7,
+     "z": -0.3153
+    },
+    {
+     "read": "core",
+     "field": 1,
+     "b": 7,
+     "z": -0.295
+    },
+    {
+     "read": "door",
+     "field": 16,
+     "b": 8,
+     "z": 0.2475
+    },
+    {
+     "read": "core",
+     "field": 10,
+     "b": 7,
+     "z": -0.2452
+    },
+    {
+     "read": "core",
+     "field": 1,
+     "b": 8,
+     "z": -0.2364
+    },
+    {
+     "read": "core",
+     "field": 6,
+     "b": 7,
+     "z": 0.2327
+    },
+    {
+     "read": "core",
+     "field": 16,
+     "b": 7,
+     "z": 0.2309
+    },
+    {
+     "read": "door",
+     "field": 1,
+     "b": 8,
+     "z": -0.2308
+    }
+   ],
+   "positive_control": {
+    "z_naval_b7_no_carry_sub": 3.715,
+    "clears": true
+   },
+   "seam_texture": {
+    "6->7": {
+     "cos": 0.1915,
+     "mag_ratio": 322838.9014
+    },
+    "7->8": {
+     "cos": 0.7811,
+     "mag_ratio": 0.903
+    },
+    "8->9": {
+     "cos": 0.8729,
+     "mag_ratio": 0.8569
+    }
+   },
+   "ablation_top5": [
+    {
+     "read": "core",
+     "field": 0,
+     "name": "naval/warship",
+     "b": 12,
+     "z": -0.9768
+    },
+    {
+     "read": "door",
+     "field": 0,
+     "name": "naval/warship",
+     "b": 12,
+     "z": -0.9329
+    },
+    {
+     "read": "core",
+     "field": 6,
+     "name": "epistemic-negative",
+     "b": 12,
+     "z": -0.8538
+    },
+    {
+     "read": "door",
+     "field": 5,
+     "name": "clause-final/physical-process",
+     "b": 7,
+     "z": -0.7854
+    },
+    {
+     "read": "core",
+     "field": 3,
+     "name": "L0-magnitude/anomalous",
+     "b": 12,
+     "z": -0.7805
+    }
+   ],
+   "H_L6_B1": "CONCENTRATED",
+   "bet": "CONCENTRATED40/SILENT35/BROADCAST25",
+   "bet_favorite_hit": true,
+   "instrument_flagged": false
+  },
+  "b1_done": true,
+  "gb2": {
+   "A": 0.00329,
+   "banked_A": 0.00329,
+   "dev_A": 3e-06,
+   "M_clean": 0.95686,
+   "banked_Mclean": 0.9569,
+   "dev_M": 4.4e-05,
+   "M_plus": 0.95757,
+   "M_minus": 0.951,
+   "nat_mag": 7.374,
+   "monotone": true,
+   "pass": true
+  },
+  "b2_geometry": {
+   "cos_vonset_rungimg": 0.1786,
+   "cos_vonset_ws": -0.0327,
+   "cos_rungimg_ws": 0.0143,
+   "proj_span5_frac": 0.8612,
+   "proj_C_norm": 0.1911,
+   "nat_mag": 7.374
+  },
+  "b2_reader": {
+   "pearson_r": 0.1789,
+   "null95_shuffle": 0.0491,
+   "n_shuffles": 12,
+   "reader_valid": false,
+   "fbD": "READER-VALIDITY FAILED -> RUNG-IS-READER unavailable"
+  },
+  "b2_writes": {
+   "bounds": [
+    7,
+    8,
+    9
+   ],
+   "z_by_b": {
+    "7": 0.2936,
+    "8": 0.2573,
+    "9": 0.2493
+   },
+   "z_carry_subtracted_by_b": {
+    "7": -0.1121,
+    "8": -0.0439,
+    "9": -0.0353
+   },
+   "carry_coord_along_rungimg": 1.3169,
+   "se_z_by_b": {
+    "7": 0.00158,
+    "8": 0.00189,
+    "9": 0.00209
+   },
+   "b_star": 7,
+   "z_max": 0.2936,
+   "null95": 0.1951,
+   "n_null": 12,
+   "control_writes_rung_channel": true
+  },
+  "b2_cowriter": {
+   "A_on6": -0.01023,
+   "banked_A_on6": -0.01023,
+   "replay_dev": 3e-06,
+   "mag6": 15.7088,
+   "null95_20_mag6": 0.0126,
+   "nulls_mag6": [
+    0.01137,
+    0.007,
+    0.0036,
+    0.00262,
+    0.00784,
+    0.00656,
+    0.00107,
+    0.00369,
+    0.0126,
+    0.00398,
+    0.00802,
+    0.00415,
+    0.0075,
+    0.00108,
+    0.01457,
+    0.00437,
+    0.00127,
+    0.00576,
+    0.001,
+    0.00824
+   ],
+   "n_null": 20,
+   "sign_matches_Aon": true,
+   "COWRITER": false,
+   "report_only_mag3": {
+    "A_on": -0.00387,
+    "null95_20_mag3": 0.00289,
+    "beats": true,
+    "note": "L5 +/-3 verdict stands either way; honest-N re-arm can only sharpen"
+   }
+  },
+  "b2_verdict": {
+   "cowriter": false,
+   "reader_valid": false,
+   "control_writes": true,
+   "H_L6_B2": "INDEPENDENT",
+   "bet": "READER45/INDEPENDENT30/COWRITER25",
+   "bet_favorite_hit": false,
+   "instrument_flagged": false
+  },
+  "b2_done": true,
+  "b3_decomp": {
+   "sigma_code_b5": 2.4676,
+   "banked_sigma": 2.4676,
+   "M3_full_row": {
+    "naval": -0.1614,
+    "clause": -0.0255,
+    "operator": 0.5769,
+    "symbol": -0.1099,
+    "rung": -0.0381
+   },
+   "Mii_full": 0.5769,
+   "banked_Mii": 0.5769,
+   "gb3_dev": 3.7e-05,
+   "gb3_pass": true,
+   "M_direct": 0.5432,
+   "M_comp": 0.0336,
+   "M6_full": 1.1467,
+   "banked_M6": 1.1467,
+   "M6_direct": 1.086,
+   "M6_comp": 0.0607
+  },
+  "b3_null": {
+   "null95_comp": 0.1646,
+   "null95_direct": 0.0499,
+   "n_null": 12,
+   "comp_draws": [
+    0.0477,
+    0.0055,
+    0.07,
+    0.1544,
+    0.0214,
+    0.1646,
+    0.1357,
+    0.045,
+    0.0403,
+    0.0852,
+    0.0729,
+    0.0239
+   ],
+   "direct_draws": [
+    0.0178,
+    0.0059,
+    0.0319,
+    0.0499,
+    0.0418,
+    0.0055,
+    0.04,
+    0.016,
+    0.0091,
+    0.0038,
+    0.0493,
+    0.0037
+   ],
+   "mag3": 7.4028
+  },
+  "b3_verdict": {
+   "echo_measurable": true,
+   "comp_beats_null": false,
+   "H_L6_B3": "LEAKAGE",
+   "fbD": null,
+   "bet": "MIXED40/LEAKAGE35/GENUINE25",
+   "bet_favorite_hit": false,
+   "instrument_flagged": false
+  },
+  "b3_texture": {
+   "sigma_b5": {
+    "prose": 2.6869,
+    "code": 2.4676,
+    "repetition": 1.8992
+   },
+   "m_frac": {
+    "prose": {
+     "16": 0.104,
+     "64": 0.1812,
+     "256": 0.4104
+    },
+    "code": {
+     "16": 0.0276,
+     "64": 0.087,
+     "256": 0.3796
+    },
+    "repetition": {
+     "16": 0.0183,
+     "64": 0.0874,
+     "256": 0.3668
+    }
+   },
+   "offspan": {
+    "prose": {
+     "rows": {
+      "3": {
+       "kl_axis": 0.02161,
+       "kl_null": 0.02673,
+       "R": 0.8086,
+       "mag": 8.0608
+      },
+      "5": {
+       "kl_axis": 0.06138,
+       "kl_null": 0.07925,
+       "R": 0.7745,
+       "mag": 13.4347
+      },
+      "10": {
+       "kl_axis": 0.28768,
+       "kl_null": 0.4044,
+       "R": 0.7114,
+       "mag": 26.8694
+      },
+      "-3": {
+       "kl_axis": 0.02476,
+       "kl_null": 0.02673,
+       "R": 0.9263,
+       "mag": 8.0608
+      },
+      "-5": {
+       "kl_axis": 0.077,
+       "kl_null": 0.07925,
+       "R": 0.9716,
+       "mag": 13.4347
+      },
+      "-10": {
+       "kl_axis": 0.44219,
+       "kl_null": 0.4044,
+       "R": 1.0934,
+       "mag": 26.8694
+      }
+     },
+     "R_k10": 0.9024,
+     "class": "MANIFOLD-BOUND",
+     "sigma": 2.6869
+    },
+    "repetition": {
+     "rows": {
+      "3": {
+       "kl_axis": 0.00205,
+       "kl_null": 0.00224,
+       "R": 0.9149,
+       "mag": 5.6977
+      },
+      "5": {
+       "kl_axis": 0.00604,
+       "kl_null": 0.00559,
+       "R": 1.0802,
+       "mag": 9.4962
+      },
+      "10": {
+       "kl_axis": 0.05036,
+       "kl_null": 0.0234,
+       "R": 2.1526,
+       "mag": 18.9925
+      },
+      "-3": {
+       "kl_axis": 0.00177,
+       "kl_null": 0.00224,
+       "R": 0.7901,
+       "mag": 5.6977
+      },
+      "-5": {
+       "kl_axis": 0.00483,
+       "kl_null": 0.00559,
+       "R": 0.8642,
+       "mag": 9.4962
+      },
+      "-10": {
+       "kl_axis": 0.02165,
+       "kl_null": 0.0234,
+       "R": 0.9253,
+       "mag": 18.9925
+      }
+     },
+     "R_k10": 1.539,
+     "class": "STRUCTURED-EXTRAPOLATION",
+     "sigma": 1.8992
+    },
+    "code_banked": {
+     "R_k10": 0.8585,
+     "class": "MANIFOLD-BOUND",
+     "source": "OFFSPAN_TABLE_V1"
+    }
+   }
+  },
+  "b3_done": true
+ },
+ "verdicts": {
+  "H_L6_A1": "DIFFUSE",
+  "A3_gate": "RE-TRANSPLANT GATE PASS: certified+recovered payload within recal floor of raw",
+  "H_L6_A2": "NAMED-SOME",
+  "H_L6_B1": "CONCENTRATED",
+  "H_L6_B2": "INDEPENDENT",
+  "H_L6_B3": "LEAKAGE"
+ },
+ "status": "COMPLETE",
+ "elapsed_s": 727.7,
+ "gpt2_meta": {
+  "n_layer": 12,
+  "d": 768,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager"
+ }
+}

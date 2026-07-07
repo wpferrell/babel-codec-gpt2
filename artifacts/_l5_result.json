@@ -1,0 +1,863 @@
+{
+ "experiment": "L5 finish the two Babel remainders: Arm A transplant gap attribution (3 nested payloads readable/certified-door/full-raw, gate payload-1==L4 T2 0.9467, matched-random nulls, captured-mass table); Arm B rung steering via matched channels (behavioral onset metric M_onset + CH-INT/CH-FIELD, positive-control gate, matched-random + magnitude-matched nulls). Consumes FROZEN ENCODER_V1. GPT-2 124M.",
+ "date": "2026-07-06",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'L5 -- FINISH THE TWO BABEL REMAINDERS: ARM A TRANSPLANT-GAP ATTRIBUTION + ARM B RUNG-STEERING-VIA-MATCHED-CHANNELS -- GAP-SCAN + PRE-REGISTRATION (2026-07-06)'",
+ "locked": {
+  "tol_replay": 0.002,
+  "n_nulldir": 3,
+  "k_edit": [
+   3,
+   -3,
+   6,
+   -6
+  ],
+  "l4_t2_sbar": 0.9467,
+  "armA_bands": "phi=(sbar2-sbar1)/(sbar3-sbar1): ATTRIBUTED phi>=0.75 / PARTIAL 0.25<phi<0.75 / MISSING-MASS phi<=0.25 ; bet PARTIAL40/MISSING35/ATTRIBUTED25 ; gate sbar1==0.9467+-2e-3",
+  "armB_bands": "positive-control GATE first; STEERS-BEHAVIORAL if behavioral_steers / CHANNEL-SPECIFIC if int_or_field_clear only / CERTIFIED-READ-ONLY if inert all channels ; bet STEERS40/CHANNEL25/READONLY35"
+ },
+ "config": {
+  "n_hold": 16,
+  "mb": 4,
+  "cap_chunk": 16,
+  "cert_block": 512,
+  "ind_seg": 64,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager",
+  "seed": 1234,
+  "smoke": false
+ },
+ "gpu_free_checks": [
+  {
+   "tag": "armA",
+   "t": 59.4,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "armB",
+   "t": 79.9,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  }
+ ],
+ "instrument_discrepancy": [],
+ "gates": {
+  "hashes": {
+   "encoder_v1": "6be189567c41e91d",
+   "encoder_ok": true,
+   "encoder_json": "365dc3ff592fc6bd",
+   "decoder_v7": "b1d2f464c00c3ef6",
+   "decoder_v7_ok": true,
+   "floors_recal": "71549ae3afcc8d07",
+   "lexicon_v3": "71a51619a9bb25c3",
+   "wellposedness": "ea5236cbd608a385",
+   "offspan": "77dd0948a63bb24f"
+  },
+  "encoder_is_decoder_inverse": {
+   "max_abs_diff": {
+    "C": 0.0,
+    "B2": 0.0,
+    "Q35": 0.0,
+    "Q_union": 0.0,
+    "mu": 0.0,
+    "read_W": 0.0
+   },
+   "pass": true
+  },
+  "identity_inject": {
+   "detail": {
+    "prose": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "code": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "repetition": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    }
+   },
+   "pass": true
+  }
+ },
+ "armA": {
+  "captured_mass": {
+   "total": 20808.752,
+   "readable_span5": 19803.977,
+   "dark_orthogonal_span5": 1004.78,
+   "certified_door_summary_increment": 0.0,
+   "qunion_onproj_increment": 0.0,
+   "raw_door_increment": 1326.133,
+   "readable_frac": 0.9517,
+   "cert_door_inc_frac": 0.0,
+   "qunion_inc_frac": 0.0,
+   "raw_door_inc_frac": 0.0637,
+   "dark_frac": 0.0483
+  },
+  "payloads": {
+   "p1_readable": {
+    "sbar": 0.9467,
+    "sbar_null": 0.186,
+    "se": 0.001,
+    "residKL": 0.3004,
+    "n_pairs": 16,
+    "per_pair": [
+     {
+      "A": 0,
+      "B": 1,
+      "s": 0.9483,
+      "s_null": 0.197,
+      "residKL": 0.29421
+     },
+     {
+      "A": 1,
+      "B": 2,
+      "s": 0.9465,
+      "s_null": 0.1757,
+      "residKL": 0.26497
+     },
+     {
+      "A": 2,
+      "B": 3,
+      "s": 0.9428,
+      "s_null": 0.1877,
+      "residKL": 0.30614
+     },
+     {
+      "A": 3,
+      "B": 4,
+      "s": 0.9479,
+      "s_null": 0.1862,
+      "residKL": 0.313
+     },
+     {
+      "A": 4,
+      "B": 5,
+      "s": 0.9492,
+      "s_null": 0.2085,
+      "residKL": 0.32041
+     },
+     {
+      "A": 5,
+      "B": 6,
+      "s": 0.9424,
+      "s_null": 0.1944,
+      "residKL": 0.36664
+     },
+     {
+      "A": 6,
+      "B": 7,
+      "s": 0.9491,
+      "s_null": 0.189,
+      "residKL": 0.28394
+     },
+     {
+      "A": 7,
+      "B": 8,
+      "s": 0.9441,
+      "s_null": 0.1732,
+      "residKL": 0.31126
+     },
+     {
+      "A": 8,
+      "B": 9,
+      "s": 0.9397,
+      "s_null": 0.1807,
+      "residKL": 0.34032
+     },
+     {
+      "A": 9,
+      "B": 10,
+      "s": 0.9527,
+      "s_null": 0.189,
+      "residKL": 0.26756
+     },
+     {
+      "A": 10,
+      "B": 11,
+      "s": 0.9527,
+      "s_null": 0.1764,
+      "residKL": 0.29532
+     },
+     {
+      "A": 11,
+      "B": 12,
+      "s": 0.9503,
+      "s_null": 0.1807,
+      "residKL": 0.27516
+     },
+     {
+      "A": 12,
+      "B": 13,
+      "s": 0.9414,
+      "s_null": 0.1749,
+      "residKL": 0.3222
+     },
+     {
+      "A": 13,
+      "B": 14,
+      "s": 0.946,
+      "s_null": 0.1985,
+      "residKL": 0.28187
+     },
+     {
+      "A": 14,
+      "B": 15,
+      "s": 0.9505,
+      "s_null": 0.1813,
+      "residKL": 0.2624
+     },
+     {
+      "A": 15,
+      "B": 0,
+      "s": 0.9443,
+      "s_null": 0.1833,
+      "residKL": 0.30096
+     }
+    ]
+   },
+   "p2_certdoor": {
+    "sbar": 0.9467,
+    "sbar_null": 0.1758,
+    "se": 0.001,
+    "residKL": 0.3004,
+    "n_pairs": 16,
+    "per_pair": [
+     {
+      "A": 0,
+      "B": 1,
+      "s": 0.9483,
+      "s_null": 0.1741,
+      "residKL": 0.29421
+     },
+     {
+      "A": 1,
+      "B": 2,
+      "s": 0.9465,
+      "s_null": 0.1765,
+      "residKL": 0.26497
+     },
+     {
+      "A": 2,
+      "B": 3,
+      "s": 0.9428,
+      "s_null": 0.1639,
+      "residKL": 0.30614
+     },
+     {
+      "A": 3,
+      "B": 4,
+      "s": 0.9479,
+      "s_null": 0.1844,
+      "residKL": 0.313
+     },
+     {
+      "A": 4,
+      "B": 5,
+      "s": 0.9492,
+      "s_null": 0.1978,
+      "residKL": 0.32041
+     },
+     {
+      "A": 5,
+      "B": 6,
+      "s": 0.9424,
+      "s_null": 0.194,
+      "residKL": 0.36664
+     },
+     {
+      "A": 6,
+      "B": 7,
+      "s": 0.9491,
+      "s_null": 0.1949,
+      "residKL": 0.28394
+     },
+     {
+      "A": 7,
+      "B": 8,
+      "s": 0.9441,
+      "s_null": 0.1535,
+      "residKL": 0.31126
+     },
+     {
+      "A": 8,
+      "B": 9,
+      "s": 0.9397,
+      "s_null": 0.1799,
+      "residKL": 0.34032
+     },
+     {
+      "A": 9,
+      "B": 10,
+      "s": 0.9527,
+      "s_null": 0.1605,
+      "residKL": 0.26756
+     },
+     {
+      "A": 10,
+      "B": 11,
+      "s": 0.9527,
+      "s_null": 0.176,
+      "residKL": 0.29532
+     },
+     {
+      "A": 11,
+      "B": 12,
+      "s": 0.9503,
+      "s_null": 0.155,
+      "residKL": 0.27516
+     },
+     {
+      "A": 12,
+      "B": 13,
+      "s": 0.9414,
+      "s_null": 0.1723,
+      "residKL": 0.3222
+     },
+     {
+      "A": 13,
+      "B": 14,
+      "s": 0.946,
+      "s_null": 0.177,
+      "residKL": 0.28187
+     },
+     {
+      "A": 14,
+      "B": 15,
+      "s": 0.9505,
+      "s_null": 0.1904,
+      "residKL": 0.2624
+     },
+     {
+      "A": 15,
+      "B": 0,
+      "s": 0.9443,
+      "s_null": 0.163,
+      "residKL": 0.30096
+     }
+    ]
+   },
+   "p2b_qunion": {
+    "sbar": 0.9467,
+    "sbar_null": 0.1745,
+    "se": 0.001,
+    "residKL": 0.3004,
+    "n_pairs": 16,
+    "per_pair": [
+     {
+      "A": 0,
+      "B": 1,
+      "s": 0.9483,
+      "s_null": 0.1978,
+      "residKL": 0.29421
+     },
+     {
+      "A": 1,
+      "B": 2,
+      "s": 0.9465,
+      "s_null": 0.17,
+      "residKL": 0.26497
+     },
+     {
+      "A": 2,
+      "B": 3,
+      "s": 0.9428,
+      "s_null": 0.1631,
+      "residKL": 0.30614
+     },
+     {
+      "A": 3,
+      "B": 4,
+      "s": 0.9479,
+      "s_null": 0.1686,
+      "residKL": 0.313
+     },
+     {
+      "A": 4,
+      "B": 5,
+      "s": 0.9492,
+      "s_null": 0.2015,
+      "residKL": 0.32041
+     },
+     {
+      "A": 5,
+      "B": 6,
+      "s": 0.9424,
+      "s_null": 0.1915,
+      "residKL": 0.36664
+     },
+     {
+      "A": 6,
+      "B": 7,
+      "s": 0.9491,
+      "s_null": 0.1732,
+      "residKL": 0.28394
+     },
+     {
+      "A": 7,
+      "B": 8,
+      "s": 0.9441,
+      "s_null": 0.1601,
+      "residKL": 0.31126
+     },
+     {
+      "A": 8,
+      "B": 9,
+      "s": 0.9397,
+      "s_null": 0.1736,
+      "residKL": 0.34032
+     },
+     {
+      "A": 9,
+      "B": 10,
+      "s": 0.9527,
+      "s_null": 0.1691,
+      "residKL": 0.26756
+     },
+     {
+      "A": 10,
+      "B": 11,
+      "s": 0.9527,
+      "s_null": 0.1712,
+      "residKL": 0.29532
+     },
+     {
+      "A": 11,
+      "B": 12,
+      "s": 0.9503,
+      "s_null": 0.148,
+      "residKL": 0.27516
+     },
+     {
+      "A": 12,
+      "B": 13,
+      "s": 0.9414,
+      "s_null": 0.177,
+      "residKL": 0.3222
+     },
+     {
+      "A": 13,
+      "B": 14,
+      "s": 0.946,
+      "s_null": 0.1825,
+      "residKL": 0.28187
+     },
+     {
+      "A": 14,
+      "B": 15,
+      "s": 0.9505,
+      "s_null": 0.1824,
+      "residKL": 0.2624
+     },
+     {
+      "A": 15,
+      "B": 0,
+      "s": 0.9443,
+      "s_null": 0.1621,
+      "residKL": 0.30096
+     }
+    ]
+   },
+   "p2c_rawdoor": {
+    "sbar": 0.9612,
+    "sbar_null": 0.1806,
+    "se": 0.0006,
+    "residKL": 0.20945,
+    "n_pairs": 16,
+    "per_pair": [
+     {
+      "A": 0,
+      "B": 1,
+      "s": 0.9603,
+      "s_null": 0.2022,
+      "residKL": 0.22164
+     },
+     {
+      "A": 1,
+      "B": 2,
+      "s": 0.9623,
+      "s_null": 0.1747,
+      "residKL": 0.18575
+     },
+     {
+      "A": 2,
+      "B": 3,
+      "s": 0.9574,
+      "s_null": 0.1686,
+      "residKL": 0.22768
+     },
+     {
+      "A": 3,
+      "B": 4,
+      "s": 0.9612,
+      "s_null": 0.189,
+      "residKL": 0.21616
+     },
+     {
+      "A": 4,
+      "B": 5,
+      "s": 0.9626,
+      "s_null": 0.2076,
+      "residKL": 0.21057
+     },
+     {
+      "A": 5,
+      "B": 6,
+      "s": 0.9599,
+      "s_null": 0.2049,
+      "residKL": 0.23923
+     },
+     {
+      "A": 6,
+      "B": 7,
+      "s": 0.9624,
+      "s_null": 0.1752,
+      "residKL": 0.19877
+     },
+     {
+      "A": 7,
+      "B": 8,
+      "s": 0.9586,
+      "s_null": 0.1598,
+      "residKL": 0.21711
+     },
+     {
+      "A": 8,
+      "B": 9,
+      "s": 0.9595,
+      "s_null": 0.1801,
+      "residKL": 0.21506
+     },
+     {
+      "A": 9,
+      "B": 10,
+      "s": 0.9647,
+      "s_null": 0.1701,
+      "residKL": 0.19591
+     },
+     {
+      "A": 10,
+      "B": 11,
+      "s": 0.9628,
+      "s_null": 0.1862,
+      "residKL": 0.22208
+     },
+     {
+      "A": 11,
+      "B": 12,
+      "s": 0.9647,
+      "s_null": 0.1755,
+      "residKL": 0.18951
+     },
+     {
+      "A": 12,
+      "B": 13,
+      "s": 0.9558,
+      "s_null": 0.1571,
+      "residKL": 0.23306
+     },
+     {
+      "A": 13,
+      "B": 14,
+      "s": 0.9614,
+      "s_null": 0.1731,
+      "residKL": 0.18443
+     },
+     {
+      "A": 14,
+      "B": 15,
+      "s": 0.961,
+      "s_null": 0.1841,
+      "residKL": 0.21055
+     },
+     {
+      "A": 15,
+      "B": 0,
+      "s": 0.9644,
+      "s_null": 0.1817,
+      "residKL": 0.1837
+     }
+    ]
+   },
+   "p3_fullraw": {
+    "sbar": 1.0,
+    "sbar_null": 0.1801,
+    "se": 0.0,
+    "residKL": 0.0,
+    "n_pairs": 16,
+    "per_pair": [
+     {
+      "A": 0,
+      "B": 1,
+      "s": 1.0,
+      "s_null": 0.1945,
+      "residKL": 0.0
+     },
+     {
+      "A": 1,
+      "B": 2,
+      "s": 1.0,
+      "s_null": 0.1669,
+      "residKL": -0.0
+     },
+     {
+      "A": 2,
+      "B": 3,
+      "s": 1.0,
+      "s_null": 0.1802,
+      "residKL": -0.0
+     },
+     {
+      "A": 3,
+      "B": 4,
+      "s": 1.0,
+      "s_null": 0.1897,
+      "residKL": -0.0
+     },
+     {
+      "A": 4,
+      "B": 5,
+      "s": 1.0,
+      "s_null": 0.202,
+      "residKL": 0.0
+     },
+     {
+      "A": 5,
+      "B": 6,
+      "s": 1.0,
+      "s_null": 0.2029,
+      "residKL": -0.0
+     },
+     {
+      "A": 6,
+      "B": 7,
+      "s": 1.0,
+      "s_null": 0.1893,
+      "residKL": -0.0
+     },
+     {
+      "A": 7,
+      "B": 8,
+      "s": 1.0,
+      "s_null": 0.165,
+      "residKL": -0.0
+     },
+     {
+      "A": 8,
+      "B": 9,
+      "s": 1.0,
+      "s_null": 0.1781,
+      "residKL": -0.0
+     },
+     {
+      "A": 9,
+      "B": 10,
+      "s": 1.0,
+      "s_null": 0.1672,
+      "residKL": 0.0
+     },
+     {
+      "A": 10,
+      "B": 11,
+      "s": 1.0,
+      "s_null": 0.1828,
+      "residKL": -0.0
+     },
+     {
+      "A": 11,
+      "B": 12,
+      "s": 1.0,
+      "s_null": 0.1575,
+      "residKL": 0.0
+     },
+     {
+      "A": 12,
+      "B": 13,
+      "s": 1.0,
+      "s_null": 0.1631,
+      "residKL": 0.0
+     },
+     {
+      "A": 13,
+      "B": 14,
+      "s": 1.0,
+      "s_null": 0.1887,
+      "residKL": 0.0
+     },
+     {
+      "A": 14,
+      "B": 15,
+      "s": 1.0,
+      "s_null": 0.1733,
+      "residKL": 0.0
+     },
+     {
+      "A": 15,
+      "B": 0,
+      "s": 1.0,
+      "s_null": 0.1802,
+      "residKL": 0.0
+     }
+    ]
+   }
+  },
+  "verdict": {
+   "sbar1": 0.9467,
+   "sbar2": 0.9467,
+   "sbar2b_qunion": 0.9467,
+   "sbar2c_rawdoor": 0.9612,
+   "sbar3": 1.0,
+   "phi": 0.0,
+   "H_L5_A": "MISSING-MASS",
+   "gate_payload1_dev": 0.0,
+   "gate_ok": true,
+   "residKL_p2_vs_floor": {
+    "residKL_p2": 0.3004,
+    "recal_floor": 0.1871,
+    "within_floor": false
+   },
+   "bet": "PARTIAL40/MISSING35/ATTRIBUTED25",
+   "bet_favorite_hit": false
+  },
+  "done": true
+ },
+ "armB": {
+  "onset_clean": 0.95686,
+  "positive_control": {
+   "M_clean": 0.95686,
+   "nat_mag": 7.374,
+   "validity_natural_mag": {
+    "M_plus": 0.95757,
+    "M_minus": 0.951,
+    "A": 0.00329,
+    "null95": 0.00235,
+    "mag": 7.374,
+    "pass": true
+   },
+   "matched_rung_mag": {
+    "M_plus": 0.95744,
+    "M_minus": 0.95043,
+    "A": 0.0035,
+    "null95": 0.00363,
+    "mag": 7.8544,
+    "pass": false
+   },
+   "GATE_PASS": true
+  },
+  "behavioral": {
+   "M_clean": 0.95686,
+   "ladder": {
+    "3": 0.94944,
+    "-3": 0.95719,
+    "6": 0.93051,
+    "-6": 0.95097
+   },
+   "A_on": -0.00388,
+   "A_on6": -0.01023,
+   "se_on": 0.0006,
+   "null95": 0.00993,
+   "mag_matched_null": 0.00417,
+   "sign_reproducible": true,
+   "beats_null": false,
+   "beats_2se": true,
+   "behavioral_steers": false,
+   "edit_sign_shown": -3,
+   "tokens_risen": [
+    "chini",
+    "ression",
+    "prising",
+    "rupal",
+    " celebration",
+    "bishop",
+    "omas",
+    "prise"
+   ],
+   "tokens_fell": [
+    "Ability",
+    "Pokemon",
+    " Kazakh",
+    "\u0627",
+    " Dust",
+    " Glac",
+    " \u00dc",
+    " Attribution"
+   ]
+  },
+  "matched_channels": {
+   "CH_INT": {
+    "int1": {
+     "7": {
+      "C": -0.08764,
+      "SE": 0.0
+     },
+     "8": {
+      "C": -0.78722,
+      "SE": 0.00424
+     },
+     "9": {
+      "C": -0.87373,
+      "SE": 0.00691
+     }
+    },
+    "int2": {
+     "7": {
+      "C": -0.17528,
+      "SE": 0.0
+     },
+     "8": {
+      "C": -1.54995,
+      "SE": 0.00755
+     },
+     "9": {
+      "C": -1.77018,
+      "SE": 0.01224
+     }
+    },
+    "kstar": 9,
+    "maxint1": 0.87373,
+    "null95": 9.84927,
+    "int_clear": false,
+    "int_stable": false
+   },
+   "CH_FIELD": {
+    "cos1": -0.9592,
+    "Dmag1": 2e-06,
+    "cos2": -0.989,
+    "Dmag2": 4e-06,
+    "null95_D": 1e-06,
+    "field_degenerate": true,
+    "field_clear": false,
+    "field_stable": false,
+    "note": "rung output proj_compl -> orthogonal to B2 & b5 upstream of BUS[6] inject -> content-field structurally ~0 (Dmag<1e-3 => UNMEASURABLE, not a silent pass)"
+   }
+  },
+  "verdict": {
+   "positive_control_pass": true,
+   "behavioral_steers": false,
+   "int_clear": false,
+   "field_clear": false,
+   "H_L5_B": "CERTIFIED-READ-ONLY",
+   "bet": "STEERS40/CHANNEL25/READONLY35",
+   "bet_favorite_hit": false
+  },
+  "done": true
+ },
+ "status": "COMPLETE",
+ "elapsed_s": 96.1,
+ "gpt2_meta": {
+  "n_layer": 12,
+  "d": 768,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager"
+ }
+}

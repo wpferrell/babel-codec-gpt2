@@ -1,0 +1,130 @@
+{
+ "version": "ENCODER_V1 1.0 (2026-07-06)",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'L3 -- INVERSE MAPS (BABEL STAGE 3): BUILD ENCODER_V1 (gloss->state), WELL-POSEDNESS TABLE, OFF-SPAN BEHAVIOR -- GAP-SCAN + PRE-REGISTRATION (2026-07-06)'",
+ "decoder_source": "decoder_v7 (b1d2f464c00c3ef6)",
+ "lexicon": "LEXICON_V3 (71a51619a9bb25c3)",
+ "seam_operators": "_l2babel_maps.pt (b43f877af68728df)",
+ "encode_rules": {
+  "core_C": {
+   "encode": "dh = C @ g (g in R^19)",
+   "shape": [
+    768,
+    19
+   ],
+   "orthonormal": true
+  },
+  "corridor_Q35": {
+   "encode": "dh = Q35 @ g (g in R^35)",
+   "shape": [
+    768,
+    35
+   ],
+   "orthonormal": true
+  },
+  "content_B2": {
+   "encode": "dh = B2 @ g (g in R^404)",
+   "shape": [
+    768,
+    404
+   ],
+   "orthonormal": true
+  },
+  "door_Q_union": {
+   "encode": "dh = Q_union @ c (c in R^385 door coords)",
+   "shape": [
+    768,
+    385
+   ]
+  },
+  "door_read19": {
+   "encode": "c = readW_pinv[b] @ g19 ; dh = Q_union @ c",
+   "shape": [
+    13,
+    19,
+    385
+   ],
+   "note": "read_W[b] 19<-385 summarizer right-inverse"
+  },
+  "door_Q_attn": {
+   "encode": "dh = Q_attn @ c",
+   "shape": [
+    768,
+    128
+   ]
+  },
+  "door_Q_mlp": {
+   "encode": "dh = Q_mlp @ c",
+   "shape": [
+    768,
+    240
+   ]
+  },
+  "wte": {
+   "encode": "by construction: y4(token,b)=proj_compl(wte[tok]@wteW[b]^T+wtec[b])",
+   "note": "deterministic in token"
+  },
+  "fold_O_r48": {
+   "encode": "dh = O_r48_cell @ f (per cell)",
+   "cells": [
+    "code_b10",
+    "code_b11",
+    "code_b4",
+    "code_b5",
+    "code_b6",
+    "code_b7",
+    "code_b8",
+    "code_b9",
+    "prose_b12",
+    "repetition_b10",
+    "repetition_b11",
+    "repetition_b12",
+    "repetition_b8",
+    "repetition_b9"
+   ]
+  },
+  "rung": {
+   "encode": "run forward: oh=proj_compl(rung((feats-mean)/std)) ; feats=[x2,ecur,s]",
+   "cells": [
+    "repetition_b5",
+    "repetition_b6",
+    "repetition_b7"
+   ]
+  },
+  "seam_operators": {
+   "source": "_l2babel_maps.pt (frozen)",
+   "sha": "b43f877af68728df",
+   "note": "W_regime_b [19,19]+bias -- seam-to-seam law for L4 T1 (referenced, not rebuilt)"
+  }
+ },
+ "M1": {
+  "max_roundtrip_projection": 0.0001810175454011187,
+  "H_L3_GLOSS_EXACT": "EXACT",
+  "bet_favorite_hit": true
+ },
+ "M2": {
+  "n_cells": 39,
+  "N_wp": 39,
+  "H_L3_WELLPOSED": "WELL-POSED",
+  "bet_favorite_hit": true,
+  "illposed_cells": [],
+  "replay_misses": [],
+  "legacy_pass": 36
+ },
+ "M3": {
+  "n_axes": 8,
+  "classes": {
+   "STRUCTURED-EXTRAPOLATION": 3,
+   "MANIFOLD-BOUND": 5
+  },
+  "modal_class": "MANIFOLD-BOUND",
+  "bet_favorite_hit": true
+ },
+ "encoder_pt_sha256_16": "6be189567c41e91d",
+ "source_sha256": {
+  "decoder_v7_tensors.pt": "b1d2f464c00c3ef6",
+  "_v5_floors_recal.json": "71549ae3afcc8d07",
+  "LEXICON_V3.md": "71a51619a9bb25c3",
+  "_l2babel_maps.pt": "b43f877af68728df"
+ }
+}

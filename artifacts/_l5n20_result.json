@@ -1,0 +1,224 @@
+{
+ "experiment": "L5N20 null-tightening re-draw: the L5 Arm-B +/-3sigma matched-random-edit null re-drawn at honest N=20 (byte-verbatim L6/L5 rung machinery; M3 replay of L6's null95_20_mag3 first, then M4 fresh SEED_N20 draw). NOT a new claim -- replaces the N=3 null disclosure. GPT-2 124M.",
+ "date": "2026-07-06",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'L5N20 -- NULL-TIGHTENING RE-DRAW OF THE L5 +/-3sigma MATCHED-RANDOM NULL AT N=20 -- GAP + PRE-REGISTRATION (2026-07-06 ~19:03)'",
+ "locked": {
+  "tol_replay": 0.002,
+  "tol_mag": 0.01,
+  "tol_nullreplay": 5e-05,
+  "n_null": 20,
+  "n_discard": 20,
+  "seed_oq4": 20260736,
+  "seed_n20": 20260745,
+  "banked": {
+   "GB1_AON": -0.00388,
+   "GB1_MAG3": 7.8544,
+   "L6_NULL95_20_MAG3": 0.00289,
+   "L5_NULL95_N3": 0.00993
+  },
+  "bands": "R=|A_on|/null95_20_new: BEATS R>1.1 / KNIFE-EDGE 0.9<=R<=1.1 / BELOW R<0.9 ; bet BEATS65/KNIFE20/BELOW15 ; verdicts untouched in every branch"
+ },
+ "config": {
+  "n_hold": 16,
+  "mb": 4,
+  "cap_chunk": 16,
+  "cert_block": 512,
+  "ind_seg": 64,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager",
+  "seed": 1234,
+  "smoke": false
+ },
+ "gpu_free_checks": [
+  {
+   "tag": "setup",
+   "t": 41.2,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "m3",
+   "t": 44.0,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "m4",
+   "t": 57.7,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  }
+ ],
+ "instrument_discrepancy": [],
+ "gates": {
+  "hashes": {
+   "detail": {
+    "encoder_v1": {
+     "sha": "6be189567c41e91d",
+     "locked": "6be189567c41e91d",
+     "ok": true
+    },
+    "encoder_json": {
+     "sha": "365dc3ff592fc6bd",
+     "locked": "365dc3ff592fc6bd",
+     "ok": true
+    },
+    "decoder_v7": {
+     "sha": "b1d2f464c00c3ef6",
+     "locked": "b1d2f464c00c3ef6",
+     "ok": true
+    },
+    "floors_recal": {
+     "sha": "71549ae3afcc8d07",
+     "locked": "71549ae3afcc8d07",
+     "ok": true
+    },
+    "lexicon_v3": {
+     "sha": "71a51619a9bb25c3",
+     "locked": "71a51619a9bb25c3",
+     "ok": true
+    },
+    "grammar": {
+     "sha": "da6f8a63a061782b",
+     "locked": "da6f8a63a061782b",
+     "ok": true
+    },
+    "l2babel_maps": {
+     "sha": "b43f877af68728df",
+     "locked": "b43f877af68728df",
+     "ok": true
+    },
+    "wellposedness": {
+     "sha": "ea5236cbd608a385",
+     "locked": "ea5236cbd608a385",
+     "ok": true
+    },
+    "offspan": {
+     "sha": "77dd0948a63bb24f",
+     "locked": "77dd0948a63bb24f",
+     "ok": true
+    }
+   },
+   "pass": true
+  },
+  "encoder_is_decoder_inverse": {
+   "max_abs_diff": {
+    "C": 0.0,
+    "B2": 0.0,
+    "Q35": 0.0,
+    "Q_union": 0.0,
+    "mu": 0.0,
+    "read_W": 0.0
+   },
+   "pass": true
+  },
+  "recal_ok": true,
+  "identity_inject": {
+   "detail": {
+    "repetition": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    }
+   },
+   "pass": true
+  },
+  "gb1": {
+   "A_on": -0.00387,
+   "banked_A": -0.00388,
+   "dev_A": 5e-06,
+   "mag3": 7.8544,
+   "banked_mag3": 7.8544,
+   "dev_mag": 2e-05,
+   "M_plus3": 0.94944,
+   "M_minus3": 0.95719,
+   "M_clean": 0.95686,
+   "banked_M_clean": 0.9569,
+   "pass": true
+  }
+ },
+ "m3_replay": {
+  "null95_replay": 0.00289,
+  "banked": 0.00289,
+  "dev": 0.0,
+  "n": 20,
+  "nulls": [
+   0.00073,
+   0.00259,
+   0.0,
+   0.00289,
+   0.00052,
+   0.0014,
+   0.00189,
+   0.0028,
+   0.00101,
+   0.00031,
+   0.00178,
+   0.01007,
+   0.00273,
+   0.00074,
+   0.00102,
+   0.00043,
+   0.00109,
+   0.00102,
+   0.00222,
+   5e-05
+  ],
+  "pass": true
+ },
+ "m4_fresh": {
+  "null95_20_new": 0.00587,
+  "n": 20,
+  "seed": 20260745,
+  "nulls": [
+   0.00587,
+   0.00172,
+   0.00188,
+   0.00159,
+   0.00159,
+   0.00291,
+   0.00357,
+   0.003,
+   0.00063,
+   0.00254,
+   0.00219,
+   0.0038,
+   0.00049,
+   0.0002,
+   0.00043,
+   0.00332,
+   0.00245,
+   0.00077,
+   0.00255,
+   0.0061
+  ],
+  "null_mean": 0.00238
+ },
+ "verdict": {
+  "A_on": -0.00387,
+  "abs_A_on": 0.00387,
+  "null95_20_new": 0.00587,
+  "ratio_R": 0.6593,
+  "band": "BELOW",
+  "replaced_disclosure": {
+   "L5_null95_N3": 0.00993,
+   "L6_rearm_null95_20": 0.00289
+  },
+  "binding_rule": "verdicts untouched in every branch: the rung stays steering-unusable (zero internal readouts cleared, sub-linear dose scaling); this run only replaces the N=3 null disclosure.",
+  "smoke": false
+ },
+ "status": "COMPLETE",
+ "gpt2_meta": {
+  "n_layer": 12,
+  "d": 768,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager"
+ },
+ "elapsed_s": 71.5
+}

@@ -1,0 +1,33 @@
+{
+ "version": "DECODER_V7 1.0 (2026-07-05)",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'V7 -- THE FINISH-LINE RUN (FOLD THE CODE COLUMN + THE ONSET QUESTION + DISCHARGE THE ASTERISK) -- GAP-SCAN + PRE-REGISTRATION (2026-07-05 ~22:35)'",
+ "assembly": "decoder_v6 + S9x onset rung(s) at BUS[6]/BUS[7] (certified on held-out periods) + V7 folded r48 reads",
+ "onset": {
+  "6": {
+   "rung": "L0",
+   "contract": "CTB",
+   "SACRED_kl_rep": 0.02644,
+   "twin": 0.25413,
+   "HOLD2": 0.05184
+  },
+  "7": {
+   "rung": "L0",
+   "contract": "CTB",
+   "SACRED_kl_rep": 0.06665,
+   "twin": 0.3287,
+   "HOLD2": 0.08678
+  }
+ },
+ "source_sha256": {
+  "decoder_v1_tensors.pt": "0f47849983d95f80",
+  "decoder_v3_tensors.pt": "296dcacca0102cec",
+  "decoder_v6_tensors.pt": "a2d384d29c27fb91",
+  "decoder_v6.json": "92d57bd895b4fe9f",
+  "_open1_bases.pt": "5cf6c47ea36f5a61",
+  "_open5_result.json": "416b2ab59774d11e",
+  "_v5_floors_recal.json": "71549ae3afcc8d07",
+  "_v3_result.json": "b57c38a643b5fdcc",
+  "_v6_result.json": "dcb767be66434df3"
+ }
+}

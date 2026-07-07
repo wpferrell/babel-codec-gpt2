@@ -1,0 +1,1446 @@
+{
+ "experiment": "L4 speak test (Babel Stage 4): T1 reconstruct (read->gloss->encode->substitute, 39 cells vs recal floors + byte-replay), T2 transplant (encode context-A gloss into context-B, gap-closure vs matched-random), T3 human-edit (edit named axes, confusion matrix vs matched-random edits -- the crown). Consumes FROZEN ENCODER_V1. GPT-2 124M.",
+ "date": "2026-07-06",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'L4 -- THE SPEAK TEST (BABEL STAGE 4, THE CROWN): T1 RECONSTRUCT / T2 TRANSPLANT / T3 HUMAN-EDIT -- GAP-SCAN + PRE-REGISTRATION (2026-07-06)'",
+ "locked": {
+  "tol_replay": 0.002,
+  "n_nulldir": 3,
+  "k_edit": [
+   3,
+   -3,
+   6,
+   -6
+  ],
+  "T1_bands": "COMPLETE==39 / MOSTLY 34-38 / BROKEN<34 (recal PRIMARY) ; bet COMPLETE80/MOSTLY15/BROKEN5",
+  "T2_bands": "TRANSFER(sbar-null>=0.15 & sbar>0) / WEAK(0<margin<0.15) / NULL(margin<=0 or sbar<=0) ; bet TRANSFER65/WEAK25/NULL10",
+  "T3_bands": "per-family EDIT-CONTROLS-DIRECTION iff |Mii|>null95 & diag-dominant & sign-reproducible ; N_ctrl of {naval,clause,rung}: STEERABLE>=2 / PARTIAL==1 / NULL==0 ; bet STEERABLE45/PARTIAL35/NULL20"
+ },
+ "config": {
+  "n_hold": 16,
+  "mb": 4,
+  "cap_chunk": 16,
+  "cert_block": 512,
+  "ind_seg": 64,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager",
+  "seed": 1234,
+  "smoke": false
+ },
+ "gpu_free_checks": [
+  {
+   "tag": "T1-prose",
+   "t": 29.5,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "T1-code",
+   "t": 39.2,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "T1-repetition",
+   "t": 48.9,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "T2",
+   "t": 58.7,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "T3",
+   "t": 61.4,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  }
+ ],
+ "instrument_discrepancy": [],
+ "gates": {
+  "hashes": {
+   "encoder_v1": "6be189567c41e91d",
+   "encoder_ok": true,
+   "decoder_v7": "b1d2f464c00c3ef6",
+   "decoder_v7_ok": true,
+   "floors_recal": "71549ae3afcc8d07",
+   "lexicon_v3": "71a51619a9bb25c3",
+   "l2babel_maps": "b43f877af68728df",
+   "wellposedness": "ea5236cbd608a385",
+   "offspan": "77dd0948a63bb24f",
+   "grammar": "da6f8a63a061782b"
+  },
+  "encoder_is_decoder_inverse": {
+   "max_abs_diff": {
+    "C": 0.0,
+    "B2": 0.0,
+    "Q35": 0.0,
+    "Q_union": 0.0,
+    "mu": 0.0,
+    "read_W": 0.0
+   },
+   "pass": true
+  },
+  "identity_inject": {
+   "detail": {
+    "prose": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "code": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    },
+    "repetition": {
+     "kl": 0.0,
+     "dlogit": 0.0,
+     "pass": true
+    }
+   },
+   "pass": true
+  }
+ },
+ "T1": {
+  "cells": {
+   "prose_b0": {
+    "regime": "prose",
+    "b": 0,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.0409,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.0409,
+    "wp_bank": 0.0409,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b1": {
+    "regime": "prose",
+    "b": 1,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.01897,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.01897,
+    "wp_bank": 0.01897,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b2": {
+    "regime": "prose",
+    "b": 2,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.04254,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.04254,
+    "wp_bank": 0.04254,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b3": {
+    "regime": "prose",
+    "b": 3,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.05965,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.05965,
+    "wp_bank": 0.05965,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b4": {
+    "regime": "prose",
+    "b": 4,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.08215,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.08215,
+    "wp_bank": 0.08215,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b5": {
+    "regime": "prose",
+    "b": 5,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.15219,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.15219,
+    "wp_bank": 0.15219,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b6": {
+    "regime": "prose",
+    "b": 6,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.1458,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.1458,
+    "wp_bank": 0.1458,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b7": {
+    "regime": "prose",
+    "b": 7,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.15457,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.15457,
+    "wp_bank": 0.15457,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b8": {
+    "regime": "prose",
+    "b": 8,
+    "grain": "O20",
+    "meter": "kl_all",
+    "KL": 0.12956,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.12956,
+    "wp_bank": 0.12956,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b9": {
+    "regime": "prose",
+    "b": 9,
+    "grain": "O20",
+    "meter": "kl_all",
+    "KL": 0.13617,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.13617,
+    "wp_bank": 0.13617,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b10": {
+    "regime": "prose",
+    "b": 10,
+    "grain": "O20",
+    "meter": "kl_all",
+    "KL": 0.14272,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.14272,
+    "wp_bank": 0.14272,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b11": {
+    "regime": "prose",
+    "b": 11,
+    "grain": "O20",
+    "meter": "kl_all",
+    "KL": 0.17104,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.17104,
+    "wp_bank": 0.17104,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "prose_b12": {
+    "regime": "prose",
+    "b": 12,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.16154,
+    "floor_recal": 0.1871,
+    "floor_legacy": 0.1871,
+    "v7_bank": 0.16154,
+    "wp_bank": 0.16154,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b0": {
+    "regime": "code",
+    "b": 0,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.14381,
+    "floor_recal": 0.2028,
+    "floor_legacy": 0.21775,
+    "v7_bank": 0.14381,
+    "wp_bank": 0.14381,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b1": {
+    "regime": "code",
+    "b": 1,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.05163,
+    "floor_recal": 0.19608,
+    "floor_legacy": 0.2236,
+    "v7_bank": 0.05163,
+    "wp_bank": 0.05163,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b2": {
+    "regime": "code",
+    "b": 2,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.18135,
+    "floor_recal": 0.23189,
+    "floor_legacy": 0.24188,
+    "v7_bank": 0.18135,
+    "wp_bank": 0.18135,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b3": {
+    "regime": "code",
+    "b": 3,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.21491,
+    "floor_recal": 0.21896,
+    "floor_legacy": 0.22101,
+    "v7_bank": 0.21491,
+    "wp_bank": 0.21491,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b4": {
+    "regime": "code",
+    "b": 4,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.11022,
+    "floor_recal": 0.19147,
+    "floor_legacy": 0.19473,
+    "v7_bank": 0.11022,
+    "wp_bank": 0.11022,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b5": {
+    "regime": "code",
+    "b": 5,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.18337,
+    "floor_recal": 0.19248,
+    "floor_legacy": 0.19684,
+    "v7_bank": 0.18337,
+    "wp_bank": 0.18337,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b6": {
+    "regime": "code",
+    "b": 6,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.14173,
+    "floor_recal": 0.18318,
+    "floor_legacy": 0.18646,
+    "v7_bank": 0.14173,
+    "wp_bank": 0.14173,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b7": {
+    "regime": "code",
+    "b": 7,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.16482,
+    "floor_recal": 0.19562,
+    "floor_legacy": 0.19793,
+    "v7_bank": 0.16482,
+    "wp_bank": 0.16482,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b8": {
+    "regime": "code",
+    "b": 8,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.1265,
+    "floor_recal": 0.17447,
+    "floor_legacy": 0.17497,
+    "v7_bank": 0.1265,
+    "wp_bank": 0.1265,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b9": {
+    "regime": "code",
+    "b": 9,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.13721,
+    "floor_recal": 0.15841,
+    "floor_legacy": 0.15937,
+    "v7_bank": 0.13721,
+    "wp_bank": 0.13721,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b10": {
+    "regime": "code",
+    "b": 10,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.10378,
+    "floor_recal": 0.14893,
+    "floor_legacy": 0.15106,
+    "v7_bank": 0.10378,
+    "wp_bank": 0.10378,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b11": {
+    "regime": "code",
+    "b": 11,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.12115,
+    "floor_recal": 0.13891,
+    "floor_legacy": 0.1388,
+    "v7_bank": 0.12115,
+    "wp_bank": 0.12115,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "code_b12": {
+    "regime": "code",
+    "b": 12,
+    "grain": "O20",
+    "meter": "kl_all",
+    "KL": 0.27013,
+    "floor_recal": 0.35895,
+    "floor_legacy": 0.13981,
+    "v7_bank": 0.27013,
+    "wp_bank": 0.27013,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": false
+   },
+   "repetition_b0": {
+    "regime": "repetition",
+    "b": 0,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.07134,
+    "floor_recal": 2.15955,
+    "floor_legacy": 1.20131,
+    "v7_bank": 0.07134,
+    "wp_bank": 0.07134,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b1": {
+    "regime": "repetition",
+    "b": 1,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.02593,
+    "floor_recal": 0.47028,
+    "floor_legacy": 0.13455,
+    "v7_bank": 0.02593,
+    "wp_bank": 0.02593,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b2": {
+    "regime": "repetition",
+    "b": 2,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.05833,
+    "floor_recal": 0.27311,
+    "floor_legacy": 0.16051,
+    "v7_bank": 0.05833,
+    "wp_bank": 0.05833,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b3": {
+    "regime": "repetition",
+    "b": 3,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.13267,
+    "floor_recal": 0.55145,
+    "floor_legacy": 0.51223,
+    "v7_bank": 0.13267,
+    "wp_bank": 0.13267,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b4": {
+    "regime": "repetition",
+    "b": 4,
+    "grain": "named",
+    "meter": "kl_all",
+    "KL": 0.36646,
+    "floor_recal": 0.44984,
+    "floor_legacy": 0.41945,
+    "v7_bank": 0.36646,
+    "wp_bank": 0.36646,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b5": {
+    "regime": "repetition",
+    "b": 5,
+    "grain": "rung",
+    "meter": "kl_rep",
+    "KL": 0.11172,
+    "floor_recal": 0.1279,
+    "floor_legacy": 0.12231,
+    "v7_bank": 0.11172,
+    "wp_bank": 0.11172,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b6": {
+    "regime": "repetition",
+    "b": 6,
+    "grain": "rung",
+    "meter": "kl_rep",
+    "KL": 0.02644,
+    "floor_recal": 0.08057,
+    "floor_legacy": 0.07765,
+    "v7_bank": 0.02644,
+    "wp_bank": 0.02644,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b7": {
+    "regime": "repetition",
+    "b": 7,
+    "grain": "rung",
+    "meter": "kl_rep",
+    "KL": 0.06665,
+    "floor_recal": 0.10724,
+    "floor_legacy": 0.0997,
+    "v7_bank": 0.06665,
+    "wp_bank": 0.06665,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b8": {
+    "regime": "repetition",
+    "b": 8,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.04536,
+    "floor_recal": 0.1093,
+    "floor_legacy": 0.08828,
+    "v7_bank": 0.04536,
+    "wp_bank": 0.04536,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b9": {
+    "regime": "repetition",
+    "b": 9,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.05499,
+    "floor_recal": 0.14426,
+    "floor_legacy": 0.11206,
+    "v7_bank": 0.05499,
+    "wp_bank": 0.05499,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b10": {
+    "regime": "repetition",
+    "b": 10,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.07573,
+    "floor_recal": 0.16938,
+    "floor_legacy": 0.11632,
+    "v7_bank": 0.07573,
+    "wp_bank": 0.07573,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": true
+   },
+   "repetition_b11": {
+    "regime": "repetition",
+    "b": 11,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.13158,
+    "floor_recal": 0.13766,
+    "floor_legacy": 0.08944,
+    "v7_bank": 0.13158,
+    "wp_bank": 0.13158,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": false
+   },
+   "repetition_b12": {
+    "regime": "repetition",
+    "b": 12,
+    "grain": "r48",
+    "meter": "kl_all",
+    "KL": 0.18155,
+    "floor_recal": 0.1935,
+    "floor_legacy": 0.07056,
+    "v7_bank": 0.18155,
+    "wp_bank": 0.18155,
+    "replay_d": 0.0,
+    "wp_replay_d": 0.0,
+    "replay_ok": true,
+    "identity_pass": true,
+    "reconstruct_ok": true,
+    "legacy_pass": false
+   }
+  },
+  "demos": [
+   {
+    "cell": "prose_b6",
+    "regime": "prose",
+    "b": 6,
+    "block": 7,
+    "pos": 304,
+    "current_token": " front",
+    "narration_named_fields": [
+     {
+      "field": 8,
+      "name": "harm/casualty",
+      "z": -1.88
+     },
+     {
+      "field": 14,
+      "name": "comma-boundary",
+      "z": 1.65
+     },
+     {
+      "field": 10,
+      "name": "punctuation-boundary",
+      "z": 1.44
+     },
+     {
+      "field": 11,
+      "name": "coastal-storm/geography",
+      "z": 1.43
+     }
+    ],
+    "narration_top_corridor": [
+     {
+      "corr_j": 34,
+      "z": -1.63
+     },
+     {
+      "corr_j": 32,
+      "z": 1.43
+     },
+     {
+      "corr_j": 2,
+      "z": -1.36
+     }
+    ],
+    "content_image_top_tokens": [
+     " tide",
+     "side",
+     " sidew",
+     " runner",
+     " circumference",
+     " angle",
+     " flank",
+     " fronts"
+    ],
+    "reconstruct_KL": 0.1458,
+    "recal_floor": 0.1871,
+    "inside_floor": true
+   },
+   {
+    "cell": "prose_b6",
+    "regime": "prose",
+    "b": 6,
+    "block": 3,
+    "pos": 202,
+    "current_token": " km",
+    "narration_named_fields": [
+     {
+      "field": 15,
+      "name": "mixed-measurement",
+      "z": 3.25
+     },
+     {
+      "field": 5,
+      "name": "clause-final/physical-process",
+      "z": 2.49
+     },
+     {
+      "field": 3,
+      "name": "L0-magnitude/anomalous",
+      "z": -1.88
+     },
+     {
+      "field": 12,
+      "name": "local-relation/admin",
+      "z": 1.87
+     }
+    ],
+    "narration_top_corridor": [
+     {
+      "corr_j": 34,
+      "z": 3.08
+     },
+     {
+      "corr_j": 32,
+      "z": -2.7
+     },
+     {
+      "corr_j": 27,
+      "z": -2.16
+     }
+    ],
+    "content_image_top_tokens": [
+     " apiece",
+     ".):",
+     ".).",
+     " increments",
+     " km",
+     "+)",
+     " pist",
+     " kilometres"
+    ],
+    "reconstruct_KL": 0.1458,
+    "recal_floor": 0.1871,
+    "inside_floor": true
+   },
+   {
+    "cell": "code_b9",
+    "regime": "code",
+    "b": 9,
+    "block": 5,
+    "pos": 321,
+    "current_token": " char",
+    "narration_named_fields": [
+     {
+      "field": 18,
+      "name": "@-formatting",
+      "z": 2.87
+     },
+     {
+      "field": 13,
+      "name": "quotation/boundary",
+      "z": -2.72
+     },
+     {
+      "field": 3,
+      "name": "L0-magnitude/anomalous",
+      "z": -2.44
+     },
+     {
+      "field": 0,
+      "name": "naval/warship",
+      "z": -1.94
+     }
+    ],
+    "narration_top_corridor": [
+     {
+      "corr_j": 24,
+      "z": 3.38
+     },
+     {
+      "corr_j": 25,
+      "z": -3.35
+     },
+     {
+      "corr_j": 19,
+      "z": 1.96
+     }
+    ],
+    "content_image_top_tokens": [
+     ")]",
+     "]}",
+     "]'",
+     "width",
+     ">]",
+     ">,",
+     ")'",
+     "])"
+    ],
+    "reconstruct_KL": 0.13721,
+    "recal_floor": 0.15841,
+    "inside_floor": true
+   },
+   {
+    "cell": "repetition_b6",
+    "regime": "repetition",
+    "b": 6,
+    "block": 9,
+    "pos": 405,
+    "current_token": " Vill",
+    "narration_named_fields": [
+     {
+      "field": 7,
+      "name": "formula/markup-symbol",
+      "z": 3.62
+     },
+     {
+      "field": 6,
+      "name": "epistemic-negative",
+      "z": 2.76
+     },
+     {
+      "field": 5,
+      "name": "clause-final/physical-process",
+      "z": -2.57
+     },
+     {
+      "field": 15,
+      "name": "mixed-measurement",
+      "z": 2.3
+     }
+    ],
+    "narration_top_corridor": [
+     {
+      "corr_j": 31,
+      "z": -2.38
+     },
+     {
+      "corr_j": 30,
+      "z": 2.17
+     },
+     {
+      "corr_j": 24,
+      "z": 1.97
+     }
+    ],
+    "content_image_top_tokens": [
+     "ouri",
+     "isexual",
+     "iage",
+     "abulary",
+     "age",
+     "ager",
+     "ain",
+     "athom"
+    ],
+    "reconstruct_KL": 0.02644,
+    "recal_floor": 0.08057,
+    "inside_floor": true
+   },
+   {
+    "cell": "prose_b12",
+    "regime": "prose",
+    "b": 12,
+    "block": 4,
+    "pos": 474,
+    "current_token": "-",
+    "narration_named_fields": [
+     {
+      "field": 16,
+      "name": "spatial-preposition/@",
+      "z": 4.51
+     },
+     {
+      "field": 17,
+      "name": "hyphen/@-format",
+      "z": -3.77
+     },
+     {
+      "field": 6,
+      "name": "epistemic-negative",
+      "z": -3.71
+     },
+     {
+      "field": 15,
+      "name": "mixed-measurement",
+      "z": 3.66
+     }
+    ],
+    "narration_top_corridor": [
+     {
+      "corr_j": 2,
+      "z": 4.68
+     },
+     {
+      "corr_j": 33,
+      "z": 4.07
+     },
+     {
+      "corr_j": 9,
+      "z": -4.01
+     }
+    ],
+    "content_image_top_tokens": [
+     "$.",
+     "\ufffd\u9192",
+     "@@@@",
+     "@@",
+     " teasp",
+     "=-=-=-=-",
+     "@@@@@@@@",
+     "@#"
+    ],
+    "reconstruct_KL": 0.16154,
+    "recal_floor": 0.1871,
+    "inside_floor": true
+   }
+  ],
+  "rollup": {
+   "n_cells": 39,
+   "N_rec": 39,
+   "verdict": "RECONSTRUCT-COMPLETE",
+   "broken_cells": [],
+   "replay_misses": [],
+   "legacy_pass": 36,
+   "PASS": true
+  }
+ },
+ "T2": {
+  "done": true,
+  "b": 6,
+  "regime": "prose",
+  "n_pairs": 16,
+  "sbar": 0.9467,
+  "sbar_null": 0.186,
+  "margin": 0.7607,
+  "se": 0.001,
+  "verdict": "TRANSFER",
+  "PASS": true,
+  "per_pair": [
+   {
+    "A": 0,
+    "B": 1,
+    "s": 0.9483,
+    "s_null": 0.197
+   },
+   {
+    "A": 1,
+    "B": 2,
+    "s": 0.9465,
+    "s_null": 0.1757
+   },
+   {
+    "A": 2,
+    "B": 3,
+    "s": 0.9428,
+    "s_null": 0.1877
+   },
+   {
+    "A": 3,
+    "B": 4,
+    "s": 0.9479,
+    "s_null": 0.1862
+   },
+   {
+    "A": 4,
+    "B": 5,
+    "s": 0.9492,
+    "s_null": 0.2085
+   },
+   {
+    "A": 5,
+    "B": 6,
+    "s": 0.9424,
+    "s_null": 0.1944
+   },
+   {
+    "A": 6,
+    "B": 7,
+    "s": 0.9491,
+    "s_null": 0.189
+   },
+   {
+    "A": 7,
+    "B": 8,
+    "s": 0.9441,
+    "s_null": 0.1732
+   },
+   {
+    "A": 8,
+    "B": 9,
+    "s": 0.9397,
+    "s_null": 0.1807
+   },
+   {
+    "A": 9,
+    "B": 10,
+    "s": 0.9527,
+    "s_null": 0.189
+   },
+   {
+    "A": 10,
+    "B": 11,
+    "s": 0.9527,
+    "s_null": 0.1764
+   },
+   {
+    "A": 11,
+    "B": 12,
+    "s": 0.9503,
+    "s_null": 0.1807
+   },
+   {
+    "A": 12,
+    "B": 13,
+    "s": 0.9414,
+    "s_null": 0.1749
+   },
+   {
+    "A": 13,
+    "B": 14,
+    "s": 0.946,
+    "s_null": 0.1985
+   },
+   {
+    "A": 14,
+    "B": 15,
+    "s": 0.9505,
+    "s_null": 0.1813
+   },
+   {
+    "A": 15,
+    "B": 0,
+    "s": 0.9443,
+    "s_null": 0.1833
+   }
+  ],
+  "demo": {
+   "A": 9,
+   "B": 10,
+   "s": 0.9527,
+   "pos": 511,
+   "A_context_tail": " , the men looked down on the Battle of Yongsan which was",
+   "B_context_tail": ". Ouellette , of H Company , left the perimeter to",
+   "B_clean_top5": [
+    " take",
+    " join",
+    " assist",
+    " help",
+    " return"
+   ],
+   "A_clean_top5": [
+    " taking",
+    " being",
+    " still",
+    " over",
+    " a"
+   ],
+   "B_with_A_gloss_top5": [
+    " a",
+    " the",
+    " about",
+    " held",
+    " being"
+   ]
+  }
+ },
+ "T3": {
+  "confusion": {},
+  "families": {
+   "naval": {
+    "role": "required",
+    "b": 6,
+    "regime": "prose",
+    "sigma": 8.5292,
+    "M_row": {
+     "naval": 2.8385,
+     "clause": -0.685,
+     "operator": 0.0297,
+     "symbol": -0.3649,
+     "rung": -0.2512
+    },
+    "M6_row": {
+     "naval": 5.6912,
+     "clause": -1.4176,
+     "operator": 0.2963,
+     "symbol": -0.3118,
+     "rung": -0.5451
+    },
+    "own_readout": "naval",
+    "Mii": 2.8385,
+    "null95": 0.532,
+    "diag_dominant": true,
+    "beats_null": true,
+    "sign_reproducible": true,
+    "EDIT_CONTROLS_DIRECTION": true,
+    "edit_sign_shown": 3,
+    "tokens_risen": [
+     " amphib",
+     " sunk",
+     " ashore",
+     " reefs",
+     "ushima",
+     " Battles",
+     " sailed",
+     " submarine"
+    ],
+    "tokens_fell": [
+     "!]",
+     "\"\u2014",
+     "\u2026)",
+     "\"/>",
+     "\u2026.\"",
+     ":]",
+     "\");",
+     " palp"
+    ]
+   },
+   "clause": {
+    "role": "required",
+    "b": 2,
+    "regime": "prose",
+    "sigma": 4.0256,
+    "M_row": {
+     "naval": 0.0822,
+     "clause": 0.5424,
+     "operator": 0.1429,
+     "symbol": -0.037,
+     "rung": 0.093
+    },
+    "M6_row": {
+     "naval": 0.2882,
+     "clause": 1.3138,
+     "operator": 0.2347,
+     "symbol": -0.0624,
+     "rung": 0.2271
+    },
+    "own_readout": "clause",
+    "Mii": 0.5424,
+    "null95": 0.1158,
+    "diag_dominant": true,
+    "beats_null": true,
+    "sign_reproducible": true,
+    "EDIT_CONTROLS_DIRECTION": true,
+    "edit_sign_shown": 3,
+    "tokens_risen": [
+     " Bastard",
+     " glim",
+     " \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0",
+     "CT",
+     "ifled",
+     "rentices",
+     "ocene",
+     "displayText"
+    ],
+    "tokens_fell": [
+     " Netanyahu",
+     " Zel",
+     ".<",
+     " Kirby",
+     " Petr",
+     " Nether",
+     " Reno",
+     " Yuri"
+    ]
+   },
+   "rung": {
+    "role": "required",
+    "b": 6,
+    "regime": "repetition",
+    "sigma": 4.8541,
+    "M_row": {
+     "naval": -0.322,
+     "clause": -0.0094,
+     "operator": 0.0876,
+     "symbol": 0.1503,
+     "rung": -0.1037
+    },
+    "M6_row": {
+     "naval": -0.6671,
+     "clause": -0.0273,
+     "operator": 0.1924,
+     "symbol": 0.3147,
+     "rung": -0.2002
+    },
+    "own_readout": "rung",
+    "Mii": -0.1037,
+    "null95": 0.0878,
+    "diag_dominant": false,
+    "beats_null": true,
+    "sign_reproducible": true,
+    "EDIT_CONTROLS_DIRECTION": false,
+    "edit_sign_shown": -3,
+    "tokens_risen": [
+     "chini",
+     "ression",
+     "prising",
+     "rupal",
+     " celebration",
+     "bishop",
+     "omas",
+     "prise"
+    ],
+    "tokens_fell": [
+     "Ability",
+     "Pokemon",
+     " Kazakh",
+     "\u0627",
+     " Dust",
+     " Glac",
+     " \u00dc",
+     " Attribution"
+    ]
+   },
+   "operator": {
+    "role": "control-manifold-bound",
+    "b": 5,
+    "regime": "code",
+    "sigma": 2.4676,
+    "M_row": {
+     "naval": -0.1614,
+     "clause": -0.0255,
+     "operator": 0.5769,
+     "symbol": -0.1099,
+     "rung": -0.0381
+    },
+    "M6_row": {
+     "naval": -0.2964,
+     "clause": -0.0344,
+     "operator": 1.1467,
+     "symbol": -0.2125,
+     "rung": -0.0731
+    },
+    "own_readout": "operator",
+    "Mii": 0.5769,
+    "null95": 0.0111,
+    "diag_dominant": true,
+    "beats_null": true,
+    "sign_reproducible": true,
+    "EDIT_CONTROLS_DIRECTION": true,
+    "edit_sign_shown": 3,
+    "tokens_risen": [
+     "ailability",
+     "eatures",
+     "orsche",
+     "\ufffd\ufffd\u6975",
+     ">>>",
+     "atever",
+     "\ufffd\u58eb",
+     "dinand"
+    ],
+    "tokens_fell": [
+     " mint",
+     "EStreamFrame",
+     " Dodgers",
+     "Tx",
+     " Astros",
+     " TX",
+     "Arcade",
+     " betting"
+    ]
+   }
+  },
+  "readout_columns": [
+   "naval",
+   "clause",
+   "operator",
+   "symbol",
+   "rung"
+  ],
+  "rollup": {
+   "required": [
+    "naval",
+    "clause",
+    "rung"
+   ],
+   "measurable": [
+    "naval",
+    "clause",
+    "rung"
+   ],
+   "N_ctrl": 2,
+   "verdict": "CROWN-STEERABLE",
+   "control_operator_controls": true,
+   "PASS": false
+  },
+  "done": true
+ },
+ "status": "COMPLETE",
+ "elapsed_s": 74.9,
+ "gpt2_meta": {
+  "n_layer": 12,
+  "d": 768,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager"
+ }
+}

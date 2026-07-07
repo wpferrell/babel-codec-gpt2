@@ -1,0 +1,391 @@
+{
+ "frozen": true,
+ "instrument": "off-span extrapolation, sigma-matched nulls",
+ "rollup": {
+  "n_axes": 8,
+  "classes": {
+   "STRUCTURED-EXTRAPOLATION": 3,
+   "MANIFOLD-BOUND": 5
+  },
+  "modal_class": "MANIFOLD-BOUND",
+  "bet_favorite_hit": true
+ },
+ "axes": {
+  "core_dim0_naval": {
+   "name": "core dim0 naval/warship",
+   "b": 6,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 0.30457,
+     "kl_null": 0.28301,
+     "R": 1.0762,
+     "mag": 25.5875
+    },
+    "5": {
+     "kl_axis": 0.8109,
+     "kl_null": 0.89075,
+     "R": 0.9104,
+     "mag": 42.6459
+    },
+    "10": {
+     "kl_axis": 2.49448,
+     "kl_null": 3.10708,
+     "R": 0.8028,
+     "mag": 85.2918
+    },
+    "-3": {
+     "kl_axis": 0.79346,
+     "kl_null": 0.28301,
+     "R": 2.8036,
+     "mag": 25.5875
+    },
+    "-5": {
+     "kl_axis": 2.30024,
+     "kl_null": 0.89075,
+     "R": 2.5824,
+     "mag": 42.6459
+    },
+    "-10": {
+     "kl_axis": 7.30231,
+     "kl_null": 3.10708,
+     "R": 2.3502,
+     "mag": 85.2918
+    }
+   },
+   "R_k10": 1.5765,
+   "pos_monotone": true,
+   "class": "STRUCTURED-EXTRAPOLATION"
+  },
+  "core_dim2_symbol": {
+   "name": "core dim2 special-symbol<->temporal",
+   "b": 6,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 0.2696,
+     "kl_null": 0.15825,
+     "R": 1.7036,
+     "mag": 18.677
+    },
+    "5": {
+     "kl_axis": 0.68424,
+     "kl_null": 0.49988,
+     "R": 1.3688,
+     "mag": 31.1284
+    },
+    "10": {
+     "kl_axis": 2.33919,
+     "kl_null": 2.28559,
+     "R": 1.0235,
+     "mag": 62.2567
+    },
+    "-3": {
+     "kl_axis": 0.23759,
+     "kl_null": 0.15825,
+     "R": 1.5013,
+     "mag": 18.677
+    },
+    "-5": {
+     "kl_axis": 0.74145,
+     "kl_null": 0.49988,
+     "R": 1.4832,
+     "mag": 31.1284
+    },
+    "-10": {
+     "kl_axis": 3.51212,
+     "kl_null": 2.28559,
+     "R": 1.5366,
+     "mag": 62.2567
+    }
+   },
+   "R_k10": 1.2801,
+   "pos_monotone": true,
+   "class": "MANIFOLD-BOUND"
+  },
+  "corr_j4_clause": {
+   "name": "corr_j4 clause/delimiter-boundary (b2_d4)",
+   "b": 2,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 0.05643,
+     "kl_null": 0.07658,
+     "R": 0.7369,
+     "mag": 12.0767
+    },
+    "5": {
+     "kl_axis": 0.207,
+     "kl_null": 0.30581,
+     "R": 0.6769,
+     "mag": 20.1278
+    },
+    "10": {
+     "kl_axis": 3.27278,
+     "kl_null": 1.92544,
+     "R": 1.6998,
+     "mag": 40.2555
+    },
+    "-3": {
+     "kl_axis": 0.09598,
+     "kl_null": 0.07658,
+     "R": 1.2533,
+     "mag": 12.0767
+    },
+    "-5": {
+     "kl_axis": 0.38225,
+     "kl_null": 0.30581,
+     "R": 1.25,
+     "mag": 20.1278
+    },
+    "-10": {
+     "kl_axis": 2.57219,
+     "kl_null": 1.92544,
+     "R": 1.3359,
+     "mag": 40.2555
+    }
+   },
+   "R_k10": 1.5179,
+   "pos_monotone": true,
+   "class": "STRUCTURED-EXTRAPOLATION"
+  },
+  "corr_j17_operator": {
+   "name": "corr_j17 operator/keyword-anchor (b5_d5)",
+   "b": 5,
+   "regime": "code",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 0.01643,
+     "kl_null": 0.01998,
+     "R": 0.8222,
+     "mag": 7.4028
+    },
+    "5": {
+     "kl_axis": 0.04706,
+     "kl_null": 0.05564,
+     "R": 0.8458,
+     "mag": 12.3381
+    },
+    "10": {
+     "kl_axis": 0.21518,
+     "kl_null": 0.24373,
+     "R": 0.8829,
+     "mag": 24.6761
+    },
+    "-3": {
+     "kl_axis": 0.01652,
+     "kl_null": 0.01998,
+     "R": 0.8266,
+     "mag": 7.4028
+    },
+    "-5": {
+     "kl_axis": 0.04662,
+     "kl_null": 0.05564,
+     "R": 0.8379,
+     "mag": 12.3381
+    },
+    "-10": {
+     "kl_axis": 0.2033,
+     "kl_null": 0.24373,
+     "R": 0.8341,
+     "mag": 24.6761
+    }
+   },
+   "R_k10": 0.8585,
+   "pos_monotone": true,
+   "class": "MANIFOLD-BOUND"
+  },
+  "door_qattn_top": {
+   "name": "door Q_attn top-variance",
+   "b": 6,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 1.73179,
+     "kl_null": 1.89534,
+     "R": 0.9137,
+     "mag": 62.4997
+    },
+    "5": {
+     "kl_axis": 3.17346,
+     "kl_null": 3.67579,
+     "R": 0.8633,
+     "mag": 104.1661
+    },
+    "10": {
+     "kl_axis": 4.57648,
+     "kl_null": 5.52113,
+     "R": 0.8289,
+     "mag": 208.3323
+    },
+    "-3": {
+     "kl_axis": 4.59411,
+     "kl_null": 1.89534,
+     "R": 2.4239,
+     "mag": 62.4997
+    },
+    "-5": {
+     "kl_axis": 6.71601,
+     "kl_null": 3.67579,
+     "R": 1.8271,
+     "mag": 104.1661
+    },
+    "-10": {
+     "kl_axis": 9.02873,
+     "kl_null": 5.52113,
+     "R": 1.6353,
+     "mag": 208.3323
+    }
+   },
+   "R_k10": 1.2321,
+   "pos_monotone": true,
+   "class": "MANIFOLD-BOUND"
+  },
+  "fold_b12_d45_corp": {
+   "name": "fold O_r48_b12_d45 corporate-name-tail",
+   "b": 12,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 0.046,
+     "kl_null": 0.05087,
+     "R": 0.9042,
+     "mag": 52.5668
+    },
+    "5": {
+     "kl_axis": 0.12855,
+     "kl_null": 0.14129,
+     "R": 0.9099,
+     "mag": 87.6113
+    },
+    "10": {
+     "kl_axis": 0.52134,
+     "kl_null": 0.56523,
+     "R": 0.9224,
+     "mag": 175.2225
+    },
+    "-3": {
+     "kl_axis": 0.04553,
+     "kl_null": 0.05087,
+     "R": 0.895,
+     "mag": 52.5668
+    },
+    "-5": {
+     "kl_axis": 0.12628,
+     "kl_null": 0.14129,
+     "R": 0.8938,
+     "mag": 87.6113
+    },
+    "-10": {
+     "kl_axis": 0.50036,
+     "kl_null": 0.56523,
+     "R": 0.8852,
+     "mag": 175.2225
+    }
+   },
+   "R_k10": 0.9038,
+   "pos_monotone": true,
+   "class": "MANIFOLD-BOUND"
+  },
+  "rung_repb6_onset": {
+   "name": "rep_b6 onset rung input push (run forward)",
+   "b": 6,
+   "regime": "repetition",
+   "kind": "rung",
+   "rows": {
+    "3": {
+     "kl_axis": 0.00554,
+     "kl_null": 0.00295,
+     "R": 1.8761,
+     "mag": 7.8544
+    },
+    "5": {
+     "kl_axis": 0.01657,
+     "kl_null": 0.00832,
+     "R": 1.9904,
+     "mag": 13.0906
+    },
+    "10": {
+     "kl_axis": 0.12898,
+     "kl_null": 0.05016,
+     "R": 2.5715,
+     "mag": 26.1813
+    },
+    "-3": {
+     "kl_axis": 0.00433,
+     "kl_null": 0.00295,
+     "R": 1.4638,
+     "mag": 7.8544
+    },
+    "-5": {
+     "kl_axis": 0.011,
+     "kl_null": 0.00832,
+     "R": 1.321,
+     "mag": 13.0906
+    },
+    "-10": {
+     "kl_axis": 0.0665,
+     "kl_null": 0.05016,
+     "R": 1.3258,
+     "mag": 26.1813
+    }
+   },
+   "R_k10": 1.9486,
+   "pos_monotone": true,
+   "class": "STRUCTURED-EXTRAPOLATION"
+  },
+  "glitch_j0_DEAF": {
+   "name": "glitch axis b2_d0 (LEXICON DEAF control)",
+   "b": 2,
+   "regime": "prose",
+   "kind": "proj",
+   "rows": {
+    "3": {
+     "kl_axis": 5.62224,
+     "kl_null": 4.51205,
+     "R": 1.246,
+     "mag": 72.6278
+    },
+    "5": {
+     "kl_axis": 6.05432,
+     "kl_null": 5.07791,
+     "R": 1.1923,
+     "mag": 121.0463
+    },
+    "10": {
+     "kl_axis": 6.48553,
+     "kl_null": 5.53288,
+     "R": 1.1722,
+     "mag": 242.0927
+    },
+    "-3": {
+     "kl_axis": 3.43407,
+     "kl_null": 4.51205,
+     "R": 0.7611,
+     "mag": 72.6278
+    },
+    "-5": {
+     "kl_axis": 3.5406,
+     "kl_null": 5.07791,
+     "R": 0.6973,
+     "mag": 121.0463
+    },
+    "-10": {
+     "kl_axis": 4.02416,
+     "kl_null": 5.53288,
+     "R": 0.7273,
+     "mag": 242.0927
+    }
+   },
+   "R_k10": 0.9497,
+   "pos_monotone": true,
+   "class": "MANIFOLD-BOUND"
+  }
+ }
+}

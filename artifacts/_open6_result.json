@@ -1,0 +1,6295 @@
+{
+ "experiment": "OPEN-6 DECODER_V1 + verdict: structured substitution ladder (S0 mean/S1 core/S2 doors/S2w +wte/S3 +corridor35/S4 +corridor+wte) at 13 boundaries x 3 regimes vs the OPEN-5 J1 per-(boundary,regime) floor; V1 assembly; A3 live narrated generation w/ 3 pre-reg predictions",
+ "date": "2026-07-05",
+ "propose_only": true,
+ "pre_registration": "FINDINGS_PEN_CONSTRUCTIVE_2026-06-28.md :: 'OPEN-6 -- DECODER_V1 + THE VERDICT (campaign stage 6/6) -- PRE-REGISTRATION (2026-07-05 ~02:35)'",
+ "locked": {
+  "floors_source": "_open5_result.json::J1.floors (full precision; prose=0.1871)",
+  "H_OPEN6_a": "OPEN iff 39/39 KL_S2w<=floor; OPEN-AT-GRAIN iff 39/39 KL_S4<=floor (35 unnamed dims/boundary<=64); else NOT-YET + gap table (escalation rule binding)",
+  "H_OPEN6_b": "g_room=mean over rooms{2,5,3,4,6} of mean_r (KL_S2-KL_S4)/KL_S2: CLOSES>=0.90/PARTIAL 0.50-0.90/WEAK<0.50",
+  "H_OPEN6_P1": "n_correct of 3: PASS 3/PARTIAL 2/FAIL<=1",
+  "H_OPEN6_P2": "median R2 (9 starts x 19 fields, F3-chain d4, P_A steps): HOLDS>=0.597/PARTIAL 0.35-0.597/FAILS<0.35",
+  "H_OPEN6_P3": "dim-8 snap contrast on generated P_A: PREDICTED-SIG C>0&|C|>=2SE/SIGN-ONLY/WRONG",
+  "bets": {
+   "H_a": "HONEST NOT-YET 65/OPEN-AT-GRAIN 25/OPEN 10; A4-shifted formal OPEN-AT-GRAIN 45/NOT-YET 40/OPEN 15",
+   "H_b": "HONEST PARTIAL 55/WEAK 25/CLOSES 20; A4-shifted formal CLOSES 40/PARTIAL 40/WEAK 20",
+   "P1": "PASS 55/PARTIAL 35/FAIL 10",
+   "P2": "HONEST PARTIAL 45/HOLDS 35/FAILS 20; shifted HOLDS 45",
+   "P3": "PREDICTED-SIG 70/SIGN-ONLY 20/WRONG 10"
+  }
+ },
+ "config": {
+  "n_hold": 16,
+  "n_stand_fit": 64,
+  "mb": 4,
+  "cap_chunk": 16,
+  "fresh_window": [
+   24576,
+   32768
+  ],
+  "rep_seed": 3,
+  "ridge_rel": 0.001,
+  "gen_steps": 48,
+  "p3_npos": 8,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager",
+  "seed": 1234,
+  "smoke": false
+ },
+ "gpu_free_checks": [
+  {
+   "tag": "anchor-gate",
+   "t": 32.5,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "G3-gate",
+   "t": 36.4,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "A1-wte-fit",
+   "t": 42.7,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "ladder-prose",
+   "t": 46.2,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "ladder-code",
+   "t": 89.0,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "ladder-repetition",
+   "t": 132.8,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "A3-P_A",
+   "t": 176.3,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "A3-P_B",
+   "t": 179.6,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  },
+  {
+   "tag": "A3-P_C",
+   "t": 181.3,
+   "foreign": [],
+   "waited_s": 0,
+   "clear": true
+  }
+ ],
+ "instrument_discrepancy": [],
+ "gates": {
+  "M0a": {
+   "content_match": {
+    "C_vs_t15": 0.0,
+    "Qu_vs_t10": 0.0,
+    "WF1_vs_hopW": 0.0
+   },
+   "core_orth": 1.1155733545820112e-06,
+   "B2_orth": 8.6772279246361e-06,
+   "corridor_recompute_match": true,
+   "Q35_orth": 1.2275759218027815e-06,
+   "maxB2tQ35": 3.1245508580468595e-07,
+   "floors_match_frozen": true,
+   "n_corridor": 35,
+   "pass": true
+  },
+  "M0b": {
+   "r2med": 0.8627,
+   "lin": 0.02536,
+   "copy": 0.12538,
+   "abl": 0.19071,
+   "identity_kl": 0.0,
+   "identity_dlogit": 0.0,
+   "pass": true,
+   "targets": {
+    "r2med": 0.8627,
+    "lin": 0.02536,
+    "copy": 0.12538,
+    "abl": 0.19071
+   }
+  },
+  "M0c": {
+   "dim8_prose_C": 0.22181,
+   "target_C": 0.22181,
+   "z": 4.13143,
+   "host_kl": 0.62048,
+   "base_det_max": 0.0,
+   "pass": true
+  }
+ },
+ "fits": {
+  "done": true,
+  "lam": 9.895205355936983e-06,
+  "n_tok": 32768,
+  "n_stand_blocks": 64
+ },
+ "cells": {
+  "prose_b0": {
+   "KL": {
+    "S0": 13.021236419677734,
+    "S1": 8.993215799331665,
+    "S2": 0.30564504116773605,
+    "S2w": 0.04472310561686754,
+    "S3": 0.20682187005877495,
+    "S4": 0.04089767672121525
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0037,
+    "S1": 0.0677,
+    "S2": 0.6137,
+    "S2w": 0.7863,
+    "S3": 0.6578,
+    "S4": 0.808
+   },
+   "m0e_proj_resid": 6.444752216339111e-07,
+   "floor": 0.1871,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b1": {
+   "KL": {
+    "S0": 12.39432430267334,
+    "S1": 8.301303029060364,
+    "S2": 0.5033566653728485,
+    "S2w": 0.057155879214406013,
+    "S3": 0.11917704716324806,
+    "S4": 0.018966891802847385
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0139,
+    "S1": 0.0286,
+    "S2": 0.5935,
+    "S2w": 0.794,
+    "S3": 0.8045,
+    "S4": 0.9406
+   },
+   "m0e_proj_resid": 4.403293132781982e-06,
+   "KL_SG4": 0.02319803973659873,
+   "floor": 0.1871,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b2": {
+   "KL": {
+    "S0": 6.905554533004761,
+    "S1": 9.951011657714844,
+    "S2": 2.704383611679077,
+    "S2w": 1.3641187250614166,
+    "S3": 0.4935567155480385,
+    "S4": 0.0425399225205183
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0128,
+    "S1": 0.02,
+    "S2": 0.4789,
+    "S2w": 0.619,
+    "S3": 0.8543,
+    "S4": 0.9508
+   },
+   "m0e_proj_resid": 1.730024814605713e-05,
+   "KL_SG4": 0.05014605727046728,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b3": {
+   "KL": {
+    "S0": 8.511683940887451,
+    "S1": 7.005716562271118,
+    "S2": 1.4048960506916046,
+    "S2w": 1.2475035190582275,
+    "S3": 0.31136105209589005,
+    "S4": 0.05965366028249264
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0034,
+    "S1": 0.0097,
+    "S2": 0.874,
+    "S2w": 0.9006,
+    "S3": 0.9678,
+    "S4": 0.9865
+   },
+   "m0e_proj_resid": 1.0475516319274902e-05,
+   "KL_SG4": 0.06578182987868786,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b4": {
+   "KL": {
+    "S0": 6.9069623947143555,
+    "S1": 7.81549334526062,
+    "S2": 1.2393586039543152,
+    "S2w": 0.8248110264539719,
+    "S3": 0.27323419600725174,
+    "S4": 0.08214939013123512
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0038,
+    "S1": 0.0098,
+    "S2": 0.8684,
+    "S2w": 0.895,
+    "S3": 0.9628,
+    "S4": 0.9815
+   },
+   "m0e_proj_resid": 1.1682510375976562e-05,
+   "KL_SG4": 0.08873205631971359,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b5": {
+   "KL": {
+    "S0": 6.058716773986816,
+    "S1": 9.234339475631714,
+    "S2": 1.228655070066452,
+    "S2w": 0.7797422558069229,
+    "S3": 0.3329043835401535,
+    "S4": 0.15219085291028023
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0042,
+    "S1": 0.0104,
+    "S2": 0.8666,
+    "S2w": 0.8928,
+    "S3": 0.9587,
+    "S4": 0.9767
+   },
+   "m0e_proj_resid": 1.3172626495361328e-05,
+   "KL_SG4": 0.16517946124076843,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b6": {
+   "KL": {
+    "S0": 5.770506501197815,
+    "S1": 6.283799767494202,
+    "S2": 1.0204580277204514,
+    "S2w": 0.6399598270654678,
+    "S3": 0.2912411317229271,
+    "S4": 0.14580019190907478
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0048,
+    "S1": 0.0118,
+    "S2": 0.8634,
+    "S2w": 0.8902,
+    "S3": 0.9515,
+    "S4": 0.9701
+   },
+   "m0e_proj_resid": 1.0136514902114868e-05,
+   "KL_SG4": 0.16008711606264114,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b7": {
+   "KL": {
+    "S0": 5.709225177764893,
+    "S1": 5.483656883239746,
+    "S2": 0.7340087741613388,
+    "S2w": 0.47846072167158127,
+    "S3": 0.28880681097507477,
+    "S4": 0.15456581115722656
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0067,
+    "S1": 0.0129,
+    "S2": 0.8566,
+    "S2w": 0.8852,
+    "S3": 0.942,
+    "S4": 0.9619
+   },
+   "m0e_proj_resid": 2.1278858184814453e-05,
+   "KL_SG4": 0.16869759559631348,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b8": {
+   "KL": {
+    "S0": 5.589651107788086,
+    "S1": 6.4249507188797,
+    "S2": 0.5618641972541809,
+    "S2w": 0.39796510338783264,
+    "S3": 0.2598835155367851,
+    "S4": 0.15421581640839577
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0107,
+    "S1": 0.0146,
+    "S2": 0.8448,
+    "S2w": 0.8757,
+    "S3": 0.9273,
+    "S4": 0.9489
+   },
+   "m0e_proj_resid": 1.761317253112793e-05,
+   "KL_SG4": 0.16829516738653183,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b9": {
+   "KL": {
+    "S0": 5.111079812049866,
+    "S1": 5.090010046958923,
+    "S2": 0.4930538237094879,
+    "S2w": 0.3508256897330284,
+    "S3": 0.2590254172682762,
+    "S4": 0.16552215814590454
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0182,
+    "S1": 0.0163,
+    "S2": 0.8312,
+    "S2w": 0.8636,
+    "S3": 0.9101,
+    "S4": 0.9332
+   },
+   "m0e_proj_resid": 1.6748905181884766e-05,
+   "KL_SG4": 0.17694468796253204,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b10": {
+   "KL": {
+    "S0": 4.561356782913208,
+    "S1": 3.6622771620750427,
+    "S2": 0.4272046834230423,
+    "S2w": 0.3136163279414177,
+    "S3": 0.24769461899995804,
+    "S4": 0.18674631789326668
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0332,
+    "S1": 0.0143,
+    "S2": 0.8073,
+    "S2w": 0.8402,
+    "S3": 0.8813,
+    "S4": 0.9051
+   },
+   "m0e_proj_resid": 1.7605721950531006e-05,
+   "KL_SG4": 0.19716332107782364,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "prose_b11": {
+   "KL": {
+    "S0": 4.352903246879578,
+    "S1": 3.5603350400924683,
+    "S2": 0.4358527362346649,
+    "S2w": 0.33334653824567795,
+    "S3": 0.3061090409755707,
+    "S4": 0.2541412115097046
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.066,
+    "S1": -0.0017,
+    "S2": 0.7671,
+    "S2w": 0.7999,
+    "S3": 0.8366,
+    "S4": 0.8604
+   },
+   "m0e_proj_resid": 1.3262033462524414e-05,
+   "KL_SG4": 0.2613748535513878,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "prose_b12": {
+   "KL": {
+    "S0": 4.471219301223755,
+    "S1": 3.701774835586548,
+    "S2": 0.6249358654022217,
+    "S2w": 0.4933945909142494,
+    "S3": 0.5265220403671265,
+    "S4": 0.4287104606628418
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1477,
+    "S1": -0.0436,
+    "S2": 0.6513,
+    "S2w": 0.7035,
+    "S3": 0.7075,
+    "S4": 0.7454
+   },
+   "m0e_proj_resid": 1.1920928955078125e-05,
+   "KL_SG4": 0.43186598271131516,
+   "floor": 0.1871,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b0": {
+   "KL": {
+    "S0": 10.033602476119995,
+    "S1": 9.472532272338867,
+    "S2": 0.42505136132240295,
+    "S2w": 0.0997154749929905,
+    "S3": 0.24455652385950089,
+    "S4": 0.14380532875657082
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0538,
+    "S1": 0.0172,
+    "S2": 0.5937,
+    "S2w": 0.7751,
+    "S3": 0.6385,
+    "S4": 0.7979
+   },
+   "m0e_proj_resid": 5.366746336221695e-07,
+   "floor": 0.21775,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "code_b1": {
+   "KL": {
+    "S0": 10.826874494552612,
+    "S1": 8.932222366333008,
+    "S2": 0.527072548866272,
+    "S2w": 0.17553766816854477,
+    "S3": 0.16527332738041878,
+    "S4": 0.05163359735161066
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1244,
+    "S1": -0.0762,
+    "S2": 0.5583,
+    "S2w": 0.7275,
+    "S3": 0.8025,
+    "S4": 0.8959
+   },
+   "m0e_proj_resid": 3.7997961044311523e-06,
+   "KL_SG4": 0.06316856294870377,
+   "floor": 0.2236,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "code_b2": {
+   "KL": {
+    "S0": 7.981932044029236,
+    "S1": 10.352246522903442,
+    "S2": 2.261499762535095,
+    "S2w": 1.9065767228603363,
+    "S3": 0.6227031052112579,
+    "S4": 0.18134674057364464
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0915,
+    "S1": -0.0538,
+    "S2": 0.4536,
+    "S2w": 0.5532,
+    "S3": 0.8525,
+    "S4": 0.9106
+   },
+   "m0e_proj_resid": 1.1980533599853516e-05,
+   "KL_SG4": 0.21876754239201546,
+   "floor": 0.24188,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "code_b3": {
+   "KL": {
+    "S0": 9.180844783782959,
+    "S1": 7.431027293205261,
+    "S2": 1.453432410955429,
+    "S2w": 1.8663311004638672,
+    "S3": 0.39593496173620224,
+    "S4": 0.21491208672523499
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0191,
+    "S1": -0.0051,
+    "S2": 0.8719,
+    "S2w": 0.8884,
+    "S3": 0.9679,
+    "S4": 0.9778
+   },
+   "m0e_proj_resid": 9.357929229736328e-06,
+   "KL_SG4": 0.21460752561688423,
+   "floor": 0.22101,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "code_b4": {
+   "KL": {
+    "S0": 9.233066320419312,
+    "S1": 9.299635887145996,
+    "S2": 1.1338551342487335,
+    "S2w": 1.127269208431244,
+    "S3": 0.36407290399074554,
+    "S4": 0.25173159688711166
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0216,
+    "S1": -0.0072,
+    "S2": 0.8623,
+    "S2w": 0.877,
+    "S3": 0.9589,
+    "S4": 0.9678
+   },
+   "m0e_proj_resid": 1.3493001461029053e-05,
+   "KL_SG4": 0.2563883364200592,
+   "floor": 0.19473,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b5": {
+   "KL": {
+    "S0": 9.778131008148193,
+    "S1": 9.552067279815674,
+    "S2": 1.482751876115799,
+    "S2w": 1.344340980052948,
+    "S3": 0.6181090623140335,
+    "S4": 0.48047394305467606
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0227,
+    "S1": -0.0086,
+    "S2": 0.8594,
+    "S2w": 0.872,
+    "S3": 0.9533,
+    "S4": 0.9611
+   },
+   "m0e_proj_resid": 1.1958181858062744e-05,
+   "KL_SG4": 0.48308900743722916,
+   "floor": 0.19684,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b6": {
+   "KL": {
+    "S0": 7.955260515213013,
+    "S1": 7.178065299987793,
+    "S2": 1.2812016606330872,
+    "S2w": 1.1170141696929932,
+    "S3": 0.48838578164577484,
+    "S4": 0.41101764887571335
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0267,
+    "S1": -0.0104,
+    "S2": 0.8518,
+    "S2w": 0.8615,
+    "S3": 0.9416,
+    "S4": 0.9477
+   },
+   "m0e_proj_resid": 1.3656914234161377e-05,
+   "KL_SG4": 0.4508807137608528,
+   "floor": 0.18646,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b7": {
+   "KL": {
+    "S0": 7.961263656616211,
+    "S1": 6.88313615322113,
+    "S2": 1.018691897392273,
+    "S2w": 0.9868233650922775,
+    "S3": 0.5209349989891052,
+    "S4": 0.5091457813978195
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0337,
+    "S1": -0.0153,
+    "S2": 0.8402,
+    "S2w": 0.8482,
+    "S3": 0.9275,
+    "S4": 0.9313
+   },
+   "m0e_proj_resid": 1.6361474990844727e-05,
+   "KL_SG4": 0.542924627661705,
+   "floor": 0.19793,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b8": {
+   "KL": {
+    "S0": 7.339861035346985,
+    "S1": 7.217069029808044,
+    "S2": 0.7871084809303284,
+    "S2w": 0.8002759516239166,
+    "S3": 0.3988679200410843,
+    "S4": 0.38716971129179
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0481,
+    "S1": -0.0257,
+    "S2": 0.823,
+    "S2w": 0.8294,
+    "S3": 0.9073,
+    "S4": 0.9091
+   },
+   "m0e_proj_resid": 1.6301870346069336e-05,
+   "KL_SG4": 0.43027164041996,
+   "floor": 0.17497,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b9": {
+   "KL": {
+    "S0": 6.848980188369751,
+    "S1": 6.833537936210632,
+    "S2": 0.6692559570074081,
+    "S2w": 0.6498226225376129,
+    "S3": 0.3719615563750267,
+    "S4": 0.35343118011951447
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0638,
+    "S1": -0.0364,
+    "S2": 0.8038,
+    "S2w": 0.8057,
+    "S3": 0.8846,
+    "S4": 0.883
+   },
+   "m0e_proj_resid": 1.9341707229614258e-05,
+   "KL_SG4": 0.36550088971853256,
+   "floor": 0.15937,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b10": {
+   "KL": {
+    "S0": 5.8544065952301025,
+    "S1": 5.073985695838928,
+    "S2": 0.5454070866107941,
+    "S2w": 0.5762184411287308,
+    "S3": 0.28540440648794174,
+    "S4": 0.2927646115422249
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0885,
+    "S1": -0.0549,
+    "S2": 0.7757,
+    "S2w": 0.7733,
+    "S3": 0.8519,
+    "S4": 0.8473
+   },
+   "m0e_proj_resid": 1.5437602996826172e-05,
+   "KL_SG4": 0.31619907170534134,
+   "floor": 0.15106,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b11": {
+   "KL": {
+    "S0": 5.568279027938843,
+    "S1": 4.592098712921143,
+    "S2": 0.4749482497572899,
+    "S2w": 0.5267880409955978,
+    "S3": 0.3255620226264,
+    "S4": 0.3531728535890579
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1312,
+    "S1": -0.0887,
+    "S2": 0.7256,
+    "S2w": 0.7253,
+    "S3": 0.8,
+    "S4": 0.7961
+   },
+   "m0e_proj_resid": 1.1205673217773438e-05,
+   "KL_SG4": 0.37672342360019684,
+   "floor": 0.1388,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "code_b12": {
+   "KL": {
+    "S0": 5.487828493118286,
+    "S1": 5.118029236793518,
+    "S2": 0.6934263110160828,
+    "S2w": 0.6733796149492264,
+    "S3": 0.5828160643577576,
+    "S4": 0.571692481637001
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1599,
+    "S1": -0.0923,
+    "S2": 0.6723,
+    "S2w": 0.7093,
+    "S3": 0.7461,
+    "S4": 0.7714
+   },
+   "m0e_proj_resid": 1.1920928955078125e-05,
+   "KL_SG4": 0.5899108648300171,
+   "floor": 0.13981,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b0": {
+   "KL": {
+    "S0": 25.70640277862549,
+    "S1": 23.538464069366455,
+    "S2": 0.8017730712890625,
+    "S2w": 0.09739463217556477,
+    "S3": 0.44874831289052963,
+    "S4": 0.07133935578167439
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0887,
+    "S1": -0.0339,
+    "S2": 0.5535,
+    "S2w": 0.819,
+    "S3": 0.6072,
+    "S4": 0.8374
+   },
+   "m0e_proj_resid": 7.110647857189178e-07,
+   "floor": 1.20131,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "repetition_b1": {
+   "KL": {
+    "S0": 24.626296043395996,
+    "S1": 20.904633045196533,
+    "S2": 3.448254883289337,
+    "S2w": 0.06051823776215315,
+    "S3": 0.4746650457382202,
+    "S4": 0.02592683956027031
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1566,
+    "S1": -0.1191,
+    "S2": 0.5203,
+    "S2w": 0.7553,
+    "S3": 0.7206,
+    "S4": 0.9036
+   },
+   "m0e_proj_resid": 3.725290298461914e-06,
+   "KL_SG4": 0.031063341535627842,
+   "floor": 0.13455,
+   "pass_open": true,
+   "pass_grain": true,
+   "void": false
+  },
+  "repetition_b2": {
+   "KL": {
+    "S0": 16.267767906188965,
+    "S1": 22.62224054336548,
+    "S2": 9.563358783721924,
+    "S2w": 5.672436237335205,
+    "S3": 2.198981821537018,
+    "S4": 0.05832978896796703
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1236,
+    "S1": -0.0932,
+    "S2": 0.4394,
+    "S2w": 0.5747,
+    "S3": 0.7737,
+    "S4": 0.8958
+   },
+   "m0e_proj_resid": 1.2665987014770508e-05,
+   "KL_SG4": 0.06771175190806389,
+   "floor": 0.16051,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "repetition_b3": {
+   "KL": {
+    "S0": 19.09367561340332,
+    "S1": 16.61815118789673,
+    "S2": 7.675512433052063,
+    "S2w": 7.1781076192855835,
+    "S3": 1.1375998258590698,
+    "S4": 0.1326650232076645
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.031,
+    "S1": -0.0189,
+    "S2": 0.8499,
+    "S2w": 0.8724,
+    "S3": 0.947,
+    "S4": 0.9702
+   },
+   "m0e_proj_resid": 1.0219868272542953e-05,
+   "KL_SG4": 0.15372496470808983,
+   "floor": 0.51223,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "repetition_b4": {
+   "KL": {
+    "S0": 16.008566856384277,
+    "S1": 19.075498580932617,
+    "S2": 7.142331957817078,
+    "S2w": 5.824004530906677,
+    "S3": 1.1427805423736572,
+    "S4": 0.3664567992091179
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0359,
+    "S1": -0.0243,
+    "S2": 0.8426,
+    "S2w": 0.8624,
+    "S3": 0.9398,
+    "S4": 0.961
+   },
+   "m0e_proj_resid": 1.546507701277733e-05,
+   "KL_SG4": 0.415131039917469,
+   "floor": 0.41945,
+   "pass_open": false,
+   "pass_grain": true,
+   "void": false
+  },
+  "repetition_b5": {
+   "KL": {
+    "S0": 14.34651780128479,
+    "S1": 20.319632530212402,
+    "S2": 8.97778606414795,
+    "S2w": 6.577334523200989,
+    "S3": 3.665410876274109,
+    "S4": 3.4600255489349365
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0421,
+    "S1": -0.0303,
+    "S2": 0.8419,
+    "S2w": 0.859,
+    "S3": 0.9352,
+    "S4": 0.9543
+   },
+   "m0e_proj_resid": 1.8943101167678833e-05,
+   "KL_SG4": 3.680224299430847,
+   "floor": 0.12231,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b6": {
+   "KL": {
+    "S0": 13.814660549163818,
+    "S1": 15.776431322097778,
+    "S2": 6.339073419570923,
+    "S2w": 4.783896088600159,
+    "S3": 1.4773520231246948,
+    "S4": 0.8452156782150269
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0476,
+    "S1": -0.0328,
+    "S2": 0.831,
+    "S2w": 0.8451,
+    "S3": 0.9202,
+    "S4": 0.9366
+   },
+   "m0e_proj_resid": 1.4320015907287598e-05,
+   "KL_SG4": 1.0806699991226196,
+   "floor": 0.07765,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b7": {
+   "KL": {
+    "S0": 14.098251104354858,
+    "S1": 14.284767627716064,
+    "S2": 4.430319666862488,
+    "S2w": 3.537327826023102,
+    "S3": 1.9460927248001099,
+    "S4": 1.437860518693924
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.0697,
+    "S1": -0.0514,
+    "S2": 0.813,
+    "S2w": 0.8251,
+    "S3": 0.8989,
+    "S4": 0.913
+   },
+   "m0e_proj_resid": 1.9021332263946533e-05,
+   "KL_SG4": 1.647988885641098,
+   "floor": 0.0997,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b8": {
+   "KL": {
+    "S0": 13.69498324394226,
+    "S1": 14.956648588180542,
+    "S2": 2.0888020992279053,
+    "S2w": 1.8478632867336273,
+    "S3": 0.5648657232522964,
+    "S4": 0.3626178950071335
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1025,
+    "S1": -0.081,
+    "S2": 0.7675,
+    "S2w": 0.774,
+    "S3": 0.8461,
+    "S4": 0.8548
+   },
+   "m0e_proj_resid": 2.1398067474365234e-05,
+   "KL_SG4": 0.42325686663389206,
+   "floor": 0.08828,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b9": {
+   "KL": {
+    "S0": 12.660753011703491,
+    "S1": 14.333315372467041,
+    "S2": 2.033954381942749,
+    "S2w": 1.6715908348560333,
+    "S3": 0.7309123128652573,
+    "S4": 0.5397771149873734
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.1365,
+    "S1": -0.1087,
+    "S2": 0.7477,
+    "S2w": 0.7477,
+    "S3": 0.8222,
+    "S4": 0.8244
+   },
+   "m0e_proj_resid": 2.4139881134033203e-05,
+   "KL_SG4": 0.5941301733255386,
+   "floor": 0.11206,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b10": {
+   "KL": {
+    "S0": 11.69144320487976,
+    "S1": 11.5426607131958,
+    "S2": 1.178768903017044,
+    "S2w": 1.3104713559150696,
+    "S3": 0.5952136814594269,
+    "S4": 0.6228368729352951
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.2222,
+    "S1": -0.1835,
+    "S2": 0.6945,
+    "S2w": 0.6875,
+    "S3": 0.7653,
+    "S4": 0.7598
+   },
+   "m0e_proj_resid": 1.290440559387207e-05,
+   "KL_SG4": 0.6837374567985535,
+   "floor": 0.11632,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b11": {
+   "KL": {
+    "S0": 11.995969772338867,
+    "S1": 11.04962158203125,
+    "S2": 1.3881295025348663,
+    "S2w": 1.7636287808418274,
+    "S3": 0.7078568935394287,
+    "S4": 0.7926817834377289
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -0.3488,
+    "S1": -0.3048,
+    "S2": 0.6278,
+    "S2w": 0.6083,
+    "S3": 0.6966,
+    "S4": 0.6813
+   },
+   "m0e_proj_resid": 1.2122094631195068e-05,
+   "KL_SG4": 0.8303101360797882,
+   "floor": 0.08944,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  },
+  "repetition_b12": {
+   "KL": {
+    "S0": 12.577680587768555,
+    "S1": 11.995464086532593,
+    "S2": 1.6202188730239868,
+    "S2w": 1.8393633365631104,
+    "S3": 1.345668077468872,
+    "S4": 1.5164200365543365
+   },
+   "identity": {
+    "kl": 0.0,
+    "dlogit": 0.0,
+    "pass": true
+   },
+   "field_r2": {
+    "S0": -1.1908,
+    "S1": -1.138,
+    "S2": 0.5626,
+    "S2w": 0.5131,
+    "S3": 0.6301,
+    "S4": 0.5913
+   },
+   "m0e_proj_resid": 1.0967254638671875e-05,
+   "KL_SG4": 1.905699759721756,
+   "floor": 0.07056,
+   "pass_open": false,
+   "pass_grain": false,
+   "void": false
+  }
+ },
+ "verdict": {
+  "complete": true,
+  "identity_fail_boundaries": [],
+  "blocked": false,
+  "N_open": 6,
+  "N_grain": 20,
+  "n_cells": 39,
+  "unnamed_dims_per_boundary": {
+   "0": 35,
+   "1": 35,
+   "2": 35,
+   "3": 35,
+   "4": 35,
+   "5": 35,
+   "6": 35,
+   "7": 35,
+   "8": 35,
+   "9": 35,
+   "10": 35,
+   "11": 35,
+   "12": 35
+  },
+  "H_OPEN6_a": "NOT-YET",
+  "residue_certificate": "OPEN-5 J5 (F-OPEN5-LATE-TAIL-STRUCTURED-RESIDUE): late-tail = ~5 outlier dirs (38-64% var, MP-excess 38-107x) + diffuse ~130-160-dim floor; no pythia transport (n_transport 0) -> gpt2-implementation residue",
+  "H_OPEN6_b": {
+   "verdict": "PARTIAL",
+   "g_room": 0.8614,
+   "per_room": {
+    "2": 0.966,
+    "5": 0.7222,
+    "3": 0.9308,
+    "4": 0.8868,
+    "6": 0.801
+   }
+  },
+  "bets": {
+   "H_a": "HONEST NOT-YET 65/OPEN-AT-GRAIN 25/OPEN 10; A4-shifted formal OPEN-AT-GRAIN 45/NOT-YET 40/OPEN 15",
+   "H_b": "HONEST PARTIAL 55/WEAK 25/CLOSES 20; A4-shifted formal CLOSES 40/PARTIAL 40/WEAK 20",
+   "P1": "PASS 55/PARTIAL 35/FAIL 10",
+   "P2": "HONEST PARTIAL 45/HOLDS 35/FAILS 20; shifted HOLDS 45",
+   "P3": "PREDICTED-SIG 70/SIGN-ONLY 20/WRONG 10"
+  },
+  "bet_result": {
+   "H_a": {
+    "honest_NOT-YET": true,
+    "shifted_OPEN-AT-GRAIN": false
+   },
+   "H_b": {
+    "honest_PARTIAL": true,
+    "shifted_CLOSES": false
+   }
+  }
+ },
+ "gap_table": [
+  {
+   "b": 5,
+   "regime": "repetition",
+   "KL_S4": 3.46003,
+   "KL_S2w": 6.57733,
+   "KL_S2": 8.97779,
+   "floor": 0.12231,
+   "excess_nats": 3.33772,
+   "ratio": 28.29,
+   "room_dark_rank": 2,
+   "k90": 256,
+   "void": false
+  },
+  {
+   "b": 12,
+   "regime": "repetition",
+   "KL_S4": 1.51642,
+   "KL_S2w": 1.83936,
+   "KL_S2": 1.62022,
+   "floor": 0.07056,
+   "excess_nats": 1.44586,
+   "ratio": 21.49,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 7,
+   "regime": "repetition",
+   "KL_S4": 1.43786,
+   "KL_S2w": 3.53733,
+   "KL_S2": 4.43032,
+   "floor": 0.0997,
+   "excess_nats": 1.33816,
+   "ratio": 14.42,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 6,
+   "regime": "repetition",
+   "KL_S4": 0.84522,
+   "KL_S2w": 4.7839,
+   "KL_S2": 6.33907,
+   "floor": 0.07765,
+   "excess_nats": 0.76757,
+   "ratio": 10.88,
+   "room_dark_rank": 5,
+   "k90": 128,
+   "void": false
+  },
+  {
+   "b": 11,
+   "regime": "repetition",
+   "KL_S4": 0.79268,
+   "KL_S2w": 1.76363,
+   "KL_S2": 1.38813,
+   "floor": 0.08944,
+   "excess_nats": 0.70324,
+   "ratio": 8.86,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 10,
+   "regime": "repetition",
+   "KL_S4": 0.62284,
+   "KL_S2w": 1.31047,
+   "KL_S2": 1.17877,
+   "floor": 0.11632,
+   "excess_nats": 0.50652,
+   "ratio": 5.35,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 12,
+   "regime": "code",
+   "KL_S4": 0.57169,
+   "KL_S2w": 0.67338,
+   "KL_S2": 0.69343,
+   "floor": 0.13981,
+   "excess_nats": 0.43188,
+   "ratio": 4.09,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 9,
+   "regime": "repetition",
+   "KL_S4": 0.53978,
+   "KL_S2w": 1.67159,
+   "KL_S2": 2.03395,
+   "floor": 0.11206,
+   "excess_nats": 0.42772,
+   "ratio": 4.82,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 7,
+   "regime": "code",
+   "KL_S4": 0.50915,
+   "KL_S2w": 0.98682,
+   "KL_S2": 1.01869,
+   "floor": 0.19793,
+   "excess_nats": 0.31122,
+   "ratio": 2.57,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 5,
+   "regime": "code",
+   "KL_S4": 0.48047,
+   "KL_S2w": 1.34434,
+   "KL_S2": 1.48275,
+   "floor": 0.19684,
+   "excess_nats": 0.28363,
+   "ratio": 2.44,
+   "room_dark_rank": 2,
+   "k90": 256,
+   "void": false
+  },
+  {
+   "b": 8,
+   "regime": "repetition",
+   "KL_S4": 0.36262,
+   "KL_S2w": 1.84786,
+   "KL_S2": 2.0888,
+   "floor": 0.08828,
+   "excess_nats": 0.27434,
+   "ratio": 4.11,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 12,
+   "regime": "prose",
+   "KL_S4": 0.42871,
+   "KL_S2w": 0.49339,
+   "KL_S2": 0.62494,
+   "floor": 0.1871,
+   "excess_nats": 0.24161,
+   "ratio": 2.29,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 6,
+   "regime": "code",
+   "KL_S4": 0.41102,
+   "KL_S2w": 1.11701,
+   "KL_S2": 1.2812,
+   "floor": 0.18646,
+   "excess_nats": 0.22456,
+   "ratio": 2.2,
+   "room_dark_rank": 5,
+   "k90": 128,
+   "void": false
+  },
+  {
+   "b": 11,
+   "regime": "code",
+   "KL_S4": 0.35317,
+   "KL_S2w": 0.52679,
+   "KL_S2": 0.47495,
+   "floor": 0.1388,
+   "excess_nats": 0.21437,
+   "ratio": 2.54,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 8,
+   "regime": "code",
+   "KL_S4": 0.38717,
+   "KL_S2w": 0.80028,
+   "KL_S2": 0.78711,
+   "floor": 0.17497,
+   "excess_nats": 0.2122,
+   "ratio": 2.21,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 9,
+   "regime": "code",
+   "KL_S4": 0.35343,
+   "KL_S2w": 0.64982,
+   "KL_S2": 0.66926,
+   "floor": 0.15937,
+   "excess_nats": 0.19406,
+   "ratio": 2.22,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 10,
+   "regime": "code",
+   "KL_S4": 0.29276,
+   "KL_S2w": 0.57622,
+   "KL_S2": 0.54541,
+   "floor": 0.15106,
+   "excess_nats": 0.1417,
+   "ratio": 1.94,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 11,
+   "regime": "prose",
+   "KL_S4": 0.25414,
+   "KL_S2w": 0.33335,
+   "KL_S2": 0.43585,
+   "floor": 0.1871,
+   "excess_nats": 0.06704,
+   "ratio": 1.36,
+   "room_dark_rank": null,
+   "k90": null,
+   "void": false
+  },
+  {
+   "b": 4,
+   "regime": "code",
+   "KL_S4": 0.25173,
+   "KL_S2w": 1.12727,
+   "KL_S2": 1.13386,
+   "floor": 0.19473,
+   "excess_nats": 0.057,
+   "ratio": 1.29,
+   "room_dark_rank": 4,
+   "k90": 128,
+   "void": false
+  }
+ ],
+ "a3": {
+  "P_A": {
+   "prompt_tokens": 32,
+   "records": [
+    {
+     "step": 0,
+     "pos": 32,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 70.073,
+       "sal": 2.73,
+       "sign": -1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 19.92,
+       "sal": 1.62,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -15.78,
+       "sal": 1.61,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5662,
+     "entropy": 3.374,
+     "corr_top_z": 11.53,
+     "token_out": " had"
+    },
+    {
+     "step": 1,
+     "pos": 33,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 95.86,
+       "sal": 3.73,
+       "sign": -1
+      },
+      {
+       "dim": 10,
+       "name": "punctuation-boundary(struct)",
+       "act": 28.584,
+       "sal": 2.42,
+       "sign": 1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 27.505,
+       "sal": 2.24,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5146,
+     "entropy": 5.077,
+     "corr_top_z": 9.89,
+     "token_out": " been"
+    },
+    {
+     "step": 2,
+     "pos": 34,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 91.717,
+       "sal": 3.57,
+       "sign": -1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 29.719,
+       "sal": 2.42,
+       "sign": 1
+      },
+      {
+       "dim": 8,
+       "name": "harm/casualty",
+       "act": 20.803,
+       "sal": 2.39,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3966,
+     "entropy": 4.728,
+     "corr_top_z": 11.94,
+     "token_out": " evacuated"
+    },
+    {
+     "step": 3,
+     "pos": 35,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 8,
+       "name": "harm/casualty",
+       "act": 28.694,
+       "sal": 3.29,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 66.226,
+       "sal": 2.58,
+       "sign": -1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 26.2,
+       "sal": 2.43,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4906,
+     "entropy": 2.249,
+     "corr_top_z": 13.67,
+     "token_out": "."
+    },
+    {
+     "step": 4,
+     "pos": 36,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 83.357,
+       "sal": 3.25,
+       "sign": -1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 23.388,
+       "sal": 2.31,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -21.455,
+       "sal": 2.19,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.1408,
+     "entropy": 2.498,
+     "corr_top_z": 9.57,
+     "token_out": "\n"
+    },
+    {
+     "step": 5,
+     "pos": 37,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 205.248,
+       "sal": 7.99,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -68.101,
+       "sal": 6.03,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 57.425,
+       "sal": 5.67,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.3183,
+     "entropy": 0.007,
+     "corr_top_z": 8.52,
+     "token_out": "\n"
+    },
+    {
+     "step": 6,
+     "pos": 38,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 82.883,
+       "sal": 3.23,
+       "sign": -1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 20.622,
+       "sal": 1.91,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 19.425,
+       "sal": 1.57,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.4815,
+     "entropy": 5.4,
+     "corr_top_z": 8.34,
+     "token_out": "The"
+    },
+    {
+     "step": 7,
+     "pos": 39,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 82.118,
+       "sal": 3.2,
+       "sign": -1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -26.466,
+       "sal": 2.7,
+       "sign": 1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 17.76,
+       "sal": 2.43,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3795,
+     "entropy": 6.208,
+     "corr_top_z": 10.54,
+     "token_out": " storm"
+    },
+    {
+     "step": 8,
+     "pos": 40,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 24.51,
+       "sal": 3.35,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 64.306,
+       "sal": 2.5,
+       "sign": -1
+      },
+      {
+       "dim": 14,
+       "name": "comma-boundary/dramatic-event [COND]",
+       "act": 18.063,
+       "sal": 1.88,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4681,
+     "entropy": 4.707,
+     "corr_top_z": 11.04,
+     "token_out": " surge"
+    },
+    {
+     "step": 9,
+     "pos": 41,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 27.632,
+       "sal": 3.78,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 84.626,
+       "sal": 3.29,
+       "sign": -1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 29.54,
+       "sal": 2.41,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3216,
+     "entropy": 4.352,
+     "corr_top_z": 12.16,
+     "token_out": " flooded"
+    },
+    {
+     "step": 10,
+     "pos": 42,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 29.226,
+       "sal": 4.0,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": -37.626,
+       "sal": 3.04,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": -32.278,
+       "sal": 2.71,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.44,
+     "entropy": 0.367,
+     "corr_top_z": 11.16,
+     "token_out": " the"
+    },
+    {
+     "step": 11,
+     "pos": 43,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 20.566,
+       "sal": 2.81,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 47.67,
+       "sal": 1.86,
+       "sign": -1
+      },
+      {
+       "dim": 2,
+       "name": "special-symbol<->temporal-connective",
+       "act": -15.464,
+       "sal": 1.73,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3919,
+     "entropy": 0.181,
+     "corr_top_z": 11.13,
+     "token_out": " coastal"
+    },
+    {
+     "step": 12,
+     "pos": 44,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 84.679,
+       "sal": 3.3,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -36.728,
+       "sal": 3.25,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -31.723,
+       "sal": 2.7,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5428,
+     "entropy": 0.009,
+     "corr_top_z": 11.5,
+     "token_out": " town"
+    },
+    {
+     "step": 13,
+     "pos": 45,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 63.332,
+       "sal": 2.47,
+       "sign": -1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 28.834,
+       "sal": 2.35,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -25.519,
+       "sal": 2.26,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4836,
+     "entropy": 0.019,
+     "corr_top_z": 11.63,
+     "token_out": " before"
+    },
+    {
+     "step": 14,
+     "pos": 46,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 90.631,
+       "sal": 3.53,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -36.488,
+       "sal": 3.23,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -33.622,
+       "sal": 2.86,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5308,
+     "entropy": 0.02,
+     "corr_top_z": 13.21,
+     "token_out": " dawn"
+    },
+    {
+     "step": 15,
+     "pos": 47,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 32.344,
+       "sal": 2.75,
+       "sign": 1
+      },
+      {
+       "dim": 8,
+       "name": "harm/casualty",
+       "act": 23.484,
+       "sal": 2.69,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 23.06,
+       "sal": 2.35,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2243,
+     "entropy": 0.324,
+     "corr_top_z": 9.66,
+     "token_out": "."
+    },
+    {
+     "step": 16,
+     "pos": 48,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 106.525,
+       "sal": 4.15,
+       "sign": -1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -26.22,
+       "sal": 2.68,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 24.654,
+       "sal": 2.43,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.1351,
+     "entropy": 0.197,
+     "corr_top_z": 9.88,
+     "token_out": " Rescue"
+    },
+    {
+     "step": 17,
+     "pos": 49,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 93.884,
+       "sal": 3.65,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -30.047,
+       "sal": 2.66,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -17.371,
+       "sal": 1.77,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5711,
+     "entropy": 0.048,
+     "corr_top_z": 13.4,
+     "token_out": " crews"
+    },
+    {
+     "step": 18,
+     "pos": 50,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 101.638,
+       "sal": 3.96,
+       "sign": -1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": 26.804,
+       "sal": 3.23,
+       "sign": 1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 32.148,
+       "sal": 2.62,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5107,
+     "entropy": 0.005,
+     "corr_top_z": 12.04,
+     "token_out": " moved"
+    },
+    {
+     "step": 19,
+     "pos": 51,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 120.077,
+       "sal": 4.67,
+       "sign": -1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 39.988,
+       "sal": 3.7,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -40.782,
+       "sal": 3.61,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4142,
+     "entropy": 0.011,
+     "corr_top_z": 10.32,
+     "token_out": " along"
+    },
+    {
+     "step": 20,
+     "pos": 52,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 146.669,
+       "sal": 5.71,
+       "sign": -1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 48.607,
+       "sal": 4.8,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -56.375,
+       "sal": 4.79,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4643,
+     "entropy": 0.009,
+     "corr_top_z": 11.79,
+     "token_out": " the"
+    },
+    {
+     "step": 21,
+     "pos": 53,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -51.227,
+       "sal": 4.54,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 107.861,
+       "sal": 4.2,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -37.99,
+       "sal": 3.23,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3976,
+     "entropy": 0.053,
+     "corr_top_z": 11.28,
+     "token_out": " waterfront"
+    },
+    {
+     "step": 22,
+     "pos": 54,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -62.446,
+       "sal": 5.53,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 119.22,
+       "sal": 4.64,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -38.273,
+       "sal": 3.25,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4205,
+     "entropy": 0.02,
+     "corr_top_z": 12.1,
+     "token_out": ","
+    },
+    {
+     "step": 23,
+     "pos": 55,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 139.556,
+       "sal": 5.43,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -56.255,
+       "sal": 4.78,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -51.615,
+       "sal": 4.57,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2581,
+     "entropy": 0.018,
+     "corr_top_z": 11.67,
+     "token_out": " and"
+    },
+    {
+     "step": 24,
+     "pos": 56,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 128.408,
+       "sal": 5.0,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -51.372,
+       "sal": 4.37,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 42.644,
+       "sal": 4.21,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4771,
+     "entropy": 0.007,
+     "corr_top_z": 12.05,
+     "token_out": " the"
+    },
+    {
+     "step": 25,
+     "pos": 57,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 105.033,
+       "sal": 4.09,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -36.225,
+       "sal": 3.21,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 28.307,
+       "sal": 2.8,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3743,
+     "entropy": 0.239,
+     "corr_top_z": 11.14,
+     "token_out": " naval"
+    },
+    {
+     "step": 26,
+     "pos": 58,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 118.589,
+       "sal": 4.62,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -50.136,
+       "sal": 4.44,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -38.1,
+       "sal": 3.24,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.6022,
+     "entropy": 0.051,
+     "corr_top_z": 14.31,
+     "token_out": " station"
+    },
+    {
+     "step": 27,
+     "pos": 59,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 101.89,
+       "sal": 3.97,
+       "sign": -1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": 22.231,
+       "sal": 2.68,
+       "sign": 1
+      },
+      {
+       "dim": 6,
+       "name": "epistemic-negative [COND 2-pole]",
+       "act": 25.404,
+       "sal": 2.07,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3729,
+     "entropy": 0.005,
+     "corr_top_z": 10.03,
+     "token_out": " reported"
+    },
+    {
+     "step": 28,
+     "pos": 60,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 120.527,
+       "sal": 4.69,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -43.958,
+       "sal": 3.74,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 39.88,
+       "sal": 3.69,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4074,
+     "entropy": 0.05,
+     "corr_top_z": 11.69,
+     "token_out": " heavy"
+    },
+    {
+     "step": 29,
+     "pos": 61,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -50.823,
+       "sal": 4.5,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 109.095,
+       "sal": 4.25,
+       "sign": -1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 45.656,
+       "sal": 4.23,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5043,
+     "entropy": 0.005,
+     "corr_top_z": 10.39,
+     "token_out": " damage"
+    },
+    {
+     "step": 30,
+     "pos": 62,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 132.918,
+       "sal": 5.17,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -51.513,
+       "sal": 4.56,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 43.348,
+       "sal": 4.01,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4776,
+     "entropy": 0.015,
+     "corr_top_z": 11.16,
+     "token_out": " to"
+    },
+    {
+     "step": 31,
+     "pos": 63,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 126.128,
+       "sal": 4.91,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -47.459,
+       "sal": 4.03,
+       "sign": 1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": 28.405,
+       "sal": 3.43,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3727,
+     "entropy": 0.018,
+     "corr_top_z": 11.3,
+     "token_out": " its"
+    },
+    {
+     "step": 32,
+     "pos": 64,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -53.777,
+       "sal": 4.76,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 119.9,
+       "sal": 4.67,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -40.62,
+       "sal": 3.45,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.512,
+     "entropy": 0.068,
+     "corr_top_z": 11.75,
+     "token_out": " ships"
+    },
+    {
+     "step": 33,
+     "pos": 65,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 121.264,
+       "sal": 4.72,
+       "sign": -1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 46.967,
+       "sal": 4.64,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 47.745,
+       "sal": 4.42,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5794,
+     "entropy": 0.007,
+     "corr_top_z": 10.41,
+     "token_out": "."
+    },
+    {
+     "step": 34,
+     "pos": 66,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 29.71,
+       "sal": 2.53,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 12.808,
+       "sal": 1.61,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": 17.508,
+       "sal": 1.55,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.1971,
+     "entropy": 0.448,
+     "corr_top_z": 8.95,
+     "token_out": " By"
+    },
+    {
+     "step": 35,
+     "pos": 67,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 95.866,
+       "sal": 3.73,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -34.18,
+       "sal": 3.03,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -34.322,
+       "sal": 2.92,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5261,
+     "entropy": 0.226,
+     "corr_top_z": 9.68,
+     "token_out": " morning"
+    },
+    {
+     "step": 36,
+     "pos": 68,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 131.196,
+       "sal": 5.11,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -49.073,
+       "sal": 4.17,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 38.435,
+       "sal": 3.8,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4649,
+     "entropy": 0.01,
+     "corr_top_z": 9.05,
+     "token_out": " the"
+    },
+    {
+     "step": 37,
+     "pos": 69,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 96.341,
+       "sal": 3.75,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -35.301,
+       "sal": 3.13,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 25.548,
+       "sal": 2.52,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4175,
+     "entropy": 0.021,
+     "corr_top_z": 10.12,
+     "token_out": " county"
+    },
+    {
+     "step": 38,
+     "pos": 70,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 115.829,
+       "sal": 4.51,
+       "sign": -1
+      },
+      {
+       "dim": 2,
+       "name": "special-symbol<->temporal-connective",
+       "act": -26.014,
+       "sal": 2.91,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 29.954,
+       "sal": 2.77,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4812,
+     "entropy": 0.037,
+     "corr_top_z": 10.87,
+     "token_out": " had"
+    },
+    {
+     "step": 39,
+     "pos": 71,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 123.548,
+       "sal": 4.81,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -31.286,
+       "sal": 2.77,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 29.439,
+       "sal": 2.73,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4707,
+     "entropy": 0.012,
+     "corr_top_z": 9.06,
+     "token_out": " been"
+    },
+    {
+     "step": 40,
+     "pos": 72,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 89.905,
+       "sal": 3.5,
+       "sign": -1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 30.73,
+       "sal": 2.85,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -30.723,
+       "sal": 2.72,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3231,
+     "entropy": 0.004,
+     "corr_top_z": 10.89,
+     "token_out": " evacuated"
+    },
+    {
+     "step": 41,
+     "pos": 73,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 51.098,
+       "sal": 5.05,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 52.86,
+       "sal": 4.9,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 105.162,
+       "sal": 4.09,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.5063,
+     "entropy": 0.004,
+     "corr_top_z": 12.48,
+     "token_out": "."
+    },
+    {
+     "step": 42,
+     "pos": 74,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 70.639,
+       "sal": 2.75,
+       "sign": -1
+      },
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": 16.982,
+       "sal": 2.35,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 22.745,
+       "sal": 2.25,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2095,
+     "entropy": 3.937,
+     "corr_top_z": 9.25,
+     "token_out": "\n"
+    },
+    {
+     "step": 43,
+     "pos": 75,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 236.475,
+       "sal": 9.21,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -86.518,
+       "sal": 7.67,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 73.572,
+       "sal": 7.27,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.4269,
+     "entropy": 0.002,
+     "corr_top_z": 8.68,
+     "token_out": "\n"
+    },
+    {
+     "step": 44,
+     "pos": 76,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 73.088,
+       "sal": 2.85,
+       "sign": -1
+      },
+      {
+       "dim": 2,
+       "name": "special-symbol<->temporal-connective",
+       "act": 15.183,
+       "sal": 1.7,
+       "sign": 1
+      },
+      {
+       "dim": 5,
+       "name": "clause-final/physical-process [COND]",
+       "act": 17.318,
+       "sal": 1.6,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.5725,
+     "entropy": 5.454,
+     "corr_top_z": 9.12,
+     "token_out": "The"
+    },
+    {
+     "step": 45,
+     "pos": 77,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 78.295,
+       "sal": 3.05,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 19.648,
+       "sal": 2.69,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": -25.353,
+       "sal": 2.59,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4594,
+     "entropy": 5.855,
+     "corr_top_z": 8.91,
+     "token_out": " storm"
+    },
+    {
+     "step": 46,
+     "pos": 78,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 24.528,
+       "sal": 3.35,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 56.643,
+       "sal": 2.21,
+       "sign": -1
+      },
+      {
+       "dim": 14,
+       "name": "comma-boundary/dramatic-event [COND]",
+       "act": 18.894,
+       "sal": 1.96,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4753,
+     "entropy": 2.146,
+     "corr_top_z": 9.76,
+     "token_out": " surge"
+    },
+    {
+     "step": 47,
+     "pos": 79,
+     "regime": "prose",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 83.147,
+       "sal": 3.24,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": 23.556,
+       "sal": 3.22,
+       "sign": 1
+      },
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": 14.574,
+       "sal": 2.02,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3672,
+     "entropy": 4.15,
+     "corr_top_z": 10.77,
+     "token_out": " flooded"
+    }
+   ],
+   "done": true,
+   "P1_predicted": "prose",
+   "P1_measured": "prose",
+   "P1_correct": true,
+   "gen_text": " had been evacuated.\n\nThe storm surge flooded the coastal town before dawn. Rescue crews moved along the waterfront, and the naval station reported heavy damage to its ships. By morning the county had been evacuated.\n\nThe storm surge flooded",
+   "n_distinct_gen": 32,
+   "degenerate": false,
+   "P2_median_r2": 0.5016,
+   "P2_n_cells": 171,
+   "P3": {
+    "C": 0.2168,
+    "SE": 0.064395,
+    "sig": true,
+    "sign": 1,
+    "n_guard": 0,
+    "n": 16,
+    "base_det_max": 0.0,
+    "verdict": "PREDICTED-SIG"
+   }
+  },
+  "P_B": {
+   "prompt_tokens": 40,
+   "records": [
+    {
+     "step": 0,
+     "pos": 40,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 87.7,
+       "sal": 3.41,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -27.337,
+       "sal": 2.42,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -24.275,
+       "sal": 2.06,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.5381,
+     "entropy": 1.947,
+     "corr_top_z": 10.17,
+     "token_out": "\n"
+    },
+    {
+     "step": 1,
+     "pos": 41,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -17.051,
+       "sal": 2.33,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 25.337,
+       "sal": 2.05,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 12.667,
+       "sal": 1.6,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.5829,
+     "entropy": 4.399,
+     "corr_top_z": 9.84,
+     "token_out": "result"
+    },
+    {
+     "step": 2,
+     "pos": 42,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 23.684,
+       "sal": 1.91,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 16.556,
+       "sal": 1.69,
+       "sign": 1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -9.198,
+       "sal": 1.26,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3378,
+     "entropy": 1.46,
+     "corr_top_z": 10.25,
+     "token_out": "."
+    },
+    {
+     "step": 3,
+     "pos": 43,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 18.493,
+       "sal": 1.5,
+       "sign": 1
+      },
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": 10.306,
+       "sal": 1.43,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 36.452,
+       "sal": 1.42,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2804,
+     "entropy": 2.432,
+     "corr_top_z": 10.71,
+     "token_out": "append"
+    },
+    {
+     "step": 4,
+     "pos": 44,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": 11.814,
+       "sal": 1.64,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 14.809,
+       "sal": 1.2,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -10.065,
+       "sal": 1.08,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2927,
+     "entropy": 0.779,
+     "corr_top_z": 11.64,
+     "token_out": "("
+    },
+    {
+     "step": 5,
+     "pos": 45,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -18.365,
+       "sal": 2.51,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 20.958,
+       "sal": 1.76,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 43.744,
+       "sal": 1.7,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.1142,
+     "entropy": 3.337,
+     "corr_top_z": 12.0,
+     "token_out": "s"
+    },
+    {
+     "step": 6,
+     "pos": 46,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 2,
+       "name": "special-symbol<->temporal-connective",
+       "act": 13.696,
+       "sal": 1.53,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 9.283,
+       "sal": 1.17,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 13.072,
+       "sal": 1.06,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3457,
+     "entropy": 2.184,
+     "corr_top_z": 11.63,
+     "token_out": ")"
+    },
+    {
+     "step": 7,
+     "pos": 47,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -20.486,
+       "sal": 2.2,
+       "sign": -1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 13.839,
+       "sal": 1.41,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 8.623,
+       "sal": 1.09,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.0893,
+     "entropy": 1.512,
+     "corr_top_z": 11.75,
+     "token_out": "\n"
+    },
+    {
+     "step": 8,
+     "pos": 48,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 209.002,
+       "sal": 8.14,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -76.897,
+       "sal": 6.81,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -74.867,
+       "sal": 6.36,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.7127,
+     "entropy": 0.009,
+     "corr_top_z": 9.79,
+     "token_out": "\n"
+    },
+    {
+     "step": 9,
+     "pos": 49,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 30.57,
+       "sal": 2.47,
+       "sign": 1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -16.518,
+       "sal": 2.26,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 48.662,
+       "sal": 1.89,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": -0.7565,
+     "entropy": 3.926,
+     "corr_top_z": 9.58,
+     "token_out": "return"
+    },
+    {
+     "step": 10,
+     "pos": 50,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -22.731,
+       "sal": 2.44,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 58.475,
+       "sal": 2.28,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 24.262,
+       "sal": 2.04,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2654,
+     "entropy": 2.571,
+     "corr_top_z": 11.48,
+     "token_out": " result"
+    },
+    {
+     "step": 11,
+     "pos": 51,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.743,
+       "sal": 1.69,
+       "sign": -1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 14.249,
+       "sal": 1.45,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 10.834,
+       "sal": 1.37,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.1661,
+     "entropy": 1.844,
+     "corr_top_z": 10.7,
+     "token_out": "\n"
+    },
+    {
+     "step": 12,
+     "pos": 52,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 229.373,
+       "sal": 8.93,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -86.835,
+       "sal": 7.69,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 75.07,
+       "sal": 7.41,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.815,
+     "entropy": 0.006,
+     "corr_top_z": 9.72,
+     "token_out": "\n"
+    },
+    {
+     "step": 13,
+     "pos": 53,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 24.668,
+       "sal": 1.99,
+       "sign": 1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -16.055,
+       "sal": 1.94,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 43.141,
+       "sal": 1.68,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": -0.8302,
+     "entropy": 2.484,
+     "corr_top_z": 9.52,
+     "token_out": "def"
+    },
+    {
+     "step": 14,
+     "pos": 54,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 66.571,
+       "sal": 2.59,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 27.563,
+       "sal": 2.32,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 22.559,
+       "sal": 2.23,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2922,
+     "entropy": 5.194,
+     "corr_top_z": 10.11,
+     "token_out": " sort"
+    },
+    {
+     "step": 15,
+     "pos": 55,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 18.407,
+       "sal": 2.32,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -20.86,
+       "sal": 2.24,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 15.989,
+       "sal": 1.36,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.356,
+     "entropy": 0.474,
+     "corr_top_z": 10.68,
+     "token_out": "_"
+    },
+    {
+     "step": 16,
+     "pos": 56,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 18.159,
+       "sal": 2.29,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 52.682,
+       "sal": 2.05,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -14.918,
+       "sal": 2.04,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.1418,
+     "entropy": 5.047,
+     "corr_top_z": 11.72,
+     "token_out": "sc"
+    },
+    {
+     "step": 17,
+     "pos": 57,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 21.051,
+       "sal": 1.77,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 13.957,
+       "sal": 1.76,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 21.654,
+       "sal": 1.75,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4418,
+     "entropy": 0.046,
+     "corr_top_z": 11.5,
+     "token_out": "ores"
+    },
+    {
+     "step": 18,
+     "pos": 58,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -19.269,
+       "sal": 2.07,
+       "sign": -1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 19.239,
+       "sal": 1.56,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 10.335,
+       "sal": 1.3,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -1.2844,
+     "entropy": 1.286,
+     "corr_top_z": 11.32,
+     "token_out": "("
+    },
+    {
+     "step": 19,
+     "pos": 59,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.573,
+       "sal": 1.68,
+       "sign": -1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 10.939,
+       "sal": 1.38,
+       "sign": 1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -10.968,
+       "sal": 1.32,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.0724,
+     "entropy": 1.847,
+     "corr_top_z": 11.86,
+     "token_out": "sc"
+    },
+    {
+     "step": 20,
+     "pos": 60,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 83.791,
+       "sal": 3.26,
+       "sign": -1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 33.043,
+       "sal": 2.67,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -26.256,
+       "sal": 2.33,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4031,
+     "entropy": 0.014,
+     "corr_top_z": 11.63,
+     "token_out": "ores"
+    },
+    {
+     "step": 21,
+     "pos": 61,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 41.245,
+       "sal": 3.51,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": -26.529,
+       "sal": 2.62,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -18.252,
+       "sal": 1.96,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": -1.2809,
+     "entropy": 0.833,
+     "corr_top_z": 11.73,
+     "token_out": "):"
+    },
+    {
+     "step": 22,
+     "pos": 62,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -23.46,
+       "sal": 2.52,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 21.92,
+       "sal": 1.86,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 15.96,
+       "sal": 1.63,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.0088,
+     "entropy": 1.515,
+     "corr_top_z": 12.31,
+     "token_out": "\n"
+    },
+    {
+     "step": 23,
+     "pos": 63,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 221.82,
+       "sal": 8.64,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -76.245,
+       "sal": 6.76,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -76.186,
+       "sal": 6.48,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.6518,
+     "entropy": 0.007,
+     "corr_top_z": 10.0,
+     "token_out": "\n"
+    },
+    {
+     "step": 24,
+     "pos": 64,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -14.34,
+       "sal": 1.73,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 18.363,
+       "sal": 1.48,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 10.33,
+       "sal": 1.3,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.6853,
+     "entropy": 5.242,
+     "corr_top_z": 9.63,
+     "token_out": "\"\"\""
+    },
+    {
+     "step": 25,
+     "pos": 65,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 27.868,
+       "sal": 2.75,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 17.705,
+       "sal": 2.23,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 55.116,
+       "sal": 2.15,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.1812,
+     "entropy": 3.233,
+     "corr_top_z": 8.04,
+     "token_out": " Return"
+    },
+    {
+     "step": 26,
+     "pos": 66,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -28.103,
+       "sal": 3.02,
+       "sign": -1
+      },
+      {
+       "dim": 14,
+       "name": "comma-boundary/dramatic-event [COND]",
+       "act": -12.335,
+       "sal": 1.28,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 9.998,
+       "sal": 1.26,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2591,
+     "entropy": 2.117,
+     "corr_top_z": 10.34,
+     "token_out": " the"
+    },
+    {
+     "step": 27,
+     "pos": 67,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -24.883,
+       "sal": 2.68,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -13.994,
+       "sal": 1.91,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 45.256,
+       "sal": 1.76,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3072,
+     "entropy": 2.489,
+     "corr_top_z": 10.73,
+     "token_out": " scores"
+    },
+    {
+     "step": 28,
+     "pos": 68,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -23.273,
+       "sal": 2.5,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 50.29,
+       "sal": 1.96,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -12.144,
+       "sal": 1.66,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.0207,
+     "entropy": 0.247,
+     "corr_top_z": 9.36,
+     "token_out": " sorted"
+    },
+    {
+     "step": 29,
+     "pos": 69,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 26.558,
+       "sal": 2.71,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -20.224,
+       "sal": 2.18,
+       "sign": -1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 10.798,
+       "sal": 1.36,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.324,
+     "entropy": 0.714,
+     "corr_top_z": 10.66,
+     "token_out": " in"
+    },
+    {
+     "step": 30,
+     "pos": 70,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.53,
+       "sal": 1.67,
+       "sign": -1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 14.115,
+       "sal": 1.39,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 32.411,
+       "sal": 1.26,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.357,
+     "entropy": 0.648,
+     "corr_top_z": 10.32,
+     "token_out": " descending"
+    },
+    {
+     "step": 31,
+     "pos": 71,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 14,
+       "name": "comma-boundary/dramatic-event [COND]",
+       "act": -16.987,
+       "sal": 1.76,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 40.073,
+       "sal": 1.56,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -14.13,
+       "sal": 1.52,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3233,
+     "entropy": 0.012,
+     "corr_top_z": 10.06,
+     "token_out": " order"
+    },
+    {
+     "step": 32,
+     "pos": 72,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 25.101,
+       "sal": 2.56,
+       "sign": 1
+      },
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": -12.549,
+       "sal": 1.74,
+       "sign": 1
+      },
+      {
+       "dim": 8,
+       "name": "harm/casualty",
+       "act": 15.074,
+       "sal": 1.73,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.5102,
+     "entropy": 1.187,
+     "corr_top_z": 9.85,
+     "token_out": ".\""
+    },
+    {
+     "step": 33,
+     "pos": 73,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 40.841,
+       "sal": 1.59,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -18.558,
+       "sal": 1.58,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 15.93,
+       "sal": 1.29,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.4275,
+     "entropy": 0.046,
+     "corr_top_z": 9.03,
+     "token_out": "\"\""
+    },
+    {
+     "step": 34,
+     "pos": 74,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 115.779,
+       "sal": 4.51,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -39.627,
+       "sal": 3.37,
+       "sign": 1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -35.172,
+       "sal": 3.12,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.0526,
+     "entropy": 0.024,
+     "corr_top_z": 9.89,
+     "token_out": "\n"
+    },
+    {
+     "step": 35,
+     "pos": 75,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 255.548,
+       "sal": 9.95,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -93.227,
+       "sal": 8.26,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 78.522,
+       "sal": 7.75,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.5355,
+     "entropy": 0.003,
+     "corr_top_z": 9.9,
+     "token_out": "\n"
+    },
+    {
+     "step": 36,
+     "pos": 76,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -17.0,
+       "sal": 2.05,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": -19.59,
+       "sal": 1.93,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 18.37,
+       "sal": 1.87,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.588,
+     "entropy": 4.164,
+     "corr_top_z": 10.23,
+     "token_out": "return"
+    },
+    {
+     "step": 37,
+     "pos": 77,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -22.677,
+       "sal": 2.44,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 41.489,
+       "sal": 1.62,
+       "sign": -1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -11.03,
+       "sal": 1.51,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2206,
+     "entropy": 1.985,
+     "corr_top_z": 10.42,
+     "token_out": " sorted"
+    },
+    {
+     "step": 38,
+     "pos": 78,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 17.257,
+       "sal": 2.18,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.954,
+       "sal": 1.72,
+       "sign": -1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 16.711,
+       "sal": 1.35,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2665,
+     "entropy": 1.111,
+     "corr_top_z": 11.25,
+     "token_out": "("
+    },
+    {
+     "step": 39,
+     "pos": 79,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -21.153,
+       "sal": 2.89,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 16.099,
+       "sal": 2.03,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -16.517,
+       "sal": 1.78,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.1038,
+     "entropy": 3.42,
+     "corr_top_z": 10.96,
+     "token_out": "sc"
+    },
+    {
+     "step": 40,
+     "pos": 80,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 68.403,
+       "sal": 2.66,
+       "sign": -1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 26.504,
+       "sal": 2.14,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 19.351,
+       "sal": 1.91,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4867,
+     "entropy": 0.032,
+     "corr_top_z": 12.38,
+     "token_out": "ores"
+    },
+    {
+     "step": 41,
+     "pos": 81,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 14,
+       "name": "comma-boundary/dramatic-event [COND]",
+       "act": -20.265,
+       "sal": 2.11,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 16.474,
+       "sal": 2.08,
+       "sign": 1
+      },
+      {
+       "dim": 2,
+       "name": "special-symbol<->temporal-connective",
+       "act": 18.382,
+       "sal": 2.06,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -1.2381,
+     "entropy": 1.228,
+     "corr_top_z": 11.66,
+     "token_out": ")"
+    },
+    {
+     "step": 42,
+     "pos": 82,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -29.112,
+       "sal": 3.13,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 27.785,
+       "sal": 2.36,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 22.649,
+       "sal": 2.31,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.1189,
+     "entropy": 0.474,
+     "corr_top_z": 12.05,
+     "token_out": "\n"
+    },
+    {
+     "step": 43,
+     "pos": 83,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 240.597,
+       "sal": 9.37,
+       "sign": -1
+      },
+      {
+       "dim": 13,
+       "name": "quotation/boundary [COND]",
+       "act": -91.15,
+       "sal": 8.08,
+       "sign": 1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 77.34,
+       "sal": 7.64,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.6821,
+     "entropy": 0.004,
+     "corr_top_z": 11.4,
+     "token_out": "\n"
+    },
+    {
+     "step": 44,
+     "pos": 84,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -19.769,
+       "sal": 2.39,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 17.743,
+       "sal": 2.24,
+       "sign": 1
+      },
+      {
+       "dim": 7,
+       "name": "formula/markup-symbol",
+       "act": 22.897,
+       "sal": 1.85,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.7126,
+     "entropy": 0.543,
+     "corr_top_z": 11.62,
+     "token_out": "def"
+    },
+    {
+     "step": 45,
+     "pos": 85,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 50.7,
+       "sal": 1.97,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -16.001,
+       "sal": 1.72,
+       "sign": -1
+      },
+      {
+       "dim": 17,
+       "name": "hyphen/@-format",
+       "act": 16.764,
+       "sal": 1.66,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2572,
+     "entropy": 2.59,
+     "corr_top_z": 11.25,
+     "token_out": " sort"
+    },
+    {
+     "step": 46,
+     "pos": 86,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 20.75,
+       "sal": 2.62,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": -60.864,
+       "sal": 2.37,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": 27.346,
+       "sal": 2.32,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3086,
+     "entropy": 0.3,
+     "corr_top_z": 12.49,
+     "token_out": "_"
+    },
+    {
+     "step": 47,
+     "pos": 87,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": 20.242,
+       "sal": 2.55,
+       "sign": 1
+      },
+      {
+       "dim": 11,
+       "name": "coastal-storm/geography",
+       "act": -16.774,
+       "sal": 2.29,
+       "sign": 1
+      },
+      {
+       "dim": 12,
+       "name": "local-relation/admin",
+       "act": -17.221,
+       "sal": 2.08,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": -0.2583,
+     "entropy": 4.281,
+     "corr_top_z": 12.3,
+     "token_out": "sc"
+    }
+   ],
+   "done": true,
+   "P1_predicted": "code",
+   "P1_measured": "code",
+   "P1_correct": true,
+   "gen_text": "\nresult.append(s)\n\nreturn result\n\ndef sort_scores(scores):\n\n\"\"\" Return the scores sorted in descending order.\"\"\"\n\nreturn sorted(scores)\n\ndef sort_sc",
+   "n_distinct_gen": 25,
+   "degenerate": false
+  },
+  "P_C": {
+   "prompt_tokens": 32,
+   "records": [
+    {
+     "step": 0,
+     "pos": 32,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 21.119,
+       "sal": 1.78,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -14.905,
+       "sal": 1.6,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 39.012,
+       "sal": 1.52,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.4447,
+     "entropy": 1.602,
+     "corr_top_z": 10.0,
+     "token_out": " red"
+    },
+    {
+     "step": 1,
+     "pos": 33,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.572,
+       "sal": 1.48,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 37.327,
+       "sal": 1.45,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.819,
+       "sal": 1.38,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2733,
+     "entropy": 1.009,
+     "corr_top_z": 10.45,
+     "token_out": " blue"
+    },
+    {
+     "step": 2,
+     "pos": 34,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 19.397,
+       "sal": 1.63,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.128,
+       "sal": 1.53,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 34.689,
+       "sal": 1.35,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3501,
+     "entropy": 1.266,
+     "corr_top_z": 11.71,
+     "token_out": " green"
+    },
+    {
+     "step": 3,
+     "pos": 35,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -14.265,
+       "sal": 1.8,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 36.153,
+       "sal": 1.41,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.288,
+       "sal": 1.32,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3705,
+     "entropy": 1.093,
+     "corr_top_z": 10.6,
+     "token_out": " yellow"
+    },
+    {
+     "step": 4,
+     "pos": 36,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.009,
+       "sal": 1.51,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.919,
+       "sal": 1.51,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 35.71,
+       "sal": 1.39,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.36,
+     "entropy": 0.655,
+     "corr_top_z": 11.14,
+     "token_out": " purple"
+    },
+    {
+     "step": 5,
+     "pos": 37,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.335,
+       "sal": 1.68,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.2,
+       "sal": 1.63,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.628,
+       "sal": 1.48,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4031,
+     "entropy": 0.811,
+     "corr_top_z": 11.21,
+     "token_out": " orange"
+    },
+    {
+     "step": 6,
+     "pos": 38,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 21.248,
+       "sal": 1.79,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.396,
+       "sal": 1.44,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 36.3,
+       "sal": 1.41,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3848,
+     "entropy": 2.207,
+     "corr_top_z": 11.72,
+     "token_out": " black"
+    },
+    {
+     "step": 7,
+     "pos": 39,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -18.129,
+       "sal": 1.95,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 15.548,
+       "sal": 1.31,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 27.208,
+       "sal": 1.06,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.4709,
+     "entropy": 1.073,
+     "corr_top_z": 10.41,
+     "token_out": " white"
+    },
+    {
+     "step": 8,
+     "pos": 40,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 20.053,
+       "sal": 1.69,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -14.802,
+       "sal": 1.59,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 34.622,
+       "sal": 1.35,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.4392,
+     "entropy": 1.137,
+     "corr_top_z": 10.57,
+     "token_out": " red"
+    },
+    {
+     "step": 9,
+     "pos": 41,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.964,
+       "sal": 1.43,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.867,
+       "sal": 1.38,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 33.975,
+       "sal": 1.32,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2735,
+     "entropy": 0.699,
+     "corr_top_z": 10.94,
+     "token_out": " blue"
+    },
+    {
+     "step": 10,
+     "pos": 42,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 18.85,
+       "sal": 1.58,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.415,
+       "sal": 1.56,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 31.238,
+       "sal": 1.22,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3602,
+     "entropy": 0.926,
+     "corr_top_z": 12.16,
+     "token_out": " green"
+    },
+    {
+     "step": 11,
+     "pos": 43,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -15.033,
+       "sal": 1.89,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.453,
+       "sal": 1.34,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 32.845,
+       "sal": 1.28,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3572,
+     "entropy": 0.828,
+     "corr_top_z": 11.0,
+     "token_out": " yellow"
+    },
+    {
+     "step": 12,
+     "pos": 44,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.405,
+       "sal": 1.56,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.16,
+       "sal": 1.44,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 13.877,
+       "sal": 1.42,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3598,
+     "entropy": 0.46,
+     "corr_top_z": 11.48,
+     "token_out": " purple"
+    },
+    {
+     "step": 13,
+     "pos": 45,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.673,
+       "sal": 1.72,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.73,
+       "sal": 1.69,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.799,
+       "sal": 1.41,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3948,
+     "entropy": 0.528,
+     "corr_top_z": 11.56,
+     "token_out": " orange"
+    },
+    {
+     "step": 14,
+     "pos": 46,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 20.765,
+       "sal": 1.75,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.3,
+       "sal": 1.43,
+       "sign": -1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -11.317,
+       "sal": 1.43,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3892,
+     "entropy": 1.926,
+     "corr_top_z": 12.05,
+     "token_out": " black"
+    },
+    {
+     "step": 15,
+     "pos": 47,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -18.078,
+       "sal": 1.94,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 15.001,
+       "sal": 1.26,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -8.012,
+       "sal": 1.01,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4705,
+     "entropy": 0.624,
+     "corr_top_z": 10.66,
+     "token_out": " white"
+    },
+    {
+     "step": 16,
+     "pos": 48,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 19.12,
+       "sal": 1.61,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -14.826,
+       "sal": 1.59,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 31.107,
+       "sal": 1.21,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.431,
+     "entropy": 0.836,
+     "corr_top_z": 10.75,
+     "token_out": " red"
+    },
+    {
+     "step": 17,
+     "pos": 49,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.986,
+       "sal": 1.4,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.426,
+       "sal": 1.38,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 31.346,
+       "sal": 1.22,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2695,
+     "entropy": 0.521,
+     "corr_top_z": 11.1,
+     "token_out": " blue"
+    },
+    {
+     "step": 18,
+     "pos": 50,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.804,
+       "sal": 1.61,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 18.31,
+       "sal": 1.54,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -10.522,
+       "sal": 1.13,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3696,
+     "entropy": 0.697,
+     "corr_top_z": 12.27,
+     "token_out": " green"
+    },
+    {
+     "step": 19,
+     "pos": 51,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -15.812,
+       "sal": 1.99,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 13.423,
+       "sal": 1.37,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.613,
+       "sal": 1.36,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3425,
+     "entropy": 0.628,
+     "corr_top_z": 11.1,
+     "token_out": " yellow"
+    },
+    {
+     "step": 20,
+     "pos": 52,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -12.995,
+       "sal": 1.64,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 14.536,
+       "sal": 1.48,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.553,
+       "sal": 1.39,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3569,
+     "entropy": 0.328,
+     "corr_top_z": 11.55,
+     "token_out": " purple"
+    },
+    {
+     "step": 21,
+     "pos": 53,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -14.074,
+       "sal": 1.77,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -16.116,
+       "sal": 1.73,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.025,
+       "sal": 1.35,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3863,
+     "entropy": 0.361,
+     "corr_top_z": 11.55,
+     "token_out": " orange"
+    },
+    {
+     "step": 22,
+     "pos": 54,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 20.273,
+       "sal": 1.7,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -11.519,
+       "sal": 1.45,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.346,
+       "sal": 1.44,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3919,
+     "entropy": 1.71,
+     "corr_top_z": 12.02,
+     "token_out": " black"
+    },
+    {
+     "step": 23,
+     "pos": 55,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -17.622,
+       "sal": 1.9,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 38.008,
+       "sal": 1.48,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.75,
+       "sal": 1.41,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4703,
+     "entropy": 0.336,
+     "corr_top_z": 10.61,
+     "token_out": " white"
+    },
+    {
+     "step": 24,
+     "pos": 56,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.008,
+       "sal": 1.61,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 18.225,
+       "sal": 1.53,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 12.209,
+       "sal": 1.25,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4227,
+     "entropy": 0.668,
+     "corr_top_z": 10.66,
+     "token_out": " red"
+    },
+    {
+     "step": 25,
+     "pos": 57,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.109,
+       "sal": 1.41,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 15.886,
+       "sal": 1.34,
+       "sign": 1
+      },
+      {
+       "dim": 18,
+       "name": "@-format",
+       "act": 8.268,
+       "sal": 1.15,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2739,
+     "entropy": 0.397,
+     "corr_top_z": 10.93,
+     "token_out": " blue"
+    },
+    {
+     "step": 26,
+     "pos": 58,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.128,
+       "sal": 1.65,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.732,
+       "sal": 1.49,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -10.583,
+       "sal": 1.14,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3762,
+     "entropy": 0.567,
+     "corr_top_z": 12.08,
+     "token_out": " green"
+    },
+    {
+     "step": 27,
+     "pos": 59,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -16.663,
+       "sal": 2.1,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.236,
+       "sal": 1.32,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 32.716,
+       "sal": 1.27,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3277,
+     "entropy": 0.472,
+     "corr_top_z": 10.89,
+     "token_out": " yellow"
+    },
+    {
+     "step": 28,
+     "pos": 60,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.715,
+       "sal": 1.73,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.811,
+       "sal": 1.41,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 34.978,
+       "sal": 1.36,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3538,
+     "entropy": 0.226,
+     "corr_top_z": 11.29,
+     "token_out": " purple"
+    },
+    {
+     "step": 29,
+     "pos": 61,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -14.58,
+       "sal": 1.84,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -16.112,
+       "sal": 1.73,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 15.617,
+       "sal": 1.31,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3754,
+     "entropy": 0.248,
+     "corr_top_z": 11.25,
+     "token_out": " orange"
+    },
+    {
+     "step": 30,
+     "pos": 62,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 19.725,
+       "sal": 1.66,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -11.687,
+       "sal": 1.47,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.38,
+       "sal": 1.44,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3941,
+     "entropy": 1.6,
+     "corr_top_z": 11.7,
+     "token_out": " black"
+    },
+    {
+     "step": 31,
+     "pos": 63,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 53.897,
+       "sal": 2.1,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -17.471,
+       "sal": 1.88,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -21.419,
+       "sal": 1.82,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4664,
+     "entropy": 0.295,
+     "corr_top_z": 10.27,
+     "token_out": " white"
+    },
+    {
+     "step": 32,
+     "pos": 64,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.167,
+       "sal": 1.63,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.279,
+       "sal": 1.45,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 12.984,
+       "sal": 1.32,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.4093,
+     "entropy": 0.549,
+     "corr_top_z": 10.29,
+     "token_out": " red"
+    },
+    {
+     "step": 33,
+     "pos": 65,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.862,
+       "sal": 1.38,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 15.864,
+       "sal": 1.33,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -9.087,
+       "sal": 1.15,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.2696,
+     "entropy": 0.316,
+     "corr_top_z": 10.52,
+     "token_out": " blue"
+    },
+    {
+     "step": 34,
+     "pos": 66,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.422,
+       "sal": 1.69,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.267,
+       "sal": 1.45,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -10.633,
+       "sal": 1.14,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3802,
+     "entropy": 0.485,
+     "corr_top_z": 11.61,
+     "token_out": " green"
+    },
+    {
+     "step": 35,
+     "pos": 67,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -17.647,
+       "sal": 2.22,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 41.015,
+       "sal": 1.6,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -17.955,
+       "sal": 1.53,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3068,
+     "entropy": 0.374,
+     "corr_top_z": 10.42,
+     "token_out": " yellow"
+    },
+    {
+     "step": 36,
+     "pos": 68,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -14.493,
+       "sal": 1.83,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 42.751,
+       "sal": 1.66,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.885,
+       "sal": 1.5,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3458,
+     "entropy": 0.171,
+     "corr_top_z": 10.77,
+     "token_out": " purple"
+    },
+    {
+     "step": 37,
+     "pos": 69,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -15.259,
+       "sal": 1.92,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.828,
+       "sal": 1.7,
+       "sign": -1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 34.859,
+       "sal": 1.36,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3613,
+     "entropy": 0.155,
+     "corr_top_z": 10.71,
+     "token_out": " orange"
+    },
+    {
+     "step": 38,
+     "pos": 70,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 19.131,
+       "sal": 1.61,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -11.726,
+       "sal": 1.48,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.56,
+       "sal": 1.46,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3896,
+     "entropy": 1.478,
+     "corr_top_z": 11.12,
+     "token_out": " black"
+    },
+    {
+     "step": 39,
+     "pos": 71,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 64.865,
+       "sal": 2.53,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -27.451,
+       "sal": 2.33,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -17.595,
+       "sal": 1.89,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.4574,
+     "entropy": 0.263,
+     "corr_top_z": 9.88,
+     "token_out": " white"
+    },
+    {
+     "step": 40,
+     "pos": 72,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.395,
+       "sal": 1.66,
+       "sign": -1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.47,
+       "sal": 1.38,
+       "sign": 1
+      },
+      {
+       "dim": 16,
+       "name": "spatial-prep/quote-final [COND]",
+       "act": 13.548,
+       "sal": 1.38,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3901,
+     "entropy": 0.453,
+     "corr_top_z": 9.91,
+     "token_out": " red"
+    },
+    {
+     "step": 41,
+     "pos": 73,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 17.047,
+       "sal": 1.43,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 36.363,
+       "sal": 1.42,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -12.202,
+       "sal": 1.31,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.2635,
+     "entropy": 0.249,
+     "corr_top_z": 9.83,
+     "token_out": " blue"
+    },
+    {
+     "step": 42,
+     "pos": 74,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -13.628,
+       "sal": 1.72,
+       "sign": 1
+      },
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 16.867,
+       "sal": 1.42,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -10.68,
+       "sal": 1.15,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3794,
+     "entropy": 0.419,
+     "corr_top_z": 10.9,
+     "token_out": " green"
+    },
+    {
+     "step": 43,
+     "pos": 75,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -18.713,
+       "sal": 2.36,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 50.713,
+       "sal": 1.97,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -22.984,
+       "sal": 1.95,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.284,
+     "entropy": 0.312,
+     "corr_top_z": 10.52,
+     "token_out": " yellow"
+    },
+    {
+     "step": 44,
+     "pos": 76,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 50.666,
+       "sal": 1.97,
+       "sign": -1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -15.283,
+       "sal": 1.93,
+       "sign": 1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -20.956,
+       "sal": 1.78,
+       "sign": 1
+      }
+     ],
+     "wte_frac_b3": 0.3338,
+     "entropy": 0.142,
+     "corr_top_z": 11.11,
+     "token_out": " purple"
+    },
+    {
+     "step": 45,
+     "pos": 77,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -16.075,
+       "sal": 2.03,
+       "sign": 1
+      },
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 44.769,
+       "sal": 1.74,
+       "sign": -1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -15.46,
+       "sal": 1.66,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3473,
+     "entropy": 0.099,
+     "corr_top_z": 9.92,
+     "token_out": " orange"
+    },
+    {
+     "step": 46,
+     "pos": 78,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 1,
+       "name": "collegiate-sports [COND]",
+       "act": 18.687,
+       "sal": 1.57,
+       "sign": 1
+      },
+      {
+       "dim": 9,
+       "name": "sports-team",
+       "act": -11.755,
+       "sal": 1.48,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -13.695,
+       "sal": 1.47,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.3854,
+     "entropy": 1.366,
+     "corr_top_z": 10.3,
+     "token_out": " black"
+    },
+    {
+     "step": 47,
+     "pos": 79,
+     "regime": "code",
+     "top_fields": [
+      {
+       "dim": 0,
+       "name": "naval/warship",
+       "act": 69.245,
+       "sal": 2.7,
+       "sign": -1
+      },
+      {
+       "dim": 15,
+       "name": "mixed-measurement",
+       "act": -30.051,
+       "sal": 2.55,
+       "sign": 1
+      },
+      {
+       "dim": 4,
+       "name": "place<->statistics toggle [COND 2-pole]",
+       "act": -17.907,
+       "sal": 1.93,
+       "sign": -1
+      }
+     ],
+     "wte_frac_b3": 0.4471,
+     "entropy": 0.251,
+     "corr_top_z": 11.97,
+     "token_out": " white"
+    }
+   ],
+   "done": true,
+   "P1_predicted": "code",
+   "P1_measured": "code",
+   "P1_correct": true,
+   "gen_text": " red blue green yellow purple orange black white red blue green yellow purple orange black white red blue green yellow purple orange black white red blue green yellow purple orange black white red blue green yellow purple orange black white red blue green yellow purple orange black white",
+   "n_distinct_gen": 8,
+   "degenerate": true
+  }
+ },
+ "status": "COMPLETE",
+ "elapsed_s": 183.6,
+ "gpt2_meta": {
+  "n_layer": 12,
+  "d": 768,
+  "precision": "fp32",
+  "tf32": "off",
+  "attn": "eager"
+ },
+ "sets": {
+  "standing_fit": [
+   64,
+   512
+  ],
+  "fresh": [
+   24576,
+   32768
+  ],
+  "rep_seed": 3
+ },
+ "a3_verdict": {
+  "P1": {
+   "n_correct": 3,
+   "verdict": "PASS",
+   "cells": {
+    "P_A": {
+     "pred": "prose",
+     "meas": "prose"
+    },
+    "P_B": {
+     "pred": "code",
+     "meas": "code"
+    },
+    "P_C": {
+     "pred": "code",
+     "meas": "code"
+    }
+   }
+  },
+  "P2": {
+   "median_r2": 0.5016,
+   "verdict": "PARTIAL"
+  },
+  "P3": {
+   "C": 0.2168,
+   "SE": 0.064395,
+   "verdict": "PREDICTED-SIG"
+  }
+ },
+ "v1_frozen": {
+  "tensors_sha": "0f47849983d95f80",
+  "json_sha": "868f15c41bf593d5"
+ }
+}
