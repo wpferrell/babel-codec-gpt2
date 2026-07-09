@@ -1,7 +1,9 @@
 # The BABEL codec — a certified two-way dictionary between GPT-2's insides and plain English
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21230108.svg)](https://doi.org/10.5281/zenodo.21230108)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21271421.svg)](https://doi.org/10.5281/zenodo.21271421)
 [![License: CC BY 4.0](https://img.shields.io/badge/paper-CC%20BY%204.0-lightgrey.svg)](LICENSE)
+
+**Version 1.1 (2026-07-08)** — revised per external agentic review: adds FDR analysis, floor sensitivity, transplant boundary×regime generality, rotation robustness, and seam perturbations; no headline number changed, all scoped. New-version DOI [10.5281/zenodo.21271421](https://doi.org/10.5281/zenodo.21271421) (concept DOI 10.5281/zenodo.21230107 always resolves to the latest version); v1 remains archived. See `paper/REVISION_NOTE.md` and `paper/REVIEWER_RESPONSE.md`.
 
 This repository contains **the BABEL codec**: the first complete, certified, bidirectional decode
 of an entire production language model — a two-way dictionary between GPT-2 small's internal
@@ -171,8 +173,8 @@ SAE releases (Bloom 2024, Gemma Scope, Bills et al. 2023) are engaged in the pap
 
 ## Read more
 
-- **The paper:** `paper/PAPER_V1.pdf` — every claim with its evidence hash (Appendix A maps each
-  number to its frozen source).
+- **The paper:** `paper/PAPER_V1_1.pdf` — every claim with its evidence hash (Appendix A maps each
+  number to its frozen source; the original v1 paper is archived at `paper/v1/PAPER_V1.pdf`).
 - **One-page summary:** `paper/PLAIN_SUMMARY.md`.
 - **The closure records:** `paper/L5_CLOSEOUT.md`, `paper/L6_CLOSEOUT.md` + addenda — the two
   loose ends hunted to certified negatives (five of seven favorite bets lost; every loss logged).

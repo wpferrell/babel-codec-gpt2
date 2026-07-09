@@ -1,4 +1,4 @@
-# PLAIN_SUMMARY.md — the paper in one page (for Will, 2026-07-06)
+# PLAIN_SUMMARY.md — the paper in one page (v1.1, 2026-07-08; revised per external agentic review)
 
 **What the paper claims.** We took one production language model — GPT-2 — and built what the
 paper claims in its locked form: the first complete, certified, bidirectional decode of an entire
@@ -16,7 +16,13 @@ once: "a certified bidirectional codec for GPT-2's residual-stream language"). E
 decoder's 351 channels was put on trial: 54% carry
 an explicit English meaning (a "naval/warship" field, a "clause boundary" word, an "operator"
 anchor); the other 46% are PROVEN to carry no word — proven, because random directions of the same
-loudness move the model more. How the language composes from layer to layer is certified linear at
+loudness move the model more. (v1.1 scope, answering the reviewer: that 54%/46% split is the frozen
+per-channel rate under the naming battery at 20 null draws; under explicit multiple-comparison
+control the *named* fraction is lower and correction-dependent — about a quarter of channels survive
+channel-level false-discovery control at q = 0.05, about 7% under the strictest per-gate control,
+with a ~9% core that no correction removes and a built-in "hold in ≥2 of 3 text regimes" rule that
+already caps the false-named fraction near 10%; the 46% word-less figure is, if anything, an
+under-estimate. Paper §6.1 + Appendix B.) How the language composes from layer to layer is certified linear at
 all 36 layer-seam tests. We built the exact inverse (English → state) and proved the round trip is
 behaviorally invisible at all 39 cells. And the model obeys hand edits: turn the "naval"
 field up and GPT-2 starts predicting *amphib, sunk, ashore, reefs, sailed, submarine*. Three of
@@ -63,8 +69,12 @@ three regimes; the 46% word-less fraction and the un-steerable rung are named, n
 **The three honest percentages** (the paper states all three, always together): 100% of the
 pre-registered definition met (certified-no-word counts as an answer); behavioral round trip
 100% / 94.7% / 3-of-4 (reconstruct / meaning-transplant / human-edit; the transplant number is
-16 prose pairs at one mid-stack checkpoint); 53.6% of channels carry an
-actual English word.
+16 prose pairs at one mid-stack checkpoint — a v1.1 boundary×regime sweep confirms it is not special
+to that checkpoint: median transplant 0.94–0.98 in prose and 0.82–0.98 in repetition across early,
+mid and late checkpoints, and 0.89 in code at late depth, though code is heavy-tailed at early/mid
+depth; paper §6.4); 53.6% of channels carry an actual English word (frozen gate-level rate under the
+20-draw battery; materially lower under multiple-comparison control — see the naming note above and
+§6.1).
 
 **The two loose ends are now finished — as certified negatives (L5, same day).** Neither headline
 number moved, and both favorite bets lost. The missing 5.3% of transplantable meaning is NOT
