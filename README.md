@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21271421.svg)](https://doi.org/10.5281/zenodo.21271421)
 [![License: CC BY 4.0](https://img.shields.io/badge/paper-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
-**Version 1.1 (2026-07-08)** — revised per external agentic review: adds FDR analysis, floor sensitivity, transplant boundary×regime generality, rotation robustness, and seam perturbations; no headline number changed, all scoped. New-version DOI [10.5281/zenodo.21271421](https://doi.org/10.5281/zenodo.21271421) (concept DOI 10.5281/zenodo.21230107 always resolves to the latest version); v1 remains archived. See `paper/REVISION_NOTE.md` and `paper/REVIEWER_RESPONSE.md`.
+**Version 1.1 (2026-07-08)** — revised per external agentic review (paperreview.ai): adds FDR analysis, floor sensitivity, transplant boundary×regime generality, rotation robustness, and seam perturbations; no headline number changed, all scoped. New-version DOI [10.5281/zenodo.21271421](https://doi.org/10.5281/zenodo.21271421) (concept DOI 10.5281/zenodo.21230107 always resolves to the latest version); v1 remains archived. See `paper/REVISION_NOTE.md` and `paper/REVIEWER_RESPONSE.md`.
 
 This repository contains **the BABEL codec**: the first complete, certified, bidirectional decode
 of an entire production language model — a two-way dictionary between GPT-2 small's internal

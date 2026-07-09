@@ -1,4 +1,4 @@
-# Response to the Stanford agentic review (paperreview.ai)
+# Response to the external agentic review (paperreview.ai)
 
 We thank the reviewer for an unusually careful and constructive read — the strengths noted
 (pre-registration, matched nulls, priced remainder, the clean wall result) are exactly the culture

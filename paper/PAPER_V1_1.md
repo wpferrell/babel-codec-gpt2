@@ -2,7 +2,7 @@
 
 **Will Ferrell** — Independent Researcher
 
-*v1.1, 2026-07-08; revised per external agentic review of the 2026‑07‑06 v1 — adds multiplicity / false-discovery control, floor-construction sensitivity, transplant boundary×regime generality, door/core rotation robustness, seam perturbations, a student-methods appendix, a no-gloss scope reframe, a glossary, and expanded related work; changes summarized in REVISION_NOTE.md and answered point-by-point in REVIEWER_RESPONSE.md. No headline number changed — every revision scopes a claim, none overturns one. All frozen, hash-stamped artifacts are public: concept DOI [10.5281/zenodo.21230107](https://doi.org/10.5281/zenodo.21230107) (always resolves to the latest version; this v1.1 receives its own versioned DOI), code github.com/wpferrell/babel-codec-gpt2, mirror huggingface.co/wpferrell/babel-codec-gpt2.*
+*v1.1, 2026-07-08; revised per external agentic review (paperreview.ai) of the 2026‑07‑06 v1 — adds multiplicity / false-discovery control, floor-construction sensitivity, transplant boundary×regime generality, door/core rotation robustness, seam perturbations, a student-methods appendix, a no-gloss scope reframe, a glossary, and expanded related work; changes summarized in REVISION_NOTE.md and answered point-by-point in REVIEWER_RESPONSE.md. No headline number changed — every revision scopes a claim, none overturns one. All frozen, hash-stamped artifacts are public: concept DOI [10.5281/zenodo.21230107](https://doi.org/10.5281/zenodo.21230107) (always resolves to the latest version; this v1.1 receives its own versioned DOI), code github.com/wpferrell/babel-codec-gpt2, mirror huggingface.co/wpferrell/babel-codec-gpt2.*
 
 ---
 

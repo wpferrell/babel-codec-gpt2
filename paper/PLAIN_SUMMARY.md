@@ -1,4 +1,4 @@
-# PLAIN_SUMMARY.md — the paper in one page (v1.1, 2026-07-08; revised per external agentic review)
+# PLAIN_SUMMARY.md — the paper in one page (v1.1, 2026-07-08; revised per external agentic review (paperreview.ai))
 
 **What the paper claims.** We took one production language model — GPT-2 — and built what the
 paper claims in its locked form: the first complete, certified, bidirectional decode of an entire
