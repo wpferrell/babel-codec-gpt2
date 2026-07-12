@@ -173,7 +173,7 @@ SAE releases (Bloom 2024, Gemma Scope, Bills et al. 2023) are engaged in the pap
 
 ## Read more
 
-- **The paper:** `paper/PAPER_V1_1.pdf` — every claim with its evidence hash (Appendix A maps each
+- **The paper:** [read online (Markdown)](paper/PAPER_V1_1.md) | [PDF on Zenodo](https://doi.org/10.5281/zenodo.21271421) | [download PDF](paper/PAPER_V1_1.pdf) (GitHub's inline PDF preview can be slow to load; the Markdown & Zenodo links always render) — every claim with its evidence hash (Appendix A maps each
   number to its frozen source; the original v1 paper is archived at `paper/v1/PAPER_V1.pdf`).
 - **One-page summary:** `paper/PLAIN_SUMMARY.md`.
 - **The closure records:** `paper/L5_CLOSEOUT.md`, `paper/L6_CLOSEOUT.md` + addenda — the two
